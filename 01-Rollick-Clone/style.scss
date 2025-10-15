@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica';
+  font-weight: 300;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-size: 10px;
+}
+
+%center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 100dvh;
+  width: 100dvw;
+
+  nav {
+    height: 8.5dvh;
+    padding: 0 4rem;
+    width: 100dvw;
+    @extend %center;
+    justify-content: space-between;
+    background: #EB116F;
+    grid-template-columns: repeat(2, 1fr);
+
+    img {
+      width: 16rem;
+      height: 6.5rem;
+      cursor: pointer;
+    }
+
+    aside {
+      @extend %center;
+      justify-content: space-between;
+      padding: 0;
+
+
+      .links {
+        @extend %center;
+        justify-content: space-evenly;
+
+        cursor: pointer;
+        font-size: 1.7rem;
+        color: hsl(0, 0, 100);
+        gap: 3.4rem;
+
+
+        a {
+          text-decoration: none;
+          color: black;
+          cursor: pointer;
+          color: hsl(0, 0, 100);
+        }
+      }
+
+      i {
+        font-size: 2rem;
+        padding: 1rem;
+        color: hsl(0, 0, 100);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🌐 Default styles (Desktop 1440px and up) */
+
+/* 🖥️ Ultra-wide / 4K Screens (above 2560px) */
+@media (min-width: 2561px) {
+  html {
+    font-size: 25px;
+  }
+  nav{
+    img{
+      width: 12rem;
+      height: 5rem;
+    }
+  }
+
+}
+
+/* 💻 Large Desktop / 2K Screens (1441px–2560px) */
+@media (min-width: 1441px) and (max-width: 2560px) {
+  html {
+    font-size: 12px;
+  }
+
+}
+
+/* 💻 Laptop styles (901px–1440px) */
+@media (min-width: 901px) and (max-width: 1440px) {
+  html {
+    font-size: 8px;
+  }
+
+}
+
+/* 📱 Tablet styles (601px–900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  html {
+    font-size: 5px;
+  }
+
+}
+
+/* 📱 Mobile styles (401px–600px) */
+@media (min-width: 401px) and (max-width: 600px) {
+  html {
+    font-size: 4px;
+
+  }
+}
+
+/* 📞 Small Mobile / Extra Small Screens (max 400px) */
+@media (max-width: 400px) {
+  html {
+    font-size: 4px;
+  }
+
+}
+
+/* 🧠 Very Small Devices (max 320px) */
+@media (max-width: 320px) {
+  html {
+    font-size: 3px;
+  }
+
+}
