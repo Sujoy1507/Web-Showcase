@@ -25,10 +25,18 @@ body {
     justify-content: center;
 }
 
+body{
+    @extend %flex-col;
+    background-color: hsl(0, 0, 7);
+    justify-content: start;
+}
+
 main {
     background: hsl(0, 0, 7);
     width: 100%;
+    max-width: 1900px;
     padding: 0 .8rem;
+    
 
     nav {
         width: 100%;
@@ -153,6 +161,29 @@ main {
 
         }
     }
+
+    .progress {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+
+        .text {
+            @extend %flex-col;
+            gap: .7rem;
+            padding: 1.5rem;
+
+            h1 {
+                color: hsl(0, 0, 50);
+                font-size: .9rem;
+                font-weight: 700;
+            }
+
+            p {
+                font-size: 2.5rem;
+                color: hsl(0, 0, 100);
+            }
+        }
+    }
 }
 
 
@@ -160,7 +191,7 @@ main {
 
 
 /* ⬇️⬇️⬇️Tablet screen⬇️⬇️⬇️ */
-@media (min-width: 426px) and (max-width: 768px) {
+@media (min-width: 700px) and (max-width: 850px) {
     main {
         nav {
             .nav-sec {
@@ -175,17 +206,27 @@ main {
                 .bottom {
                     h2 {
                         font-size: 4rem;
-
                     }
                 }
             }
         }
 
+        .progress {
+            .text {
+                h1 {
+                    font-size: 1.2rem;
+                }
+
+                p {
+                    font-size: 4rem; // Fixed: removed 'fos'
+                }
+            }
+        }
     }
 }
 
 /* ⬇️⬇️⬇️Laptop screen⬇️⬇️⬇️ */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 851px) and (max-width: 1024px) {
     main {
         nav {
             .nav-sec {
@@ -196,7 +237,21 @@ main {
         }
 
 
+        .progress {
+            grid-template-columns: repeat(4, 1fr);
+
+            .text {
+                h1 {
+                    font-size: 1.2rem;
+                }
+
+                p {
+                    font-size: 4rem; // Fixed: removed 'fos'
+                }
+            }
+        }
     }
+
 
 }
 
@@ -233,6 +288,20 @@ main {
                 padding: 3.5rem;
             }
         }
+
+        .progress {
+            grid-template-columns: repeat(4, 1fr);
+
+            .text {
+                h1 {
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    font-size: 4.7rem; // Fixed: removed 'fos'
+                }
+            }
+        }
     }
 }
 
@@ -267,6 +336,20 @@ main {
                 align-items: start;
                 justify-content: space-between;
                 padding: 3.5rem;
+            }
+        }
+
+        .progress {
+            grid-template-columns: repeat(4, 1fr);
+
+            .text {
+                h1 {
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    font-size: 4.7rem; // Fixed: removed 'fos'
+                }
             }
         }
     }
@@ -316,6 +399,7 @@ main {
                 padding: 3.5rem;
             }
         }
+        
     }
 
 }

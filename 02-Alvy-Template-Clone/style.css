@@ -19,16 +19,22 @@ main nav .nav-sec .cart, main nav .nav-sec, main nav {
   justify-content: center;
 }
 
-main .first-section .text .bottom, main .first-section .text, main .first-section {
+main .progress .text, main .first-section .text .bottom, main .first-section .text, main .first-section, body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+body {
+  background-color: hsl(0, 0%, 7%);
+  justify-content: start;
+}
+
 main {
   background: hsl(0, 0%, 7%);
   width: 100%;
+  max-width: 1900px;
   padding: 0 0.8rem;
 }
 main nav {
@@ -127,21 +133,54 @@ main .first-section .text .bottom button i {
   color: hsl(0, 2%, 48%);
   border: 2px solid hsl(0, 2%, 48%);
 }
+main .progress {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+main .progress .text {
+  gap: 0.7rem;
+  padding: 1.5rem;
+}
+main .progress .text h1 {
+  color: hsl(0, 0%, 50%);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+main .progress .text p {
+  font-size: 2.5rem;
+  color: hsl(0, 0%, 100%);
+}
 
 /* 🔝🔝🔝 Small screen 🔝🔝🔝 */
 /* ⬇️⬇️⬇️Tablet screen⬇️⬇️⬇️ */
-@media (min-width: 426px) and (max-width: 768px) {
+@media (min-width: 700px) and (max-width: 850px) {
   main nav .nav-sec .get {
     display: initial;
   }
   main .first-section .text .bottom h2 {
     font-size: 4rem;
   }
+  main .progress .text h1 {
+    font-size: 1.2rem;
+  }
+  main .progress .text p {
+    font-size: 4rem;
+  }
 }
 /* ⬇️⬇️⬇️Laptop screen⬇️⬇️⬇️ */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 851px) and (max-width: 1024px) {
   main nav .nav-sec button {
     display: initial;
+  }
+  main .progress {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  main .progress .text h1 {
+    font-size: 1.2rem;
+  }
+  main .progress .text p {
+    font-size: 4rem;
   }
 }
 /* ⬇️⬇️⬇️Desktop screen⬇️⬇️⬇️ */
@@ -170,6 +209,15 @@ main .first-section .text .bottom button i {
     justify-content: space-between;
     padding: 3.5rem;
   }
+  main .progress {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  main .progress .text h1 {
+    font-size: 1.5rem;
+  }
+  main .progress .text p {
+    font-size: 4.7rem;
+  }
 }
 /* ⬇️⬇️⬇️Large desktop / 2K⬇️⬇️⬇️ */
 @media (min-width: 1441px) and (max-width: 2560px) {
@@ -196,6 +244,15 @@ main .first-section .text .bottom button i {
     align-items: start;
     justify-content: space-between;
     padding: 3.5rem;
+  }
+  main .progress {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  main .progress .text h1 {
+    font-size: 1.5rem;
+  }
+  main .progress .text p {
+    font-size: 4.7rem;
   }
 }
 /* ⬇️⬇️⬇️Ultra 4K screen⬇️⬇️⬇️ */
