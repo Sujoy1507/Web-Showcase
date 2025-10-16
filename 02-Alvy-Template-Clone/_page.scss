@@ -1,0 +1,61 @@
+%flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@mixin page-style {
+    @extend %flex-col;
+    width: 100%;
+    gap: 1rem;
+}
+
+@mixin img-style {
+    width: 100%;
+    border-radius: 10px;
+}
+
+@mixin test-style {
+    @extend %flex-col;
+    align-items: start;
+    width: 100%;
+    color: hsl(0, 0%, 100%);
+    padding: 2rem;
+    background: hsl(0, 0, 13);
+    border-radius: 10px;
+    gap: 4rem;
+    padding-bottom: 4.5rem;
+
+}
+
+@mixin h1-style {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+@mixin bottom-style {
+    @extend %flex-col;
+    align-items: start;
+    gap: 2rem;
+}
+
+@mixin h2-style {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+@mixin p-style {
+    line-height: 2.5rem;
+    font-size: 1.25rem;
+    opacity: .7;
+    word-spacing: .2rem;
+}

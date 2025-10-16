@@ -1,4 +1,20 @@
 @charset "UTF-8";
+main .three-img .section .bottom, main .ourteam, main nav .nav-sec .cart, main nav .nav-sec, main nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .three-img .section, main .three-img, main .second-section .text .bottom,
+main .third-section .text .bottom, main .second-section .text,
+main .third-section .text, main .second-section,
+main .third-section, main .progress .text, main .first-section .text .bottom, main .first-section .text, main .first-section, body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,13 +29,16 @@ body {
   width: 100%;
 }
 
-main nav .nav-sec .cart, main nav .nav-sec, main nav {
+main .three-img .section .bottom, main .ourteam, main nav .nav-sec .cart, main nav .nav-sec, main nav {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-main .progress .text, main .first-section .text .bottom, main .first-section .text, main .first-section, body {
+main .three-img .section, main .three-img, main .second-section .text .bottom,
+main .third-section .text .bottom, main .second-section .text,
+main .third-section .text, main .second-section,
+main .third-section, main .progress .text, main .first-section .text .bottom, main .first-section .text, main .first-section, body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,12 +46,12 @@ main .progress .text, main .first-section .text .bottom, main .first-section .te
 }
 
 body {
-  background-color: hsl(0, 0%, 7%);
+  background-color: hsl(0, 0%, 10%);
   justify-content: start;
 }
 
 main {
-  background: hsl(0, 0%, 7%);
+  background: hsl(0, 0%, 10%);
   width: 100%;
   max-width: 1900px;
   padding: 0 0.8rem;
@@ -151,6 +170,100 @@ main .progress .text p {
   font-size: 2.5rem;
   color: hsl(0, 0%, 100%);
 }
+main .second-section,
+main .third-section {
+  width: 100%;
+  gap: 1rem;
+}
+main .second-section img,
+main .third-section img {
+  width: 100%;
+  border-radius: 10px;
+}
+main .second-section .text,
+main .third-section .text {
+  align-items: start;
+  width: 100%;
+  color: hsl(0, 0%, 100%);
+  padding: 2rem;
+  background: hsl(0, 0%, 13%);
+  border-radius: 10px;
+  gap: 4rem;
+  padding-bottom: 4.5rem;
+}
+main .second-section .text h1,
+main .third-section .text h1 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+main .second-section .text .bottom,
+main .third-section .text .bottom {
+  align-items: start;
+  gap: 2rem;
+}
+main .second-section .text .bottom h2,
+main .third-section .text .bottom h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 100;
+}
+main .second-section .text .bottom p,
+main .third-section .text .bottom p {
+  line-height: 2.5rem;
+  font-size: 1.25rem;
+  opacity: 0.7;
+  word-spacing: 0.2rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+main .ourteam {
+  justify-content: start;
+  color: hsl(0, 0%, 100%);
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+main .three-img {
+  gap: 0.7rem;
+}
+main .three-img .section {
+  position: relative;
+}
+main .three-img .section img {
+  width: 100%;
+  border-radius: 10px;
+}
+main .three-img .section .top {
+  position: absolute;
+  color: hsla(0, 0%, 100%, 0.562);
+  top: 7%;
+  right: 10%;
+}
+main .three-img .section .top i {
+  border: 1.5px solid hsla(0, 0%, 100%, 0.562);
+  border-radius: 50%;
+  padding: 0.3rem;
+}
+main .three-img .section .bottom {
+  margin: 1rem;
+  border-radius: 0.8rem;
+  justify-content: space-between;
+  position: absolute;
+  color: hsla(0, 0%, 100%, 0.562);
+  bottom: 5%;
+  width: 100%;
+  background: hsla(0, 0%, 100%, 0.15);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+}
+main .three-img .section .bottom .name {
+  font-size: 0.65rem;
+}
+main .three-img .section .bottom .profession {
+  font-size: 0.65rem;
+}
 
 /* 🔝🔝🔝 Small screen 🔝🔝🔝 */
 /* ⬇️⬇️⬇️Tablet screen⬇️⬇️⬇️ */
@@ -167,6 +280,17 @@ main .progress .text p {
   main .progress .text p {
     font-size: 4rem;
   }
+  main .second-section .text .bottom h2 {
+    font-size: 3rem;
+  }
+  .three-img {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .three-img .section {
+    width: 50%;
+  }
 }
 /* ⬇️⬇️⬇️Laptop screen⬇️⬇️⬇️ */
 @media (min-width: 851px) and (max-width: 1024px) {
@@ -180,6 +304,9 @@ main .progress .text p {
     font-size: 1.2rem;
   }
   main .progress .text p {
+    font-size: 4rem;
+  }
+  main .second-section .text .bottom h2 {
     font-size: 4rem;
   }
 }
@@ -218,13 +345,7 @@ main .progress .text p {
   main .progress .text p {
     font-size: 4.7rem;
   }
-}
-/* ⬇️⬇️⬇️Large desktop / 2K⬇️⬇️⬇️ */
-@media (min-width: 1441px) and (max-width: 2560px) {
-  main nav .nav-sec button {
-    display: initial;
-  }
-  main .first-section {
+  main .second-section {
     min-height: 60dvh;
     display: flex;
     align-items: stretch;
@@ -232,12 +353,42 @@ main .progress .text p {
     gap: 2rem;
     flex-direction: row;
   }
-  main .first-section img {
+  main .second-section img {
     width: 50%;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  main .first-section .text {
+  main .second-section .text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    padding: 3.5rem;
+  }
+}
+/* ⬇️⬇️⬇️Large desktop / 2K⬇️⬇️⬇️ */
+@media (min-width: 1441px) and (max-width: 2560px) {
+  main nav .nav-sec button {
+    display: initial;
+  }
+  main .first-section,
+  main .second-section {
+    min-height: 60dvh;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-direction: row;
+  }
+  main .first-section img,
+  main .second-section img {
+    width: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main .first-section .text,
+  main .second-section .text {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -269,24 +420,37 @@ main .progress .text p {
   main nav .nav-sec button {
     display: initial;
   }
-  main .first-section {
+  main .first-section,
+  main .second-section {
     display: flex;
     align-items: stretch;
     justify-content: space-between;
     gap: 2rem;
     flex-direction: row;
   }
-  main .first-section img {
+  main .first-section img,
+  main .second-section img {
     width: 50%;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  main .first-section .text {
+  main .first-section .text,
+  main .second-section .text {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
     padding: 3.5rem;
+  }
+  main .progress {
+    padding: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  main .progress .text h1 {
+    font-size: 1.5rem;
+  }
+  main .progress .text p {
+    font-size: 4.7rem;
   }
 }/*# sourceMappingURL=style.css.map */
