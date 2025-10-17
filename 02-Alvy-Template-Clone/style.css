@@ -810,6 +810,27 @@ main .footer .footer-bottom .to-top .top-icon {
   main .progress .text p {
     font-size: 4.7rem;
   }
+  main .first-section {
+    min-height: 60dvh;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-direction: row;
+  }
+  main .first-section img {
+    width: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main .first-section .text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    padding: 3.5rem;
+  }
   main .ourteam {
     width: 100%;
     padding: 0.7rem;
@@ -828,6 +849,27 @@ main .footer .footer-bottom .to-top .top-icon {
     align-items: center;
     flex-direction: column;
     background: hsl(0, 0%, 7%);
+  }
+  .first-section {
+    min-height: 60dvh;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-direction: row;
+  }
+  .first-section img {
+    width: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .first-section .text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    padding: 3.5rem;
   }
   .img-text {
     display: grid;
