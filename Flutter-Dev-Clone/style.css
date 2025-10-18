@@ -101,6 +101,43 @@ main .page-one-container .page-one h2 {
   font-weight: 300;
   padding: 0 0.8rem;
 }
+main .page-two {
+  width: 100%;
+  padding: 1rem;
+  padding-bottom: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+main .page-two .card {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+main .page-two .card img {
+  width: 100%;
+  padding-top: 3rem;
+}
+main .page-two .card h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+main .page-two .card p {
+  opacity: 0.8;
+  padding-right: 2.5rem;
+  font-size: 1.2rem;
+}
+main .page-two .card .line {
+  padding-top: 4rem;
+  width: 100%;
+  border-bottom: 0.3rem solid hsla(0, 0%, 12%, 0.123);
+}
 
 /* 🔝🔝🔝 Small screen 🔝🔝🔝 */
 /* ⬇️⬇️⬇️Tablet screen⬇️⬇️⬇️ */
@@ -143,6 +180,12 @@ main .page-one-container .page-one h2 {
     width: 80%;
     overflow: none;
   }
+  main .page-two {
+    margin: 0 auto;
+    max-width: 1290px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
   main .page-one {
     max-width: 1290px;
     margin: 0 auto;
@@ -179,6 +222,12 @@ main .page-one-container .page-one h2 {
     width: 80%;
     overflow: none;
   }
+  main .page-two {
+    margin: 0 auto;
+    max-width: 1290px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
   main .page-one {
     max-width: 1290px;
     margin: 0 auto;
@@ -214,6 +263,12 @@ main .page-one-container .page-one h2 {
     display: flex;
     width: 95%;
     overflow: none;
+  }
+  main .page-two {
+    margin: 0 auto;
+    max-width: 1290px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
   main .page-one {
     max-width: 1290px;

@@ -118,6 +118,46 @@ main {
         }
     }
 
+    .page-two {
+        width: 100%;
+        padding: 1rem;
+        padding-bottom: 6rem;
+        @include Flex(center, center);
+        flex-direction: column;
+        gap: 4rem;
+
+        .card {
+            width: 100%;
+            @include Flex(center, start);
+            flex-direction: column;
+            padding: 1rem;
+            gap: 1rem;
+
+            img {
+                width: 100%;
+                padding-top: 3rem;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+                font-weight: 700;
+            }
+
+            p {
+                opacity: 0.8;
+                padding-right: 2.5rem;
+                font-size: 1.2rem;
+            }
+
+            .line {
+                padding-top: 4rem;
+
+                width: 100%;
+                border-bottom: .3rem solid hsla(0, 0%, 12%, 0.123);
+            }
+        }
+    }
+
 }
 
 
@@ -185,6 +225,13 @@ main {
 
         }
 
+        .page-two {
+            margin: 0 auto;
+            max-width: 1290px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
         .page-one {
             max-width: 1290px;
             margin: 0 auto;
@@ -232,6 +279,13 @@ main {
             }
         }
 
+        .page-two {
+            margin: 0 auto;
+            max-width: 1290px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
         .page-one {
             max-width: 1290px;
             margin: 0 auto;
@@ -277,6 +331,13 @@ main {
                 width: 95%;
                 overflow: none;
             }
+        }
+
+        .page-two {
+            margin: 0 auto;
+            max-width: 1290px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .page-one {
