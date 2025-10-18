@@ -67,7 +67,11 @@ main nav .nav-links button {
   border-radius: 3.4rem;
   background: #0E76FB;
 }
-main .page-one {
+main .page-one-container {
+  width: 100%;
+  background: linear-gradient(45deg, #FCDDE8, transparent, transparent);
+}
+main .page-one-container .page-one {
   width: 100%;
   padding: 1rem;
   padding-bottom: 6rem;
@@ -76,19 +80,22 @@ main .page-one {
   justify-content: center;
   flex-direction: column;
   gap: 4rem;
-  background: linear-gradient(45deg, #FCDDE8, transparent, transparent);
 }
-main .page-one img {
+main .page-one-container .page-one .first {
+  width: 100%;
+}
+main .page-one-container .page-one .first img {
   width: 100%;
   aspect-ratio: 1/0.8;
 }
-main .page-one h1 {
+main .page-one-container .page-one .first h1 {
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
   padding: 0 2rem;
 }
-main .page-one h2 {
+main .page-one-container .page-one h2 {
+  width: 100%;
   text-align: center;
   font-size: 2.2rem;
   font-weight: 300;
@@ -104,14 +111,8 @@ main .page-one h2 {
   main nav img {
     width: 126px;
   }
-  main .page-one {
-    padding-top: 5rem;
-  }
-  main .page-one img {
-    width: 83%;
-  }
 }
-/* ⬇️⬇️⬇️Laptop screen⬇️⬇️⬇️ */
+/* ⬇️⬇️⬇️tablet screen⬇️⬇️⬇️ */
 @media (min-width: 800px) and (max-width: 1023px) {
   main nav {
     padding: 1.5rem;
@@ -120,8 +121,10 @@ main .page-one h2 {
     width: 126px;
   }
   main .page-one {
-    display: grid;
-    grid-template-columns: repeat();
+    padding-top: 5rem;
+  }
+  main .page-one img {
+    width: 83%;
   }
 }
 /* ⬇️⬇️⬇️Desktop screen⬇️⬇️⬇️ */
@@ -132,10 +135,32 @@ main .page-one h2 {
   main nav img {
     width: 126px;
   }
+  main nav i {
+    display: none;
+  }
   main nav .nav-links {
     display: flex;
     width: 80%;
     overflow: none;
+  }
+  main .page-one {
+    max-width: 1290px;
+    margin: 0 auto;
+  }
+  main .page-one .first {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    grid-auto-flow: row;
+    direction: rtl;
+  }
+  main .page-one .first h1 {
+    padding-left: 3rem;
+    font-size: 4.5rem;
+    text-align: end;
+  }
+  main h2 {
+    width: 925px;
   }
 }
 /* ⬇️⬇️⬇️Large desktop / 2K⬇️⬇️⬇️ */
@@ -146,23 +171,67 @@ main .page-one h2 {
   main nav img {
     width: 126px;
   }
+  main nav i {
+    display: none;
+  }
   main nav .nav-links {
     display: flex;
     width: 80%;
     overflow: none;
   }
+  main .page-one {
+    max-width: 1290px;
+    margin: 0 auto;
+  }
+  main .page-one .first {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    grid-auto-flow: row;
+    direction: rtl;
+  }
+  main .page-one .first h1 {
+    padding-left: 3rem;
+    font-size: 4.5rem;
+    text-align: end;
+  }
+  main .page-one h2 {
+    width: 925px;
+  }
 }
 /* ⬇️⬇️⬇️Ultra 4K screen⬇️⬇️⬇️ */
-@media (min-width: 2561px) and (max-width: 3840px) {
+@media (min-width: 2561px) {
   main nav {
     padding: 1.5rem;
   }
   main nav img {
     width: 126px;
   }
+  main nav i {
+    display: none;
+  }
   main nav .nav-links {
     display: flex;
     width: 95%;
     overflow: none;
+  }
+  main .page-one {
+    max-width: 1290px;
+    margin: 0 auto;
+  }
+  main .page-one .first {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    grid-auto-flow: row;
+    direction: rtl;
+  }
+  main .page-one .first h1 {
+    padding-left: 3rem;
+    font-size: 4.5rem;
+    text-align: end;
+  }
+  main .page-one h2 {
+    width: 925px;
   }
 }/*# sourceMappingURL=style.css.map */

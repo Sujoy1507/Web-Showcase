@@ -76,36 +76,46 @@ main {
         }
     }
 
-    .page-one {
+    .page-one-container {
         width: 100%;
-        padding: 1rem;
-        padding-bottom: 6rem;
-        @include Flex(center, center);
-        flex-direction: column;
-        gap: 4rem;
         background: linear-gradient(45deg, #FCDDE8, transparent, transparent);
 
-        img {
+        .page-one {
             width: 100%;
-            aspect-ratio: 1/.8;
+            padding: 1rem;
+            padding-bottom: 6rem;
+            @include Flex(center, center);
+            flex-direction: column;
+            gap: 4rem;
+            // background: linear-gradient(45deg, #FCDDE8, transparent, transparent);
+
+            .first {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    aspect-ratio: 1/.8;
+                }
+
+                h1 {
+                    text-align: center;
+
+                    font-size: 3rem;
+                    font-weight: 900;
+                    padding: 0 2rem;
+                }
+            }
+
+            h2 {
+                width: 100%;
+                text-align: center;
+
+                font-size: 2.2rem;
+                font-weight: 300;
+                padding: 0 .8rem;
+            }
+
         }
-
-        h1 {
-            text-align: center;
-
-            font-size: 3rem;
-            font-weight: 900;
-            padding: 0 2rem;
-        }
-
-        h2 {
-            text-align: center;
-
-            font-size: 2.2rem;
-            font-weight: 300;
-            padding: 0 .8rem;
-        }
-
     }
 
 }
@@ -124,18 +134,12 @@ main {
             }
         }
 
-        .page-one{
-            padding-top: 5rem;
-            img{
 
-                width: 83%;
-            }
-        }
     }
 
 }
 
-/* ⬇️⬇️⬇️Laptop screen⬇️⬇️⬇️ */
+/* ⬇️⬇️⬇️tablet screen⬇️⬇️⬇️ */
 @media (min-width: 800px) and (max-width: 1023px) {
     main {
         nav {
@@ -146,9 +150,13 @@ main {
             }
         }
 
-        .page-one{
-            display: grid;
-            grid-template-columns: repeat();
+        .page-one {
+            padding-top: 5rem;
+
+            img {
+
+                width: 83%;
+            }
         }
     }
 
@@ -164,11 +172,40 @@ main {
                 width: 126px;
             }
 
+            i {
+                display: none;
+            }
+
             .nav-links {
                 display: flex;
                 width: 80%;
                 overflow: none;
             }
+
+
+        }
+
+        .page-one {
+            max-width: 1290px;
+            margin: 0 auto;
+
+            .first {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+                grid-auto-flow: row;
+                direction: rtl;
+
+                h1 {
+                    padding-left: 3rem;
+                    font-size: 4.5rem;
+                    text-align: end;
+                }
+            }
+        }
+
+        h2 {
+            width: 925px;
         }
     }
 
@@ -184,10 +221,37 @@ main {
                 width: 126px;
             }
 
+            i {
+                display: none;
+            }
+
             .nav-links {
                 display: flex;
                 width: 80%;
                 overflow: none;
+            }
+        }
+
+        .page-one {
+            max-width: 1290px;
+            margin: 0 auto;
+
+            .first {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+                grid-auto-flow: row;
+                direction: rtl;
+
+                h1 {
+                    padding-left: 3rem;
+                    font-size: 4.5rem;
+                    text-align: end;
+                }
+            }
+
+            h2 {
+                width: 925px;
             }
         }
     }
@@ -195,7 +259,7 @@ main {
 }
 
 /* ⬇️⬇️⬇️Ultra 4K screen⬇️⬇️⬇️ */
-@media (min-width: 2561px) and (max-width: 3840px) {
+@media (min-width: 2561px) {
     main {
         nav {
             padding: 1.5rem;
@@ -204,10 +268,37 @@ main {
                 width: 126px;
             }
 
+            i {
+                display: none;
+            }
+
             .nav-links {
                 display: flex;
                 width: 95%;
                 overflow: none;
+            }
+        }
+
+        .page-one {
+            max-width: 1290px;
+            margin: 0 auto;
+
+            .first {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+                grid-auto-flow: row;
+                direction: rtl;
+
+                h1 {
+                    padding-left: 3rem;
+                    font-size: 4.5rem;
+                    text-align: end;
+                }
+            }
+
+            h2 {
+                width: 925px;
             }
         }
     }
