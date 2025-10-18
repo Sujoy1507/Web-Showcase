@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica';
+    font-weight: 300;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+@mixin Flex($Jc, $Ai) {
+    display: flex;
+    align-items: $Ai;
+    justify-content: $Jc;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+
+    span {
+        padding: 1rem;
+        @include Flex(center, center);
+        font-size: .9rem;
+        font-weight: 500;
+        color: hsl(0, 0, 100);
+        background: linear-gradient(to right, #0E76FB, #7F3FF2);
+    }
+
+    nav {
+
+        width: 100%;
+        @include Flex(space-between, center);
+        padding: 1rem .7rem;
+        gap: 1rem;
+
+        img {
+            width: 100px;
+        }
+
+        .nav-links {
+            display: none;
+            width: 0%;
+            overflow: hidden;
+            @include Flex(end, center);
+            gap: 1rem;
+            font-size: 1rem;
+            gap: 2rem;
+
+            .links {
+                &:hover {
+                    background: hsla(0, 0%, 10%, 0.089);
+                    border-radius: 3.5rem;
+                    padding: 0.5em 1rem;
+                    margin: -1rem;
+                }
+            }
+
+            i {
+                font-weight: 700;
+                font-size: .6rem;
+                opacity: 0.7;
+            }
+
+            button {
+                font-size: .6rem;
+                border: none;
+                padding: .5rem 1rem;
+                border-radius: 3.4rem;
+                background: #0E76FB;
+            }
+        }
+    }
+
+    .page-one {
+        width: 100%;
+        padding: 1rem;
+        padding-bottom: 6rem;
+        @include Flex(center, center);
+        flex-direction: column;
+        gap: 4rem;
+        background: linear-gradient(45deg, #FCDDE8, transparent, transparent);
+
+        img {
+            width: 100%;
+            aspect-ratio: 1/.8;
+        }
+
+        h1 {
+            text-align: center;
+
+            font-size: 3rem;
+            font-weight: 900;
+            padding: 0 2rem;
+        }
+
+        h2 {
+            text-align: center;
+
+            font-size: 2.2rem;
+            font-weight: 300;
+            padding: 0 .8rem;
+        }
+
+    }
+
+}
+
+
+/* 🔝🔝🔝 Small screen 🔝🔝🔝 */
+
+/* ⬇️⬇️⬇️Tablet screen⬇️⬇️⬇️ */
+@media (min-width: 600px) and (max-width: 799px) {
+    main {
+        nav {
+            padding: 1.5rem;
+
+            img {
+                width: 126px;
+            }
+        }
+
+        .page-one{
+            padding-top: 5rem;
+            img{
+
+                width: 83%;
+            }
+        }
+    }
+
+}
+
+/* ⬇️⬇️⬇️Laptop screen⬇️⬇️⬇️ */
+@media (min-width: 800px) and (max-width: 1023px) {
+    main {
+        nav {
+            padding: 1.5rem;
+
+            img {
+                width: 126px;
+            }
+        }
+
+        .page-one{
+            display: grid;
+            grid-template-columns: repeat();
+        }
+    }
+
+}
+
+/* ⬇️⬇️⬇️Desktop screen⬇️⬇️⬇️ */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    main {
+        nav {
+            padding: 1.5rem;
+
+            img {
+                width: 126px;
+            }
+
+            .nav-links {
+                display: flex;
+                width: 80%;
+                overflow: none;
+            }
+        }
+    }
+
+}
+
+/* ⬇️⬇️⬇️Large desktop / 2K⬇️⬇️⬇️ */
+@media (min-width: 1441px) and (max-width: 2560px) {
+    main {
+        nav {
+            padding: 1.5rem;
+
+            img {
+                width: 126px;
+            }
+
+            .nav-links {
+                display: flex;
+                width: 80%;
+                overflow: none;
+            }
+        }
+    }
+
+}
+
+/* ⬇️⬇️⬇️Ultra 4K screen⬇️⬇️⬇️ */
+@media (min-width: 2561px) and (max-width: 3840px) {
+    main {
+        nav {
+            padding: 1.5rem;
+
+            img {
+                width: 126px;
+            }
+
+            .nav-links {
+                display: flex;
+                width: 95%;
+                overflow: none;
+            }
+        }
+    }
+}
