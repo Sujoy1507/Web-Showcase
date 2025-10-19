@@ -239,6 +239,48 @@ main .container-page-four .page-four .text-section button {
   border-radius: 3.5rem;
   background: hsl(216, 100%, 50%);
 }
+main .page-five {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  gap: 4rem;
+}
+main .page-five img {
+  width: 100%;
+}
+main .page-five .text-section {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+main .page-five .text-section h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+main .page-five .text-section h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+main .page-five .text-section h3 {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  opacity: 0.8;
+}
+main .page-five .text-section button {
+  border: 1.5px solid hsl(216, 100%, 50%);
+  padding: 0.8rem 2rem;
+  color: hsl(0, 0%, 100%);
+  border-radius: 3.5rem;
+  background: hsl(216, 100%, 50%);
+}
 
 /* 🔝🔝🔝 Small screen 🔝🔝🔝 */
 /* ⬇️⬇️⬇️Tablet screen⬇️⬇️⬇️ */
@@ -249,7 +291,8 @@ main .container-page-four .page-four .text-section button {
   main nav img {
     width: 126px;
   }
-  main .page-four img {
+  main .page-four img,
+  main .page-five img {
     max-width: 600px;
   }
   main .page-three {
@@ -372,6 +415,59 @@ main .container-page-four .page-four .text-section button {
     width: -moz-fit-content;
     width: fit-content;
   }
+  main .page-five {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row;
+    direction: rtl;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  main .page-five img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+  main .page-five .text-section {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    justify-content: center;
+  }
+  main .page-five .text-section h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    opacity: 0.7;
+  }
+  main .page-five .text-section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  main .page-five .text-section h3 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    opacity: 0.8;
+  }
+  main .page-five .text-section button {
+    border: 1.5px solid hsl(216, 100%, 50%);
+    padding: 0.8rem 2rem;
+    color: hsl(0, 0%, 100%);
+    border-radius: 3.5rem;
+    background: hsl(216, 100%, 50%);
+    width: -moz-fit-content;
+    width: fit-content;
+  }
   main .page-three {
     margin: 0 auto;
     max-width: 1290px;
@@ -424,6 +520,59 @@ main .container-page-four .page-four .text-section button {
     display: flex;
     width: 80%;
     overflow: none;
+  }
+  main .page-five {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row;
+    direction: rtl;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  main .page-five img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+  main .page-five .text-section {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    justify-content: center;
+  }
+  main .page-five .text-section h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    opacity: 0.7;
+  }
+  main .page-five .text-section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  main .page-five .text-section h3 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    opacity: 0.8;
+  }
+  main .page-five .text-section button {
+    border: 1.5px solid hsl(216, 100%, 50%);
+    padding: 0.8rem 2rem;
+    color: hsl(0, 0%, 100%);
+    border-radius: 3.5rem;
+    background: hsl(216, 100%, 50%);
+    width: -moz-fit-content;
+    width: fit-content;
   }
   main .container-page-four {
     width: 100%;
@@ -533,6 +682,59 @@ main .container-page-four .page-four .text-section button {
     display: flex;
     width: 95%;
     overflow: none;
+  }
+  main .page-five {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row;
+    direction: rtl;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  main .page-five img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+  main .page-five .text-section {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    justify-content: center;
+  }
+  main .page-five .text-section h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    opacity: 0.7;
+  }
+  main .page-five .text-section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  main .page-five .text-section h3 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    opacity: 0.8;
+  }
+  main .page-five .text-section button {
+    border: 1.5px solid hsl(216, 100%, 50%);
+    padding: 0.8rem 2rem;
+    color: hsl(0, 0%, 100%);
+    border-radius: 3.5rem;
+    background: hsl(216, 100%, 50%);
+    width: -moz-fit-content;
+    width: fit-content;
   }
   main .container-page-four {
     width: 100%;
