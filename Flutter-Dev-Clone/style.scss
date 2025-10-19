@@ -222,49 +222,57 @@ main {
 
     }
 
-    .page-four-container {
+    .container-page-four {
         width: 100%;
-        padding: 1rem;
-        @include Flex(center, center);
-        flex-direction: column;
-        gap: 4rem;
 
         .page-four {
-            width: 100%;
             @include Flex(center, start);
             flex-direction: column;
+            gap: 2rem;
+            width: 100%;
             gap: 4rem;
+            background: linear-gradient(45deg, #FCFCE2, transparent);
 
             img {
                 width: 100%;
             }
 
-            .text-section{
+            .text-section {
                 width: 100%;
                 @include Flex(center, start);
                 flex-direction: column;
                 gap: 2rem;
+                padding: 1rem;
 
-                p:nth-child(1) {
+                h1 {
                     font-size: 1.3rem;
                     font-weight: 700;
                     opacity: 0.7;
                 }
 
-                p:nth-child(2) {
+                h2 {
                     font-size: 3rem;
                     font-weight: 700;
                 }
 
-                p:nth-child(3) {
+                h3 {
                     font-size: 1.2rem;
                     line-height: 1.5rem;
                     opacity: 0.8;
                 }
 
+                button {
+                    border: 1.5px solid hsl(216, 100%, 50%);
+                    padding: 0.8rem 2rem;
+                    color: hsl(0, 0, 100);
+                    border-radius: 3.5rem;
+                    background: hsl(216, 100%, 50%);
+                }
             }
         }
     }
+
+
 
 
 
@@ -281,6 +289,12 @@ main {
 
             img {
                 width: 126px;
+            }
+        }
+
+        .page-four {
+            img {
+                max-width: 600px;
             }
         }
 
@@ -315,6 +329,15 @@ main {
 
             img {
                 width: 126px;
+            }
+        }
+
+        .text-section {
+            .bottom {
+                flex-direction: row;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
 
@@ -370,6 +393,72 @@ main {
 
 
         }
+
+        .container-page-four {
+            width: 100%;
+            overflow-x: hidden;
+            background: linear-gradient(45deg, #FCFCE2, transparent);
+
+
+            .page-four {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                justify-content: center;
+                gap: 3rem;
+                max-width: 1290px;
+                margin: 0 auto;
+                padding: 2rem;
+
+                img {
+                    width: 100%;
+                    max-width: 550px;
+                    height: auto;
+                    object-fit: contain;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                .text-section {
+                    width: 100%;
+                    max-width: 600px;
+                    padding: 1rem 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.2rem;
+                    justify-content: center;
+
+                    h1 {
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        opacity: 0.7;
+                    }
+
+                    h2 {
+                        font-size: 3rem;
+                        font-weight: 700;
+                    }
+
+                    h3 {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                        opacity: 0.8;
+                    }
+
+                    button {
+                        border: 1.5px solid hsl(216, 100%, 50%);
+                        padding: 0.8rem 2rem;
+                        color: hsl(0, 0%, 100%);
+                        border-radius: 3.5rem;
+                        background: hsl(216, 100%, 50%);
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+
+
+
 
         .page-three {
             margin: 0 auto;
@@ -438,6 +527,69 @@ main {
             }
         }
 
+        .container-page-four {
+            width: 100%;
+            background: linear-gradient(45deg, #FCFCE2, transparent);
+            overflow-x: hidden;
+
+            .page-four {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                justify-content: center;
+                gap: 3rem;
+                max-width: 1290px;
+                margin: 0 auto;
+                padding: 2rem;
+
+                img {
+                    width: 100%;
+                    max-width: 550px;
+                    height: auto;
+                    object-fit: contain;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                .text-section {
+                    width: 100%;
+                    max-width: 600px;
+                    padding: 1rem 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.2rem;
+                    justify-content: center;
+
+                    h1 {
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        opacity: 0.7;
+                    }
+
+                    h2 {
+                        font-size: 3rem;
+                        font-weight: 700;
+                    }
+
+                    h3 {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                        opacity: 0.8;
+                    }
+
+                    button {
+                        border: 1.5px solid hsl(216, 100%, 50%);
+                        padding: 0.8rem 2rem;
+                        color: hsl(0, 0%, 100%);
+                        border-radius: 3.5rem;
+                        background: hsl(216, 100%, 50%);
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+
+
         .page-three {
             margin: 0 auto;
             max-width: 1290px;
@@ -504,6 +656,70 @@ main {
                 overflow: none;
             }
         }
+
+        .container-page-four {
+            width: 100%;
+            background: linear-gradient(45deg, #FCFCE2, transparent);
+            overflow-x: hidden;
+
+            .page-four {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                justify-content: center;
+                gap: 3rem;
+                max-width: 1290px;
+                margin: 0 auto;
+                padding: 2rem;
+
+
+                img {
+                    width: 100%;
+                    max-width: 550px;
+                    height: auto;
+                    object-fit: contain;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                .text-section {
+                    width: 100%;
+                    max-width: 600px;
+                    padding: 1rem 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.2rem;
+                    justify-content: center;
+
+                    h1 {
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        opacity: 0.7;
+                    }
+
+                    h2 {
+                        font-size: 3rem;
+                        font-weight: 700;
+                    }
+
+                    h3 {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                        opacity: 0.8;
+                    }
+
+                    button {
+                        border: 1.5px solid hsl(216, 100%, 50%);
+                        padding: 0.8rem 2rem;
+                        color: hsl(0, 0%, 100%);
+                        border-radius: 3.5rem;
+                        background: hsl(216, 100%, 50%);
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+
 
         .page-three {
             margin: 0 auto;
