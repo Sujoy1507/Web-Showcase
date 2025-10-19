@@ -193,10 +193,10 @@ main .page-three .text-section .bottom p {
   font-weight: 900;
   padding-left: 1rem;
 }
-main .container-page-four {
+main .container-page-four, main .page-six-container {
   width: 100%;
 }
-main .container-page-four .page-four {
+main .container-page-four .page-four, main .page-six-container .page-four {
   display: flex;
   align-items: start;
   justify-content: center;
@@ -206,10 +206,11 @@ main .container-page-four .page-four {
   gap: 4rem;
   background: linear-gradient(45deg, #FCFCE2, transparent);
 }
-main .container-page-four .page-four img {
+main .container-page-four .page-four img, main .page-six-container .page-four img {
+  padding-top: 8rem;
   width: 100%;
 }
-main .container-page-four .page-four .text-section {
+main .container-page-four .page-four .text-section, main .page-six-container .page-four .text-section {
   width: 100%;
   display: flex;
   align-items: start;
@@ -218,21 +219,21 @@ main .container-page-four .page-four .text-section {
   gap: 2rem;
   padding: 1rem;
 }
-main .container-page-four .page-four .text-section h1 {
+main .container-page-four .page-four .text-section h1, main .page-six-container .page-four .text-section h1 {
   font-size: 1.3rem;
   font-weight: 700;
   opacity: 0.7;
 }
-main .container-page-four .page-four .text-section h2 {
+main .container-page-four .page-four .text-section h2, main .page-six-container .page-four .text-section h2 {
   font-size: 3rem;
   font-weight: 700;
 }
-main .container-page-four .page-four .text-section h3 {
+main .container-page-four .page-four .text-section h3, main .page-six-container .page-four .text-section h3 {
   font-size: 1.2rem;
   line-height: 1.5rem;
   opacity: 0.8;
 }
-main .container-page-four .page-four .text-section button {
+main .container-page-four .page-four .text-section button, main .page-six-container .page-four .text-section button {
   border: 1.5px solid hsl(216, 100%, 50%);
   padding: 0.8rem 2rem;
   color: hsl(0, 0%, 100%);
@@ -249,6 +250,7 @@ main .page-five {
   gap: 4rem;
 }
 main .page-five img {
+  padding-top: 8rem;
   width: 100%;
 }
 main .page-five .text-section {
@@ -317,6 +319,12 @@ main .page-five .text-section button {
   main nav img {
     width: 126px;
   }
+  main .container-page-four .page-four img, main .page-six-container .page-four img {
+    max-width: 600px;
+  }
+  main .page-five img {
+    max-width: 600px;
+  }
   main .text-section .bottom {
     flex-direction: row;
     display: flex;
@@ -359,12 +367,12 @@ main .page-five .text-section button {
     width: 80%;
     overflow: none;
   }
-  main .container-page-four {
+  main .container-page-four, main .page-six-container {
     width: 100%;
     overflow-x: hidden;
     background: linear-gradient(45deg, #FCFCE2, transparent);
   }
-  main .container-page-four .page-four {
+  main .container-page-four .page-four, main .page-six-container .page-four {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -374,7 +382,7 @@ main .page-five .text-section button {
     margin: 0 auto;
     padding: 2rem;
   }
-  main .container-page-four .page-four img {
+  main .container-page-four .page-four img, main .page-six-container .page-four img {
     width: 100%;
     max-width: 550px;
     height: auto;
@@ -383,7 +391,7 @@ main .page-five .text-section button {
     display: block;
     margin: 0 auto;
   }
-  main .container-page-four .page-four .text-section {
+  main .container-page-four .page-four .text-section, main .page-six-container .page-four .text-section {
     width: 100%;
     max-width: 600px;
     padding: 1rem 2rem;
@@ -392,21 +400,21 @@ main .page-five .text-section button {
     gap: 1.2rem;
     justify-content: center;
   }
-  main .container-page-four .page-four .text-section h1 {
+  main .container-page-four .page-four .text-section h1, main .page-six-container .page-four .text-section h1 {
     font-size: 1.3rem;
     font-weight: 700;
     opacity: 0.7;
   }
-  main .container-page-four .page-four .text-section h2 {
+  main .container-page-four .page-four .text-section h2, main .page-six-container .page-four .text-section h2 {
     font-size: 3rem;
     font-weight: 700;
   }
-  main .container-page-four .page-four .text-section h3 {
+  main .container-page-four .page-four .text-section h3, main .page-six-container .page-four .text-section h3 {
     font-size: 1.2rem;
     line-height: 1.6rem;
     opacity: 0.8;
   }
-  main .container-page-four .page-four .text-section button {
+  main .container-page-four .page-four .text-section button, main .page-six-container .page-four .text-section button {
     border: 1.5px solid hsl(216, 100%, 50%);
     padding: 0.8rem 2rem;
     color: hsl(0, 0%, 100%);
@@ -574,12 +582,12 @@ main .page-five .text-section button {
     width: -moz-fit-content;
     width: fit-content;
   }
-  main .container-page-four {
+  main .container-page-four, main .page-six-container {
     width: 100%;
     background: linear-gradient(45deg, #FCFCE2, transparent);
     overflow-x: hidden;
   }
-  main .container-page-four .page-four {
+  main .container-page-four .page-four, main .page-six-container .page-four {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -589,7 +597,7 @@ main .page-five .text-section button {
     margin: 0 auto;
     padding: 2rem;
   }
-  main .container-page-four .page-four img {
+  main .container-page-four .page-four img, main .page-six-container .page-four img {
     width: 100%;
     max-width: 550px;
     height: auto;
@@ -598,7 +606,7 @@ main .page-five .text-section button {
     display: block;
     margin: 0 auto;
   }
-  main .container-page-four .page-four .text-section {
+  main .container-page-four .page-four .text-section, main .page-six-container .page-four .text-section {
     width: 100%;
     max-width: 600px;
     padding: 1rem 2rem;
@@ -607,21 +615,21 @@ main .page-five .text-section button {
     gap: 1.2rem;
     justify-content: center;
   }
-  main .container-page-four .page-four .text-section h1 {
+  main .container-page-four .page-four .text-section h1, main .page-six-container .page-four .text-section h1 {
     font-size: 1.3rem;
     font-weight: 700;
     opacity: 0.7;
   }
-  main .container-page-four .page-four .text-section h2 {
+  main .container-page-four .page-four .text-section h2, main .page-six-container .page-four .text-section h2 {
     font-size: 3rem;
     font-weight: 700;
   }
-  main .container-page-four .page-four .text-section h3 {
+  main .container-page-four .page-four .text-section h3, main .page-six-container .page-four .text-section h3 {
     font-size: 1.2rem;
     line-height: 1.6rem;
     opacity: 0.8;
   }
-  main .container-page-four .page-four .text-section button {
+  main .container-page-four .page-four .text-section button, main .page-six-container .page-four .text-section button {
     border: 1.5px solid hsl(216, 100%, 50%);
     padding: 0.8rem 2rem;
     color: hsl(0, 0%, 100%);
@@ -736,12 +744,12 @@ main .page-five .text-section button {
     width: -moz-fit-content;
     width: fit-content;
   }
-  main .container-page-four {
+  main .container-page-four, main .page-six-container {
     width: 100%;
     background: linear-gradient(45deg, #FCFCE2, transparent);
     overflow-x: hidden;
   }
-  main .container-page-four .page-four {
+  main .container-page-four .page-four, main .page-six-container .page-four {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -751,7 +759,7 @@ main .page-five .text-section button {
     margin: 0 auto;
     padding: 2rem;
   }
-  main .container-page-four .page-four img {
+  main .container-page-four .page-four img, main .page-six-container .page-four img {
     width: 100%;
     max-width: 550px;
     height: auto;
@@ -760,7 +768,7 @@ main .page-five .text-section button {
     display: block;
     margin: 0 auto;
   }
-  main .container-page-four .page-four .text-section {
+  main .container-page-four .page-four .text-section, main .page-six-container .page-four .text-section {
     width: 100%;
     max-width: 600px;
     padding: 1rem 2rem;
@@ -769,21 +777,21 @@ main .page-five .text-section button {
     gap: 1.2rem;
     justify-content: center;
   }
-  main .container-page-four .page-four .text-section h1 {
+  main .container-page-four .page-four .text-section h1, main .page-six-container .page-four .text-section h1 {
     font-size: 1.3rem;
     font-weight: 700;
     opacity: 0.7;
   }
-  main .container-page-four .page-four .text-section h2 {
+  main .container-page-four .page-four .text-section h2, main .page-six-container .page-four .text-section h2 {
     font-size: 3rem;
     font-weight: 700;
   }
-  main .container-page-four .page-four .text-section h3 {
+  main .container-page-four .page-four .text-section h3, main .page-six-container .page-four .text-section h3 {
     font-size: 1.2rem;
     line-height: 1.6rem;
     opacity: 0.8;
   }
-  main .container-page-four .page-four .text-section button {
+  main .container-page-four .page-four .text-section button, main .page-six-container .page-four .text-section button {
     border: 1.5px solid hsl(216, 100%, 50%);
     padding: 0.8rem 2rem;
     color: hsl(0, 0%, 100%);

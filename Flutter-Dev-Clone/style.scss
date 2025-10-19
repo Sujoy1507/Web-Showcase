@@ -222,7 +222,7 @@ main {
 
     }
 
-    .container-page-four {
+    .container-page-four, .page-six-container {
         width: 100%;
 
         .page-four {
@@ -234,6 +234,7 @@ main {
             background: linear-gradient(45deg, #FCFCE2, transparent);
 
             img {
+                padding-top: 8rem;
                 width: 100%;
             }
 
@@ -273,7 +274,7 @@ main {
     }
 
 
-    .page-five {
+    .page-five,  {
         @include Flex(center, start);
         flex-direction: column;
         gap: 2rem;
@@ -281,6 +282,7 @@ main {
         gap: 4rem;
 
         img {
+            padding-top: 8rem;
             width: 100%;
         }
 
@@ -379,6 +381,20 @@ main {
             }
         }
 
+        .container-page-four, .page-six-container{
+            .page-four{
+                img{
+                    max-width: 600px;
+                }
+            }
+        }
+
+        .page-five{
+                img{
+                    max-width: 600px;
+                }
+            }
+
         .text-section {
             .bottom {
                 flex-direction: row;
@@ -441,7 +457,7 @@ main {
 
         }
 
-        .container-page-four {
+        .container-page-four, .page-six-container {
             width: 100%;
             overflow-x: hidden;
             background: linear-gradient(45deg, #FCFCE2, transparent);
@@ -690,7 +706,7 @@ main {
             }
         }
 
-        .container-page-four {
+        .container-page-four, .page-six-container {
             width: 100%;
             background: linear-gradient(45deg, #FCFCE2, transparent);
             overflow-x: hidden;
@@ -878,7 +894,7 @@ main {
             }
         }
 
-        .container-page-four {
+        .container-page-four, .page-six-container {
             width: 100%;
             background: linear-gradient(45deg, #FCFCE2, transparent);
             overflow-x: hidden;
