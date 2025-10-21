@@ -181,6 +181,11 @@ main {
         @include Flex(center, start, column);
         padding: 1rem;
 
+        h1 {
+            padding: 1rem;
+            color: hsl(66, 81%, 48%);
+        }
+
         .container {
             width: 100%;
             overflow-x: auto;
@@ -260,7 +265,58 @@ main {
         }
     }
 
+    .page-04 {
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        color: hsl(0, 0, 100);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        @include Flex(center, start, column);
+        padding: 1rem;
 
+        h1 {
+            padding: 1rem;
+            color: hsl(66, 81%, 48%);
+        }
+
+        .container {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            @include Flex(flex-start, center, row);
+            gap: 2rem;
+
+            &::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #2689c2;
+                border-radius: 10px;
+
+                &:hover {
+                    background: #26a3c2;
+                }
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: #ff0505;
+                border-radius: 10px;
+
+                &:hover {
+                    background: #e045c6;
+                }
+            }
+
+            img{
+                border-radius: 1rem;
+                margin-bottom: 3rem;
+            }
+        }
+
+    }
 }
 
 /* 🔝🔝🔝 Small screen 🔝🔝🔝 */

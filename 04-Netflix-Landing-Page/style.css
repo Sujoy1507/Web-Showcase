@@ -178,6 +178,10 @@ main .page-02 {
   flex-direction: column;
   padding: 1rem;
 }
+main .page-02 h1 {
+  padding: 1rem;
+  color: hsl(66, 81%, 48%);
+}
 main .page-02 .container {
   width: 100%;
   overflow-x: auto;
@@ -255,6 +259,54 @@ main .page-03 .container {
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+}
+main .page-04 {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  color: hsl(0, 0%, 100%);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+main .page-04 h1 {
+  padding: 1rem;
+  color: hsl(66, 81%, 48%);
+}
+main .page-04 .container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 2rem;
+}
+main .page-04 .container::-webkit-scrollbar {
+  height: 8px;
+}
+main .page-04 .container::-webkit-scrollbar-track {
+  background: #2689c2;
+  border-radius: 10px;
+}
+main .page-04 .container::-webkit-scrollbar-track:hover {
+  background: #26a3c2;
+}
+main .page-04 .container::-webkit-scrollbar-thumb {
+  background: #ff0505;
+  border-radius: 10px;
+}
+main .page-04 .container::-webkit-scrollbar-thumb:hover {
+  background: #e045c6;
+}
+main .page-04 .container img {
+  border-radius: 1rem;
+  margin-bottom: 3rem;
 }
 
 /* 🔝🔝🔝 Small screen 🔝🔝🔝 */
