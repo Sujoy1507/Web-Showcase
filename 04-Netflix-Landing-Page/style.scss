@@ -212,7 +212,12 @@ main {
             }
 
             .card {
+                background: #27272785;
+                backdrop-filter: filter(blur(10px));
+                border-radius: 1rem;
+                padding: 1rem;
                 width: 200px;
+                margin-bottom: 2rem;
                 @include Flex(center, center, column);
                 flex-shrink: 0;
                 gap: 1rem;
@@ -234,6 +239,27 @@ main {
         }
     }
 
+    .page-03 {
+        width: 100%;
+        gap: 2rem;
+        max-width: 1600px;
+        margin: 0 auto;
+        color: hsl(0, 0, 100);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        @include Flex(center, start, column);
+        padding: 1rem;
+
+        .container {
+            background: #27272785;
+            width: 100%;
+            border-radius: 1rem;
+            padding: 1rem;
+            @include Flex(center, start, column);
+            gap: 1rem;
+        }
+    }
+
 
 }
 
@@ -243,7 +269,20 @@ main {
 @media (min-width: 600px) and (max-width: 765px) {}
 
 /* ⬇️⬇️⬇️Laptop screen⬇️⬇️⬇️ */
-@media (min-width: 766px) and (max-width: 1023px) {}
+@media (min-width: 766px) and (max-width: 1023px) {
+    main {
+        .page-03 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+
+            .container {
+                width: 100%;
+                min-height: 367px;
+            }
+        }
+    }
+}
 
 /* ⬇️⬇️⬇️Desktop screen⬇️⬇️⬇️ */
 @media (min-width: 1024px) and (max-width: 1440px) {
@@ -258,6 +297,18 @@ main {
             .b-logo {
                 display: initial;
             }
+        }
+
+        .page-03 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+
+            .container {
+                width: 100%;
+                min-height: 300px;
+            }
+
         }
 
         .video-section {
@@ -294,6 +345,19 @@ main {
             }
         }
 
+
+        .page-03 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+
+            .container {
+                width: 100%;
+                min-height: 300px;
+            }
+        }
+
+
         .video-section {
             position: relative;
 
@@ -327,6 +391,19 @@ main {
                 display: initial;
             }
         }
+
+
+        .page-03 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+
+            .container {
+                width: 100%;
+                min-height: 242px;
+            }
+        }
+
 
         .video-section {
             position: relative;
