@@ -1,0 +1,231 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica";
+  font-weight: 300;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  background: linear-gradient(rgba(32, 32, 32, 0.7411764706), rgba(57, 57, 47, 0.7176470588), rgba(38, 37, 35, 0.5215686275), #202020, rgba(57, 57, 47, 0.6352941176), rgba(38, 37, 35, 0.7176470588), rgba(32, 32, 32, 0.6431372549), rgba(57, 57, 47, 0.6352941176), rgba(38, 37, 35, 0.6509803922));
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+main nav {
+  max-width: 1900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0.5rem 1.5rem;
+  gap: 1rem;
+}
+main nav .n-logo {
+  width: 1.1rem;
+}
+main nav .b-logo {
+  width: 10.1rem;
+  display: none;
+}
+main nav button {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  border: none;
+}
+main > .links {
+  border-radius: 3rem;
+  background: hsl(0, 0%, 0%);
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  max-width: 343px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0.8rem 1.5rem;
+  gap: 2.5rem;
+}
+main > .links p {
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+main .video-section {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main .video-section .video {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 3rem;
+  aspect-ratio: 16/9;
+}
+main .video-section .video iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 3rem;
+  pointer-events: none;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .video-section .text {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+main .video-section .text img {
+  width: 11rem;
+}
+main .video-section .text input {
+  width: 258px;
+  padding: 0.8rem 1rem;
+  border-radius: 2rem;
+  background: hsla(0, 0%, 12%, 0.548);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid hsl(0, 0%, 100%);
+}
+main .video-section .text input::-moz-placeholder {
+  color: hsl(0, 0%, 100%);
+  padding: 1rem 3rem;
+}
+main .video-section .text input::placeholder {
+  color: hsl(0, 0%, 100%);
+  padding: 1rem 3rem;
+}
+main .video-section .text button {
+  padding: 0.9rem 5rem;
+  border-radius: 2rem;
+  border: none;
+  background: hsl(0, 96%, 50%);
+  color: hsl(0, 0%, 100%);
+}
+main .video-section .text p {
+  color: hsl(0, 0%, 100%);
+}
+main .page-01 {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  color: hsl(0, 0%, 100%);
+  margin-top: 2rem;
+  margin-bottom: 2px;
+  padding: 1rem;
+}
+main .page-01 .container {
+  width: 100%;
+  border-radius: 1.5rem;
+  background: #302D2C;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.7rem;
+  padding: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+main .page-01 .container > p:nth-child(1) {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+main .page-01 .container .right {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+main .page-01 .container .right > p:nth-child(2) {
+  font-size: 0.9rem;
+}
+
+/* 🔝🔝🔝 Small screen 🔝🔝🔝 */
+/* ⬇️⬇️⬇️Tablet screen⬇️⬇️⬇️ */
+/* ⬇️⬇️⬇️Laptop screen⬇️⬇️⬇️ */
+/* ⬇️⬇️⬇️Desktop screen⬇️⬇️⬇️ */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  main nav .n-logo {
+    display: none;
+  }
+  main nav .b-logo {
+    display: initial;
+  }
+  main .video-section {
+    position: relative;
+  }
+  main .video-section .text {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+  }
+  main .page-01 .container .right {
+    flex-direction: row;
+  }
+}
+/* ⬇️⬇️⬇️Large desktop / 2K⬇️⬇️⬇️ */
+@media (min-width: 1441px) and (max-width: 2560px) {
+  main nav .n-logo {
+    display: none;
+  }
+  main nav .b-logo {
+    display: initial;
+  }
+  main .video-section {
+    position: relative;
+  }
+  main .video-section .text {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+  }
+  main .page-01 .container .right {
+    flex-direction: row;
+  }
+}
+/* ⬇️⬇️⬇️Ultra 4K screen⬇️⬇️⬇️ */
+@media (min-width: 2561px) {
+  main nav .n-logo {
+    display: none;
+  }
+  main nav .b-logo {
+    display: initial;
+  }
+  main .video-section {
+    position: relative;
+  }
+  main .video-section .text {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+  }
+  main .page-01 .container .right {
+    flex-direction: row;
+  }
+}/*# sourceMappingURL=style.css.map */
