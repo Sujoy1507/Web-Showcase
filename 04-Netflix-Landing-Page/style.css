@@ -165,6 +165,66 @@ main .page-01 .container .right {
 main .page-01 .container .right > p:nth-child(2) {
   font-size: 0.9rem;
 }
+main .page-02 {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  color: hsl(0, 0%, 100%);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+main .page-02 .container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 2rem;
+}
+main .page-02 .container::-webkit-scrollbar {
+  height: 8px;
+}
+main .page-02 .container::-webkit-scrollbar-track {
+  background: #2689c2;
+  border-radius: 10px;
+}
+main .page-02 .container::-webkit-scrollbar-track:hover {
+  background: #26a3c2;
+}
+main .page-02 .container::-webkit-scrollbar-thumb {
+  background: #ff0505;
+  border-radius: 10px;
+}
+main .page-02 .container::-webkit-scrollbar-thumb:hover {
+  background: #e045c6;
+}
+main .page-02 .container .card {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 1rem;
+}
+main .page-02 .container .card img {
+  width: 100%;
+  border-radius: 1rem;
+}
+main .page-02 .container .card h2 {
+  font-size: 0.8rem;
+}
+main .page-02 .container .card p {
+  font-size: 0.7rem;
+  padding-bottom: 1rem;
+}
 
 /* 🔝🔝🔝 Small screen 🔝🔝🔝 */
 /* ⬇️⬇️⬇️Tablet screen⬇️⬇️⬇️ */
