@@ -183,8 +183,11 @@ main {
 
         h1 {
             padding: 1rem;
-            color: hsl(66, 81%, 48%);
+            font-weight: 900;
+            text-shadow: 5px 5px 7px hsla(0, 0%, 99%, 0.555), -5px -5px 10px hsla(0, 0%, 100%, 0.555);
+            color: hsl(0, 65%, 51%);
         }
+
 
         .container {
             width: 100%;
@@ -244,9 +247,9 @@ main {
         }
     }
 
+
     .page-03 {
         width: 100%;
-        gap: 2rem;
         max-width: 1600px;
         margin: 0 auto;
         color: hsl(0, 0, 100);
@@ -255,15 +258,42 @@ main {
         @include Flex(center, start, column);
         padding: 1rem;
 
-        .container {
-            background: #27272785;
-            width: 100%;
-            border-radius: 1rem;
+        h1 {
             padding: 1rem;
-            @include Flex(center, start, column);
-            gap: 1rem;
+            font-weight: 900;
+            text-shadow: 5px 5px 7px hsla(23, 16%, 84%, 0.555), -5px -5px 10px hsla(117, 15%, 75%, 0.555);
+            color: hsl(0, 65%, 51%);
         }
+
+        .contain {
+            width: 100%;
+            @include Flex(start, start, column);
+            gap: 2rem;
+
+            .container {
+                border-radius: 1rem;
+                width: 100%;
+                background: #55514f9f;
+                backdrop-filter: blur(20px);
+                padding: 2rem 1rem;
+                @include Flex(start, start, column);
+                gap: .5rem;
+
+                h2 {
+                    font-size: .9rem;
+                }
+
+                p {
+                    font-size: .8rem;
+                    opacity: 0.8;
+                }
+            }
+        }
+
     }
+
+
+
 
     .page-04 {
         width: 100%;
@@ -277,10 +307,13 @@ main {
 
         h1 {
             padding: 1rem;
-            color: hsl(66, 81%, 48%);
+            font-weight: 900;
+            text-shadow: 5px 5px 7px hsla(24, 26%, 96%, 0.555), -5px -5px 10px hsla(120, 14%, 86%, 0.555);
+            color: hsl(0, 65%, 51%);
         }
 
         .container {
+            padding: 2rem;
             width: 100%;
             overflow-x: auto;
             overflow-y: hidden;
@@ -310,12 +343,165 @@ main {
                 }
             }
 
-            img{
+            img {
+                width: 280px;
                 border-radius: 1rem;
                 margin-bottom: 3rem;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    cursor: pointer;
+                    scale: 1.1;
+                }
             }
         }
 
+    }
+
+    .page-05 {
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        color: hsl(0, 0, 100);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        @include Flex(center, start, column);
+        padding: 1rem;
+
+        h1 {
+            padding: 1rem;
+            font-weight: 900;
+            text-shadow: 5px 5px 7px hsla(23, 16%, 84%, 0.555), -5px -5px 10px hsla(117, 15%, 75%, 0.555);
+            color: hsl(0, 65%, 51%);
+        }
+
+        .container {
+            padding: 2rem;
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            @include Flex(flex-start, center, row);
+            gap: 2rem;
+
+            &::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #2689c2;
+                border-radius: 10px;
+
+                &:hover {
+                    background: #26a3c2;
+                }
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: #ff0505;
+                border-radius: 10px;
+
+                &:hover {
+                    background: #e045c6;
+                }
+            }
+
+            img {
+                width: 280px;
+                height: 400px;
+                object-fit: cover;
+                border-radius: 1rem;
+                margin-bottom: 3rem;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    cursor: pointer;
+                    scale: 1.03;
+                }
+            }
+        }
+
+    }
+
+    .page-06 {
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        color: hsl(0, 0, 100);
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        @include Flex(center, start, column);
+        padding: 1rem;
+
+        h1 {
+            padding: 1rem;
+            font-weight: 900;
+            text-shadow: 5px 5px 7px hsla(23, 16%, 84%, 0.555), -5px -5px 10px hsla(117, 15%, 75%, 0.555);
+            color: hsl(0, 65%, 51%);
+        }
+
+        .container {
+            padding: 1rem;
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            @include Flex(flex-start, center, column);
+            gap: 2rem;
+
+            .card {
+                width: 100%;
+                padding: 1rem;
+                @include Flex(flex-start, start, column);
+                border-radius: 1rem;
+                gap: 1rem;
+
+                p:nth-child(1) {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                }
+
+
+                p:nth-child(2) {
+                    font-size: 1rem;
+                    opacity: 0.8;
+                }
+
+                p:nth-child(3) {
+                    font-size: 1rem;
+                    opacity: 0.85;
+                }
+
+                p:nth-child(4) {
+                    font-size: 1rem;
+                    opacity: 0.85;
+                }
+
+                &:hover {
+                    filter: brightness(1.1) saturate(1.5) contrast(1.1) hue-rotate(10deg);
+                    cursor: pointer;
+                }
+
+
+            }
+
+            .card:nth-child(1) {
+                background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            }
+
+            .card:nth-child(2) {
+                background: linear-gradient(135deg, #2d3748 0%, #1a2332 100%);
+            }
+
+            .card:nth-child(3) {
+                background: linear-gradient(135deg, #6b46c1 0%, #3c2463 100%);
+            }
+
+            .card:nth-child(4) {
+                background: linear-gradient(135deg, #9333ea 0%, #581c87 100%);
+            }
+
+        }
     }
 }
 
@@ -325,25 +511,23 @@ main {
 @media (min-width: 600px) and (max-width: 765px) {}
 
 /* ⬇️⬇️⬇️Laptop screen⬇️⬇️⬇️ */
-@media (min-width: 766px) and (max-width: 1023px) {
-    main {
-        .page-03 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-
-            .container {
-                width: 100%;
-                min-height: 367px;
-            }
-        }
-    }
-}
+@media (min-width: 766px) and (max-width: 1023px) {}
 
 /* ⬇️⬇️⬇️Desktop screen⬇️⬇️⬇️ */
 @media (min-width: 1024px) and (max-width: 1440px) {
 
     main {
+
+
+        .page-03 {
+            .contain {
+                flex-direction: row;
+
+                .container{
+                    min-height: 282px;
+                }
+            }
+        }
 
         nav {
             .n-logo {
@@ -355,17 +539,16 @@ main {
             }
         }
 
-        .page-03 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-
+        .page-06 {
             .container {
-                width: 100%;
-                min-height: 300px;
-            }
+                flex-direction: row;
 
+                .card {
+                    min-height: 220px;
+                }
+            }
         }
+
 
         .video-section {
             position: relative;
@@ -401,17 +584,28 @@ main {
             }
         }
 
-
         .page-03 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            .contain {
+                flex-direction: row;
 
-            .container {
-                width: 100%;
-                min-height: 300px;
+                .container{
+                    min-height: 255px;
+                }
             }
         }
+
+        .page-06 {
+            .container {
+                flex-direction: row;
+
+                .card {
+                    min-height: 220px;
+                }
+            }
+        }
+
+
+
 
 
         .video-section {
@@ -448,17 +642,26 @@ main {
             }
         }
 
-
         .page-03 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            .contain {
+                flex-direction: row;
 
-            .container {
-                width: 100%;
-                min-height: 242px;
+                .container{
+                    min-height: 242px;
+                }
             }
         }
+
+        .page-06 {
+            .container {
+                flex-direction: row;
+
+                .card {
+                    min-height: 220px;
+                }
+            }
+        }
+
 
 
         .video-section {
