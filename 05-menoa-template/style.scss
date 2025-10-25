@@ -30,7 +30,7 @@ main {
         margin: .8rem .8rem 0;
         // border: 2px solid hsla(0, 0%, 0%, 0.151);
         border-radius: 1rem;
-        
+
 
         .link1 {
             width: 0;
@@ -62,7 +62,10 @@ main {
         @include flex(center, start, column);
         margin: 1rem;
         gap: -12rem;
+        margin: 0 auto;
         margin-top: 2rem;
+        margin: 0 auto;
+        width: 300px;
 
 
         img {
@@ -78,7 +81,7 @@ main {
         p {
             margin-top: 4rem;
             background: hsl(0, 0, 100);
-            backdrop-filter: 20px; 
+            backdrop-filter: 20px;
             padding: .5rem;
             border-radius: .5rem;
             border: 1px solid hsla(0, 0%, 0%, 0.151);
@@ -88,6 +91,89 @@ main {
             i {
                 color: hsl(150, 64%, 49%);
             }
+        }
+    }
+
+    .page1 {
+        @include flex(center, start, column);
+        padding: 1.5rem;
+        width: 358px;
+        gap: 1rem;
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+
+        }
+
+        p {
+            font-size: .9rem;
+            opacity: .7;
+        }
+
+        .button {
+            @include flex(center, start, row);
+            gap: 1rem;
+
+            button:nth-child(1) {
+                background: hsl(0, 0%, 0%);
+                color: hsl(0, 0, 100);
+                padding: .7rem 1rem;
+                border-radius: .4rem;
+                border: none;
+                font-weight: 700;
+                font-size: 1.3rem;
+                letter-spacing: 1.2px;
+                font-size: .8rem;
+            }
+
+            button:nth-child(2) {
+                background: hsla(0, 0%, 0%, 0.11);
+                backdrop-filter: blur(5px);
+                color: hsl(0, 0%, 1%);
+                padding: .7rem 1rem;
+                border-radius: .4rem;
+                font-weight: 700;
+                border: none;
+                letter-spacing: 1.2px;
+                font-size: 1.3rem;
+                font-size: .8rem;
+            }
+        }
+    }
+
+    .card-container {
+        @include flex(center, center, column);
+        gap: 1.5rem;
+        width: 358px;
+        margin: 0 auto;
+        padding: 1rem;
+
+        padding-bottom: 4rem;
+
+        .card {
+            @include flex(center, start, column);
+            gap: 1rem;
+            padding: 1rem;
+            width: 358px;
+            border-radius: 1rem;
+            border: 1px solid hsla(0, 0%, 13%, 0.096);
+
+
+            img {
+                width: 326px;
+                border-radius: 1rem;
+            }
+        }
+
+        h3{
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding-bottom: 0.5rem;
+        }
+
+        h4{
+            opacity: 0.8;
         }
     }
 
@@ -104,6 +190,16 @@ main {
             max-width: 358px;
             margin: 0 auto;
         }
+
+        .profile {
+            margin: 0 auto;
+            width: 300px;
+        }
+
+        .page1 {
+            width: 358px;
+            margin: 0 auto;
+        }
     }
 
 }
@@ -115,6 +211,56 @@ main {
             max-width: 358px;
             margin: 0 auto;
         }
+
+        .card-container{
+            width: 730px;
+
+            .card{
+                width: 730px;
+
+                img{
+                    width: 700px;
+                }
+            }
+        }
+
+        .profile {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+
+            img {
+                margin-top: 4rem;
+                display: initial;
+            }
+
+            p {
+                margin-top: -1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .page1 {
+            width: 600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            h1 {
+                font-size: 2.7rem;
+            }
+
+            p {
+                width: 410px;
+            }
+        }
     }
 
 }
@@ -123,23 +269,38 @@ main {
 @media (min-width: 1024px) and (max-width: 1440px) {
     main {
 
-        .profile{
+        .profile {
             width: 300px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin:  0 auto;
-            img{
-            margin-top: 4rem;
+            margin: 0 auto;
+
+            img {
+                margin-top: 4rem;
                 display: initial;
             }
-            p{
+
+            p {
                 margin-top: -1rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
         }
+
+        .card-container{
+            width: 730px;
+
+            .card{
+                width: 730px;
+
+                img{
+                    width: 700px;
+                }
+            }
+        }
+
         nav {
             margin: 1rem auto 0;
             border: 2px solid hsla(0, 0%, 0%, 0.151);
@@ -155,6 +316,24 @@ main {
 
             i {
                 display: none;
+            }
+        }
+
+        .page1 {
+            width: 600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            h1 {
+                font-size: 2.7rem;
+            }
+
+            p {
+                width: 410px;
             }
         }
     }
@@ -164,23 +343,40 @@ main {
 /* ⬇️⬇️⬇️Large desktop / 2K⬇️⬇️⬇️ */
 @media (min-width: 1441px) and (max-width: 2560px) {
     main {
-        .profile{
+        .profile {
             width: 300px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin:  0 auto;
-            img{
-            margin-top: 4rem;
+            margin: 0 auto;
+
+            img {
+                margin-top: 4rem;
                 display: initial;
             }
-            p{
+
+            p {
                 margin-top: -1rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
         }
+
+        .card-container{
+            width: 730px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            .card{
+                width: 468px;
+
+                img{
+                    width: 428px;
+                }
+            }
+        }
+
         nav {
             margin: 1rem auto 0;
             border: 2px solid hsla(0, 0%, 0%, 0.151);
@@ -196,6 +392,24 @@ main {
 
             i {
                 display: none;
+            }
+        }
+
+        .page1 {
+            width: 700px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            h1 {
+                font-size: 3.3rem;
+            }
+
+            p {
+                width: 410px;
             }
         }
     }
@@ -203,25 +417,43 @@ main {
 }
 
 /* ⬇️⬇️⬇️Ultra 4K screen⬇️⬇️⬇️ */
-@media (min-width: 2561px) and (max-width: 3840px) {
+@media (min-width: 2561px) {
     main {
-        .profile{
+        .profile {
             width: 300px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin:  0 auto;
-            img{
-            margin-top: 4rem;
+            margin: 0 auto;
+
+            img {
+                margin-top: 4rem;
                 display: initial;
             }
-            p{
+
+            p {
                 margin-top: -1rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
         }
+
+        .card-container{
+            width: 730px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            .card{
+                width: 468px;
+
+                img{
+                    width: 428px;
+                }
+            }
+        }
+
+
         nav {
             margin: 1rem auto 0;
             border: 2px solid hsla(0, 0%, 0%, 0.151);
@@ -237,6 +469,24 @@ main {
 
             i {
                 display: none;
+            }
+        }
+
+        .page1 {
+            width: 700px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            h1 {
+                font-size: 3.3rem;
+            }
+
+            p {
+                width: 410px;
             }
         }
     }

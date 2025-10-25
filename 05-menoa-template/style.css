@@ -58,7 +58,10 @@ main .profile {
   flex-direction: column;
   margin: 1rem;
   gap: -12rem;
+  margin: 0 auto;
   margin-top: 2rem;
+  margin: 0 auto;
+  width: 300px;
 }
 main .profile img {
   display: none;
@@ -85,6 +88,88 @@ main .profile p {
 main .profile p i {
   color: hsl(150, 64%, 49%);
 }
+main .page1 {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  width: 358px;
+  gap: 1rem;
+}
+main .page1 h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+main .page1 p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+main .page1 .button {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+main .page1 .button button:nth-child(1) {
+  background: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+  padding: 0.7rem 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 1.2px;
+  font-size: 0.8rem;
+}
+main .page1 .button button:nth-child(2) {
+  background: hsla(0, 0%, 0%, 0.11);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  color: hsl(0, 0%, 1%);
+  padding: 0.7rem 1rem;
+  border-radius: 0.4rem;
+  font-weight: 700;
+  border: none;
+  letter-spacing: 1.2px;
+  font-size: 1.3rem;
+  font-size: 0.8rem;
+}
+main .card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 358px;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-bottom: 4rem;
+}
+main .card-container .card {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  width: 358px;
+  border-radius: 1rem;
+  border: 1px solid hsla(0, 0%, 13%, 0.096);
+}
+main .card-container .card img {
+  width: 326px;
+  border-radius: 1rem;
+}
+main .card-container h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+main .card-container h4 {
+  opacity: 0.8;
+}
 
 /* 🔝🔝🔝 Small screen 🔝🔝🔝 */
 /* ⬇️⬇️⬇️Tablet screen⬇️⬇️⬇️ */
@@ -93,12 +178,61 @@ main .profile p i {
     max-width: 358px;
     margin: 0 auto;
   }
+  main .profile {
+    margin: 0 auto;
+    width: 300px;
+  }
+  main .page1 {
+    width: 358px;
+    margin: 0 auto;
+  }
 }
 /* ⬇️⬇️⬇️Laptop screen⬇️⬇️⬇️ */
 @media (min-width: 766px) and (max-width: 1023px) {
   main nav {
     max-width: 358px;
     margin: 0 auto;
+  }
+  main .card-container {
+    width: 730px;
+  }
+  main .card-container .card {
+    width: 730px;
+  }
+  main .card-container .card img {
+    width: 700px;
+  }
+  main .profile {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  main .profile img {
+    margin-top: 4rem;
+    display: initial;
+  }
+  main .profile p {
+    margin-top: -1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .page1 {
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  main .page1 h1 {
+    font-size: 2.7rem;
+  }
+  main .page1 p {
+    width: 410px;
   }
 }
 /* ⬇️⬇️⬇️Desktop screen⬇️⬇️⬇️ */
@@ -120,6 +254,15 @@ main .profile p i {
     justify-content: center;
     align-items: center;
   }
+  main .card-container {
+    width: 730px;
+  }
+  main .card-container .card {
+    width: 730px;
+  }
+  main .card-container .card img {
+    width: 700px;
+  }
   main nav {
     margin: 1rem auto 0;
     border: 2px solid hsla(0, 0%, 0%, 0.151);
@@ -133,6 +276,21 @@ main .profile p i {
   }
   main nav i {
     display: none;
+  }
+  main .page1 {
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  main .page1 h1 {
+    font-size: 2.7rem;
+  }
+  main .page1 p {
+    width: 410px;
   }
 }
 /* ⬇️⬇️⬇️Large desktop / 2K⬇️⬇️⬇️ */
@@ -154,6 +312,17 @@ main .profile p i {
     justify-content: center;
     align-items: center;
   }
+  main .card-container {
+    width: 730px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main .card-container .card {
+    width: 468px;
+  }
+  main .card-container .card img {
+    width: 428px;
+  }
   main nav {
     margin: 1rem auto 0;
     border: 2px solid hsla(0, 0%, 0%, 0.151);
@@ -168,9 +337,24 @@ main .profile p i {
   main nav i {
     display: none;
   }
+  main .page1 {
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  main .page1 h1 {
+    font-size: 3.3rem;
+  }
+  main .page1 p {
+    width: 410px;
+  }
 }
 /* ⬇️⬇️⬇️Ultra 4K screen⬇️⬇️⬇️ */
-@media (min-width: 2561px) and (max-width: 3840px) {
+@media (min-width: 2561px) {
   main .profile {
     width: 300px;
     display: flex;
@@ -188,6 +372,17 @@ main .profile p i {
     justify-content: center;
     align-items: center;
   }
+  main .card-container {
+    width: 730px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main .card-container .card {
+    width: 468px;
+  }
+  main .card-container .card img {
+    width: 428px;
+  }
   main nav {
     margin: 1rem auto 0;
     border: 2px solid hsla(0, 0%, 0%, 0.151);
@@ -201,5 +396,20 @@ main .profile p i {
   }
   main nav i {
     display: none;
+  }
+  main .page1 {
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  main .page1 h1 {
+    font-size: 3.3rem;
+  }
+  main .page1 p {
+    width: 410px;
   }
 }/*# sourceMappingURL=style.css.map */
