@@ -1,4 +1,8 @@
 @charset "UTF-8";
+@font-face {
+  font-family: Helvetica;
+  src: url(./Helvetica.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -56,11 +60,8 @@ main .profile {
   align-items: start;
   justify-content: center;
   flex-direction: column;
-  margin: 1rem;
   gap: -12rem;
-  margin: 0 auto;
-  margin-top: 2rem;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   width: 300px;
 }
 main .profile img {
@@ -77,8 +78,8 @@ main .profile img {
 main .profile p {
   margin-top: 4rem;
   background: hsl(0, 0%, 100%);
-  -webkit-backdrop-filter: 20px;
-          backdrop-filter: 20px;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid hsla(0, 0%, 0%, 0.151);
@@ -96,6 +97,7 @@ main .page1 {
   padding: 1.5rem;
   width: 358px;
   gap: 1rem;
+  margin: 0 auto;
 }
 main .page1 h1 {
   font-size: 2rem;
@@ -119,7 +121,6 @@ main .page1 .button button:nth-child(1) {
   border-radius: 0.4rem;
   border: none;
   font-weight: 700;
-  font-size: 1.3rem;
   letter-spacing: 1.2px;
   font-size: 0.8rem;
 }
@@ -133,7 +134,6 @@ main .page1 .button button:nth-child(2) {
   font-weight: 700;
   border: none;
   letter-spacing: 1.2px;
-  font-size: 1.3rem;
   font-size: 0.8rem;
 }
 main .card-container {
@@ -245,8 +245,7 @@ main .Services {
   gap: 2rem;
   padding: 1rem;
   width: 358px;
-  margin: 0 auto;
-  margin-top: 20dvh;
+  margin: 20dvh auto 0;
 }
 main .Services h1 {
   font-size: 1.6rem;
@@ -267,7 +266,7 @@ main .Services .card-container {
   flex-direction: column;
   gap: 1rem;
 }
-main .Services .card-container card {
+main .Services .card-container .card {
   border: 1px solid hsla(0, 0%, 13%, 0.096);
   width: 100%;
   display: flex;
@@ -278,13 +277,278 @@ main .Services .card-container card {
   padding: 1rem;
   border-radius: 1rem;
 }
-main .Services .card-container card h3 {
+main .Services .card-container .card h3 {
   font-size: 0.95rem;
   font-weight: 500;
 }
-main .Services .card-container card h4 {
+main .Services .card-container .card h4 {
   font-size: 0.7rem;
   opacity: 0.8;
+}
+main .how {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  width: 358px;
+  margin: 20dvh auto 0;
+}
+main .how > h4 {
+  font-size: 1.2rem;
+  border: 1px solid hsla(0, 0%, 0%, 0.151);
+  padding: 0.6rem;
+  border-radius: 1rem;
+}
+main .how > h5 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+main .how .card-contain {
+  width: 358px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .how .card-contain .card {
+  border: 1px solid hsla(0, 0%, 13%, 0.096);
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+main .how .card-contain .card .top p:nth-child(1) {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+main .how .card-contain .card .top > p:nth-child(2) {
+  font-size: 2rem;
+  font-weight: 600;
+  width: 60%;
+}
+main .how .card-contain .card > p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+main .leaders {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  width: 358px;
+  margin: 20dvh auto 0;
+}
+main .leaders > h4 {
+  font-size: 1.2rem;
+  padding: 0.6rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  opacity: 0.9;
+}
+main .leaders > h4 img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .leaders > h4 img:nth-child(2) {
+  transform: translateX(-10px);
+}
+main .leaders > h4 img:nth-child(3) {
+  transform: translateX(-20px);
+}
+main .leaders > h5 {
+  width: 250px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+}
+main .leaders .card-contain {
+  width: 358px;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 1rem;
+}
+main .leaders .card-contain .card {
+  border: 1px solid hsla(0, 0%, 13%, 0.096);
+  min-width: 358px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+main .leaders .card-contain .card .top {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .leaders .card-contain .card .top p:nth-child(1) {
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+main .leaders .card-contain .card .bottom {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+main .leaders .card-contain .card .bottom img {
+  width: 25px;
+  height: 25px;
+  border-radius: 1rem;
+}
+main .faq-section {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+main .faq-section .faq-content {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+main .faq-section .faq-text {
+  text-align: left;
+}
+main .faq-section .faq-text .status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main .faq-section .faq-text .status .dot {
+  width: 10px;
+  height: 10px;
+  background: #00d26a;
+  border-radius: 50%;
+}
+main .faq-section .faq-text .status p {
+  font-size: 0.9rem;
+}
+main .faq-section .faq-text h1 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 700;
+}
+main .faq-section .faq-text p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+main .faq-section .faq-text button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+main .faq-section .faq-text button:hover {
+  opacity: 0.8;
+}
+main .faq-section .faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .faq-section .faq-accordion .faq-item {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1rem;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+main .faq-section .faq-accordion .faq-item:hover {
+  border-color: #ccc;
+}
+main .faq-section .faq-accordion .faq-item .faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1rem;
+}
+main .faq-section .faq-accordion .faq-item .faq-question span {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+main .footer {
+  background: #000;
+  color: #fff;
+  padding: 2rem 1rem;
+  font-family: "Helvetica", sans-serif;
+}
+main .footer .footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1.5rem;
+  border-bottom: 1px solid #222;
+  padding-bottom: 1.5rem;
+}
+main .footer .footer-left h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+main .footer .footer-left .email {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+main .footer .footer-right ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+main .footer .footer-right ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+main .footer .footer-right ul li a:hover {
+  color: #00d26a;
+}
+main .footer .footer-bottom {
+  text-align: left;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #777;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 /* 🔝🔝🔝 Small screen 🔝🔝🔝 */
@@ -305,9 +569,40 @@ main .Services .card-container card h4 {
 }
 /* ⬇️⬇️⬇️Laptop screen⬇️⬇️⬇️ */
 @media (min-width: 766px) and (max-width: 1023px) {
+  main .footer {
+    padding: 3rem 2rem;
+  }
+  main .footer .footer-container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  main .footer .footer-container .footer-left h2 {
+    font-size: 1.75rem;
+  }
+  main .footer .footer-container .footer-left .email {
+    font-size: 0.95rem;
+  }
+  main .footer .footer-container .footer-right ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  main .footer .footer-container .footer-right ul li a {
+    font-size: 1rem;
+  }
+  main .footer .footer-bottom {
+    font-size: 0.85rem;
+  }
   main nav {
     max-width: 358px;
     margin: 0 auto;
+  }
+  main .faq-section .faq-content {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  main .faq-section .faq-text h1 {
+    font-size: 2rem;
   }
   main .profile {
     width: 300px;
@@ -344,10 +639,75 @@ main .Services .card-container card h4 {
 }
 /* ⬇️⬇️⬇️Desktop screen⬇️⬇️⬇️ */
 @media (min-width: 1024px) and (max-width: 1440px) {
+  main .footer {
+    padding: 4rem 5rem;
+  }
+  main .footer .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  main .footer .footer-container .footer-left h2 {
+    font-size: 2rem;
+  }
+  main .footer .footer-container .footer-left .email {
+    font-size: 1rem;
+  }
+  main .footer .footer-container .footer-right ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  main .footer .footer-container .footer-right ul li a {
+    font-size: 1.05rem;
+  }
+  main .footer .footer-bottom {
+    font-size: 0.9rem;
+  }
+  main .faq-section {
+    padding: 4rem;
+  }
+  main .faq-section .faq-text h1 {
+    font-size: 2.5rem;
+  }
+  main .faq-section .faq-accordion .faq-item {
+    padding: 1.5rem;
+  }
+  main .leaders {
+    width: 100%;
+    max-width: 1200px;
+  }
+  main .leaders > h5 {
+    width: 100%;
+    font-size: 3rem;
+  }
+  main .leaders .card-contain {
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    justify-content: center;
+  }
+  main .leaders .card-contain .card {
+    width: calc(33.333% - 0.67rem);
+    min-width: 300px;
+  }
+  main .how {
+    width: 730px;
+    margin: 0 auto;
+  }
+  main .how .card-contain {
+    width: 730px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main .how .card-contain .card {
+    width: 230px;
+  }
+  main .how .card-contain .card .top p:nth-child(2) {
+    width: 100%;
+  }
   main .Services {
     width: 730px;
-    margin-bottom: 50dvh;
-    margin-top: 120dvh;
+    margin: 120dvh auto 50dvh;
   }
   main .Services .card-container {
     width: 730px;
@@ -356,7 +716,7 @@ main .Services .card-container card h4 {
     justify-content: center;
     margin: 0 auto;
   }
-  main .Services .card-container card {
+  main .Services .card-container .card {
     width: calc((100% - 2rem) / 3);
   }
   main .scroll .fixed {
@@ -492,7 +852,7 @@ main .Services .card-container card h4 {
   }
   main nav .link1 {
     width: 60%;
-    overflow: none;
+    overflow: visible;
   }
   main nav .buy {
     display: initial;
@@ -518,10 +878,82 @@ main .Services .card-container card h4 {
 }
 /* ⬇️⬇️⬇️Large desktop / 2K⬇️⬇️⬇️ */
 @media (min-width: 1441px) and (max-width: 2560px) {
-  main .Services {
-    margin-top: 120dvh;
-    margin-bottom: 50dvh;
+  main .footer {
+    padding: 5rem 8rem;
+  }
+  main .footer .footer-container {
+    max-width: 1200px;
+  }
+  main .footer .footer-container .footer-left h2 {
+    font-size: 2.3rem;
+  }
+  main .footer .footer-container .footer-left .email {
+    font-size: 1.1rem;
+  }
+  main .footer .footer-container .footer-right ul {
+    gap: 1rem;
+  }
+  main .footer .footer-container .footer-right ul li a {
+    font-size: 1.1rem;
+  }
+  main .footer .footer-bottom {
+    font-size: 0.95rem;
+  }
+  main .faq-section {
+    padding: 4rem;
+  }
+  main .faq-section .faq-text h1 {
+    font-size: 2.5rem;
+  }
+  main .faq-section .faq-accordion .faq-item {
+    padding: 1.5rem;
+  }
+  main .leaders {
+    width: 100%;
+    max-width: 1200px;
+  }
+  main .leaders > h5 {
+    width: 100%;
+    font-size: 3rem;
+  }
+  main .leaders .card-contain {
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    justify-content: center;
+  }
+  main .leaders .card-contain .card {
+    width: calc(33.333% - 0.67rem);
+    min-width: 300px;
+  }
+  main .how {
     width: 730px;
+    margin: 0 auto;
+  }
+  main .how .card-contain {
+    width: 730px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main .how .card-contain .card {
+    width: 230px;
+    position: relative;
+  }
+  main .how .card-contain .card .top p:nth-child(2) {
+    width: 100%;
+  }
+  main .how .card-contain .card:nth-child(1) {
+    transform: rotate(-5deg);
+    z-index: 2;
+  }
+  main .how .card-contain .card:nth-child(3) {
+    transform: rotate(5deg);
+    z-index: 2;
+  }
+  main .Services {
+    width: 730px;
+    margin: 120dvh auto 50dvh;
   }
   main .Services .card-container {
     width: 730px;
@@ -530,7 +962,7 @@ main .Services .card-container card h4 {
     justify-content: center;
     margin: 0 auto;
   }
-  main .Services .card-container card {
+  main .Services .card-container .card {
     width: calc((100% - 2rem) / 3);
   }
   main .scroll .fixed {
@@ -668,7 +1100,7 @@ main .Services .card-container card h4 {
   }
   main nav .link1 {
     width: 60%;
-    overflow: none;
+    overflow: visible;
   }
   main nav .buy {
     display: initial;
@@ -694,10 +1126,85 @@ main .Services .card-container card h4 {
 }
 /* ⬇️⬇️⬇️Ultra 4K screen⬇️⬇️⬇️ */
 @media (min-width: 2561px) {
-  main .Services {
-    margin-top: 120dvh;
-    margin-bottom: 50dvh;
+  main .footer {
+    padding: 5rem 8rem;
+  }
+  main .footer .footer-container {
+    max-width: 1200px;
+  }
+  main .footer .footer-container .footer-left h2 {
+    font-size: 2.3rem;
+  }
+  main .footer .footer-container .footer-left .email {
+    font-size: 1.1rem;
+  }
+  main .footer .footer-container .footer-right ul {
+    gap: 1rem;
+  }
+  main .footer .footer-container .footer-right ul li a {
+    font-size: 1.1rem;
+  }
+  main .footer .footer-bottom {
+    font-size: 0.95rem;
+  }
+  main .faq-section {
+    padding: 6rem 10rem;
+  }
+  main .faq-section .faq-text h1 {
+    font-size: 3rem;
+  }
+  main .faq-section .faq-text p {
+    font-size: 1.2rem;
+  }
+  main .faq-section .faq-accordion .faq-question {
+    font-size: 1.2rem;
+  }
+  main .leaders {
+    width: 100%;
+    max-width: 1200px;
+  }
+  main .leaders > h5 {
+    width: 100%;
+    font-size: 3rem;
+  }
+  main .leaders .card-contain {
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    justify-content: center;
+  }
+  main .leaders .card-contain .card {
+    width: calc(33.333% - 0.67rem);
+    min-width: 300px;
+  }
+  main .how {
     width: 730px;
+    margin: 0 auto;
+  }
+  main .how .card-contain {
+    width: 730px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main .how .card-contain .card {
+    width: 230px;
+    position: relative;
+  }
+  main .how .card-contain .card .top p:nth-child(2) {
+    width: 100%;
+  }
+  main .how .card-contain .card:nth-child(1) {
+    transform: rotate(-5deg);
+    z-index: 2;
+  }
+  main .how .card-contain .card:nth-child(3) {
+    transform: rotate(5deg);
+    z-index: 2;
+  }
+  main .Services {
+    width: 730px;
+    margin: 120dvh auto 50dvh;
   }
   main .Services .card-container {
     width: 730px;
@@ -706,7 +1213,7 @@ main .Services .card-container card h4 {
     justify-content: center;
     margin: 0 auto;
   }
-  main .Services .card-container card {
+  main .Services .card-container .card {
     width: calc((100% - 2rem) / 3);
   }
   main .scroll .fixed {
@@ -844,7 +1351,7 @@ main .Services .card-container card h4 {
   }
   main nav .link1 {
     width: 60%;
-    overflow: none;
+    overflow: visible;
   }
   main nav .buy {
     display: initial;
