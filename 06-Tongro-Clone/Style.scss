@@ -1,0 +1,279 @@
+// FONT FAMILY INSTALL IN THE CODE
+
+
+@font-face {
+    font-family: Helvetica;
+    src: url(../Helvetica.ttf);
+}
+
+// GLOBAL BOILARPLATE
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica';
+    font-weight: 300;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+// MIXIN CREATION
+
+@mixin Flex($Jc, $Ai , $Fd) {
+    display: flex;
+    align-items: $Ai;
+    justify-content: $Jc;
+    flex-direction: $Fd;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+
+    nav {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 1rem clamp(2rem, 4.533vw + 0.867rem, 6.25rem);
+        @include Flex(space-between, center, row);
+
+        .logo {
+            font-size: clamp(1rem, 2.466vw + 0.384rem, 1.563rem);
+            cursor: pointer;
+            font-weight: 700;
+
+            span {
+                opacity: 0.7;
+            }
+        }
+
+        .nav-links {
+            width: 0;
+            overflow: hidden;
+            @include Flex(center, center, row);
+            gap: 3rem;
+            opacity: 0.8;
+            list-style-type: none;
+
+            .link {
+                cursor: pointer;
+
+            }
+        }
+
+        i {
+            font-size: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    }
+
+    .hero {
+        width: 100%;
+        background: #FFBD8D;
+
+
+        .text-container {
+            position: relative;
+            @include Flex(center, center, row);
+            gap: clamp(9rem, 8.219vw + 5.712rem, 12rem);
+            height: 50dvh;
+            width: 100%;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 1rem clamp(2rem, 4.533vw + 0.867rem, 6.25rem);
+            color: hsl(0, 0, 100);
+            font-size: clamp(3.5rem, 6.849vw + 2.975rem, 6.25rem);
+
+            >img {
+                width: clamp(30.375rem, 58.904vw + 19.649rem, 47.813rem);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                z-index: 2;
+            }
+
+            .text-1 {
+                z-index: 3;
+            }
+
+            .text-2 {
+                z-index: 1;
+            }
+
+        }
+
+    }
+}
+
+/* 🔝🔝🔝 Small screen 🔝🔝🔝 */
+
+/* ⬇️⬇️⬇️Laptop screen⬇️⬇️⬇️ */
+@media (min-width: 766px) and (max-width: 1023px) {
+    // MIXIN CREATION
+
+    @mixin Flex($Jc, $Ai , $Fd) {
+        display: flex;
+        align-items: $Ai;
+        justify-content: $Jc;
+        flex-direction: $Fd;
+    }
+
+    main {
+        nav {
+            .logo {
+                font-size: clamp(2rem, 6.226vw - 0.981rem, 3rem);
+            }
+
+            i {
+                font-size: 2rem;
+            }
+        }
+
+        .hero {
+            .text-container {
+                font-size: clamp(6.25rem, -1.946rem + 17.121vw, 9rem);
+                gap: clamp(12rem, 15.504vw + 0.14rem, 16rem);
+
+                img {
+                    width: clamp(28rem, -28.63rem + 118.288vw, 47rem);
+                }
+            }
+        }
+    }
+
+}
+
+/* ⬇️⬇️⬇️Desktop screen⬇️⬇️⬇️ */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    // MIXIN CREATION
+
+    @mixin Flex($Jc, $Ai , $Fd) {
+        display: flex;
+        align-items: $Ai;
+        justify-content: $Jc;
+        flex-direction: $Fd;
+    }
+
+    main {
+        nav {
+            .logo {
+                font-size: clamp(1.375rem, 2.66vw - 0.327rem, 2rem);
+            }
+
+            .nav-links {
+                font-size: clamp(0.625rem, 2.66vw - 1.077rem, 1.25rem);
+                gap: clamp(1.563rem, 3.457vw - 0.65rem, 2.375rem);
+                width: auto;
+                overflow: none;
+            }
+
+            i {
+                font-size: 2rem;
+            }
+        }
+
+        .hero {
+            .text-container {
+                height: 90dvh;
+                font-size: clamp(9rem, -3.308rem + 19.231vw, 14rem);
+                gap: clamp(16rem, 6.154rem + 15.385vw, 20rem);
+
+                img {
+                    width: clamp(47rem, 27.308rem + 30.769vw, 55rem);
+                }
+            }
+        }
+    }
+
+}
+
+/* ⬇️⬇️⬇️Large desktop / 2K⬇️⬇️⬇️ */
+@media (min-width: 1441px) and (max-width: 2560px) {
+    // MIXIN CREATION
+
+    @mixin Flex($Jc, $Ai , $Fd) {
+        display: flex;
+        align-items: $Ai;
+        justify-content: $Jc;
+        flex-direction: $Fd;
+    }
+
+    main {
+        nav {
+            .logo {
+                font-size: clamp(1.375rem, 2.66vw - 0.327rem, 2rem);
+            }
+
+            .nav-links {
+                width: auto;
+                overflow: none;
+            }
+
+            i {
+                font-size: 2rem;
+            }
+        }
+
+        .hero {
+            .text-container {
+                height: 75dvh;
+                font-size: clamp(9rem, -3.308rem + 19.231vw, 14rem);
+                gap: clamp(16rem, 6.154rem + 15.385vw, 20rem);
+
+                img {
+                    width: clamp(47rem, 27.308rem + 30.769vw, 55rem);
+                }
+            }
+        }
+    }
+
+}
+
+/* ⬇️⬇️⬇️Ultra 4K screen⬇️⬇️⬇️ */
+@media (min-width: 2561px) {
+    // MIXIN CREATION
+
+    @mixin Flex($Jc, $Ai , $Fd) {
+        display: flex;
+        align-items: $Ai;
+        justify-content: $Jc;
+        flex-direction: $Fd;
+    }
+
+    main {
+        nav {
+            .logo {
+                font-size: clamp(1.375rem, 2.66vw - 0.327rem, 2rem);
+            }
+
+            .nav-links {
+                width: auto;
+                overflow: none;
+            }
+
+            i {
+                font-size: 2rem;
+            }
+        }
+
+        .hero {
+            .text-container {
+                height: 60dvh;
+                font-size: clamp(9rem, -3.308rem + 19.231vw, 14rem);
+                gap: clamp(16rem, 6.154rem + 15.385vw, 20rem);
+
+                img {
+                    width: clamp(47rem, 27.308rem + 30.769vw, 55rem);
+                }
+            }
+        }
+    }
+
+}
