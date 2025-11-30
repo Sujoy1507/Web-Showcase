@@ -77,4 +77,44 @@ main .board .fill {
 }
 main .board .food {
   background-color: var(--bg-food-color);
+}
+main .modal {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background: hsla(0, 0%, 43%, 0.324);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .modal .start-game,
+main .modal .game-over {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+main .modal .start-game .btn,
+main .modal .game-over .btn {
+  padding: var(--space-sm) var(--space-lg);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-weight: 900;
+  transition: all 0.3s ease;
+}
+main .modal .start-game .btn:active,
+main .modal .game-over .btn:active {
+  transform: scale(0.9);
+  background: hsl(0, 80%, 45%);
+}
+main .modal .start-game .btn:hover,
+main .modal .game-over .btn:hover {
+  background: hsl(60, 80%, 45%);
+  color: hsl(240, 90%, 20%);
+}
+main .modal .game-over {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
