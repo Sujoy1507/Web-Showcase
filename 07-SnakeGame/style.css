@@ -61,11 +61,20 @@ main .section .infos .info {
   border-radius: var(--border-radius-sm);
 }
 main .section .controls {
-  display: flex;
+  display: none;
   justify-content: space-evenly;
   align-items: center;
-  gap: 2rem;
   margin-bottom: 2rem;
+}
+main .section .controls .control {
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  height: 75px;
+  width: 100px;
+  border: 2px solid var(--border-primary-color);
 }
 main .board {
   border: 1px solid var(--border-primary-color);
@@ -124,4 +133,32 @@ main .modal .game-over .btn:hover {
 }
 main .modal .game-over {
   display: none;
+}
+
+@media (max-width: 600px) {
+  main .section .controls {
+    display: grid;
+    height: 25%;
+    grid-template-areas: ". up ." "left name right" ". down .";
+  }
+  main .section .controls .c-up {
+    grid-area: up;
+  }
+  main .section .controls .c-down {
+    grid-area: down;
+  }
+  main .section .controls .c-left {
+    grid-area: left;
+  }
+  main .section .controls .c-right {
+    grid-area: right;
+  }
+  main .section .controls .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    grid-area: name;
+  }
 }/*# sourceMappingURL=style.css.map */

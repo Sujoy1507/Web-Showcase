@@ -77,11 +77,21 @@ main {
         }
 
         .controls {
-            display: flex;
+            display: none;
             justify-content: space-evenly;
             align-items: center;
-            gap: 2rem;
             margin-bottom: 2rem;
+
+            .control {
+                border-radius: var(--border-radius-sm);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2rem;
+                height: 75px;
+                width: 100px;
+                border: 2px solid var(--border-primary-color);
+            }
         }
     }
 
@@ -146,6 +156,42 @@ main {
 
         .game-over {
             display: none;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        .section {
+            .controls {
+                display: grid;
+                height: 25%;
+                grid-template-areas:
+                    ". up ."
+                    "left name right"
+                    ". down .";
+
+                .c-up {
+                    grid-area: up;
+                }
+                .c-down {
+                    grid-area: down;
+                }
+                .c-left {
+                    grid-area: left;
+                }
+                .c-right {
+                    grid-area: right;
+                }
+                .name {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 2rem;
+                    text-transform: uppercase;
+                    grid-area: name;
+                }
+            }
         }
     }
 }
