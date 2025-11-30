@@ -60,6 +60,13 @@ main .section .infos .info {
   border: 2px solid var(--border-primary-color);
   border-radius: var(--border-radius-sm);
 }
+main .section .controls {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
 main .board {
   border: 1px solid var(--border-primary-color);
   flex-grow: 1;

@@ -5,6 +5,12 @@ const modal = document.querySelector(".modal");
 const startGameModal = document.querySelector(".start-game");
 const gameOverModal = document.querySelector(".game-over");
 
+//arrows 
+const arrowUp = document.querySelector('.c-up');
+const arrowDown = document.querySelector('.c-down');
+const arrowLeft = document.querySelector('.c-left');
+const arrowRight = document.querySelector('.c-right');
+
 const blockWidth = 40;
 const blockHeight = 40;
 
@@ -31,6 +37,19 @@ for (let row = 0; row < rows; row++) {
         blocks[`${row}-${col}`] = block;
     }
 }
+
+arrowUp.addEventListener('click',()=>{
+     direction = "up";
+}) 
+arrowDown.addEventListener('click',()=>{
+     direction = "down";
+}) 
+arrowLeft.addEventListener('click',()=>{
+     direction = "left";
+}) 
+arrowRight.addEventListener('click',()=>{
+     direction = "right";
+}) 
 
 function render() {
     let head = null;
