@@ -5,19 +5,32 @@ const modal = document.querySelector(".modal");
 const startGameModal = document.querySelector(".start-game");
 const gameOverModal = document.querySelector(".game-over");
 
-//arrows 
-const arrowUp = document.querySelector('.c-up');
-const arrowDown = document.querySelector('.c-down');
-const arrowLeft = document.querySelector('.c-left');
-const arrowRight = document.querySelector('.c-right');
+const highScoreElement = document.querySelector(".high-score span");
+const scoreElement = document.querySelector(".score span");
+const timeElement = document.querySelector(".time span");
+
+//arrows
+const arrowUp = document.querySelector(".c-up");
+const arrowDown = document.querySelector(".c-down");
+const arrowLeft = document.querySelector(".c-left");
+const arrowRight = document.querySelector(".c-right");
 
 const blockWidth = 40;
 const blockHeight = 40;
 
+let highScore = localStorage.getItem("highScore") || 0;
+let score = 0;
+let time = "00-00";
+
+highScoreElement.innerText = highScore;
+
 const cols = Math.floor(board.clientWidth / blockWidth);
+
 const rows = Math.floor(board.clientHeight / blockHeight);
 
 let intervalId = null;
+let timerIntervalId = null;
+
 let food = {
     x: Math.floor(Math.random() * rows),
     y: Math.floor(Math.random() * cols),
@@ -33,28 +46,29 @@ for (let row = 0; row < rows; row++) {
         const block = document.createElement("div");
         block.classList.add("block");
         board.appendChild(block);
-        block.innerHTML = `${row}-${col}`;
         blocks[`${row}-${col}`] = block;
     }
 }
 
-arrowUp.addEventListener('click',()=>{
-     direction = "up";
-}) 
-arrowDown.addEventListener('click',()=>{
-     direction = "down";
-}) 
-arrowLeft.addEventListener('click',()=>{
-     direction = "left";
-}) 
-arrowRight.addEventListener('click',()=>{
-     direction = "right";
-}) 
+arrowUp.addEventListener("click", () => {
+    direction = "up";
+});
+arrowDown.addEventListener("click", () => {
+    direction = "down";
+});
+arrowLeft.addEventListener("click", () => {
+    direction = "left";
+});
+arrowRight.addEventListener("click", () => {
+    direction = "right";
+});
 
 function render() {
     let head = null;
 
     blocks[`${food.x}-${food.y}`].classList.add("food");
+
+    //direction logic
 
     if (direction === "left") {
         head = { x: snake[0].x, y: snake[0].y - 1 };
@@ -66,6 +80,8 @@ function render() {
         head = { x: snake[0].x - 1, y: snake[0].y };
     }
 
+    //Wall collision  logic
+
     if (head.x < 0 || head.y < 0 || head.x >= rows || head.y >= cols) {
         clearInterval(intervalId);
 
@@ -76,6 +92,8 @@ function render() {
         return;
     }
 
+    //food consume
+
     if (head.x === food.x && head.y === food.y) {
         blocks[`${food.x}-${food.y}`].classList.remove("food");
         food = {
@@ -84,6 +102,14 @@ function render() {
         };
         blocks[`${food.x}-${food.y}`].classList.add("food");
         snake.unshift(head);
+
+        score += 10;
+        scoreElement.innerText = score;
+        if (score > highScore) {
+            highScore = score;
+            highScoreElement.innerText = highScore;
+            localStorage.setItem("highScore", highScore.toString());
+        }
     }
 
     snake.forEach((segment) => {
@@ -105,6 +131,19 @@ startButton.addEventListener("click", () => {
     intervalId = setInterval(() => {
         render();
     }, 300);
+    timerIntervalId = setInterval(() => {
+        let [min, sec] = time.split("-").map(Number);
+
+        if (sec === 59) {
+            min += 1;
+            sec = 0;
+        } else {
+            sec += 1;
+        }
+
+        time = `${min}-${sec}`;
+        timeElement.innerText = time;
+    }, 1000);
 });
 
 restartButton.addEventListener("click", () => {
@@ -112,6 +151,11 @@ restartButton.addEventListener("click", () => {
 });
 
 function restartGame(params) {
+    time = "00-00";
+    score = 0;
+    scoreElement.innerText = score;
+    timeElement.innerText = time;
+    highScoreElement.innerText = highScore;
     direction = "right";
     blocks[`${food.x}-${food.y}`].classList.remove("food");
     snake.forEach((segment) => {
