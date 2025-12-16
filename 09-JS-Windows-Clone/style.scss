@@ -14,201 +14,52 @@ body {
     width: 100%;
 }
 
-main {
+.container {
     width: 100%;
-    height: 100%;
-    background-image: url(./pexels-akos-szabo-145938-440731.jpg);
-    background-size: cover;
-    background-position: top;
+    height: 100dvh;
+    background: hsl(180, 80%, 84%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    section {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-
-        .bottom {
-            width: 100%;
-            height: 50px;
-            position: absolute;
-            background: hsl(0, 0, 100);
-            bottom: 0;
-            left: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            > img {
-                width: 40px;
-                height: 40px;
+    .calculator{
+        padding: 1.5rem;
+        background: hsl(270, 94%, 14%);
+        border-radius: .6rem;
+        
+        form{
+            input{
+                border: none;
+                outline: none;
+                width: 70px;
+                height: 70px;
+                border-radius: .6rem;
+                background: transparent;
+                font-size: 1.5rem;
+                color: hsl(0, 0, 100);
+                cursor: pointer;
+                box-shadow: -.5rem -.5rem 1rem hsla(0, 0%, 100%, 0.272),.3rem .3rem 1rem hsla(0, 0, 0, .4) ;
+                margin: 0.5rem;
             }
 
-            .search-container {
-                width: 30%;
-                height: 40px;
-                border-radius: 2rem;
-                border: 0.5px solid black;
-                padding: 0 0.4rem;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .left-box {
-                    width: 15%;
-                    height: 100%;
-                    display: flex;
-                    gap: 1rem;
-                    justify-content: space-between;
-                    align-items: center;
-
-                    > i {
-                        font-size: 1.5rem;
-                    }
-                }
-
-                .right-box {
-                    height: 100%;
-                    > img {
-                        width: 38px;
-                        height: 38px;
-                    }
-                }
-            }
-        }
-
-        .windowScreen {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, 60%);
-            height: 85%;
-            width: 55%;
-            display: flex;
-            justify-content: center;
-            gap: 0.4rem;
-            align-items: center;
-            transition: all 0.2s ease;
-
-            .left-side {
-                height: 100%;
-                width: 70%;
-                padding: 2rem;
-                background-color: hsl(0, 0, 100);
-                border-radius: 0.7rem;
-
-                .win-search-container {
-                    width: 100%;
-                    height: 30px;
-                    position: relative;
-
-                    .win-search {
-                        height: 100%;
-                        width: 100%;
-                        border-radius: 2rem;
-                        border: 1px solid hsla(0, 2%, 28%, 0.452);
-                        padding-left: 3rem;
-                    }
-                    > i {
-                        position: absolute;
-                        left: 1rem;
-                        top: 0.4rem;
-                    }
-                    margin-bottom: 1rem;
-                }
-                > img {
-                    width: 100%;
-                    height: 85%;
-                    border-radius: 0.6rem;
-                }
-
-                .buttom {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: 12px 18px;
-                    background: #ffffff;
-                    border-top: 1px solid #ddd;
-                    border-radius: 0.5rem;
-
-                    .user {
-                        display: flex;
-                        align-items: center;
-                        gap: 10px;
-
-                        .user-icon {
-                            display: flex;
-                            align-items: center;
-                            gap: 8px;
-
-                            i {
-                                font-size: 22px;
-                            }
-
-                            p {
-                                font-size: 14px;
-                                font-weight: 500;
-                            }
-                        }
-                    }
-
-                    .ri-shut-down-line {
-                        font-size: 22px;
-                        cursor: pointer;
-
-                        &:hover {
-                            color: red;
-                        }
-                    }
-                }
+            input.equeal{
+                width: 160px;
             }
 
-            .right-side {
-                height: 100%;
-                width: 30%;
-                background-color: hsl(0, 0, 100);
-                border-radius: 0.7rem;
+            input.operator{
+                color: hsl(183, 57%, 61%);
+                font-weight: 900;
 
-                > img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: .7rem;
-                }
             }
-        }
 
-        .right-click-menu {
-            display: none;
+            .display{
+                display: flex;justify-content: center;margin: 1.2rem 0;
 
-            position: absolute;
-            border-radius: 0.7rem;
-            height: 350px;
-            width: 200px;
-            background-color: rgb(255, 255, 255);
-            padding-block: 1rem;
-
-            .menu-box {
-                margin-bottom: 0.8rem;
-
-                width: 100%;
-                display: flex;
-                justify-content: start;
-                padding-left: 1rem;
-                padding-bottom: 0.5rem;
-                align-items: center;
-                gap: 0.8rem;
-
-                &:nth-child(4) {
-                    border-bottom: 1px solid rgba(67, 66, 66, 0.285);
-                    border-top: 1px solid rgba(67, 66, 66, 0.285);
-                }
-                &:nth-child(7) {
-                    border-bottom: 1px solid rgba(67, 66, 66, 0.285);
-                    border-top: 1px solid rgba(67, 66, 66, 0.285);
-                }
-                &:hover{
-                    background-color: rgb(235, 235, 235);
-                    border-radius: .4rem;
+                input{
+                    text-align: right;
+                    flex: 1;
+                    font-size: 3rem;
+                    box-shadow: none;
                 }
             }
         }

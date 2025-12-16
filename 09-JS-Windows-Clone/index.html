@@ -3,92 +3,61 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Windows</title>
+        <title>JavaScript Calculator</title>
         <link rel="stylesheet" href="style.css" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
-            rel="stylesheet"
-        />
     </head>
     <body>
+
         <main>
-            <section>
-                <div class="bottom">
-                    <img
-                        class="windows-bttn"
-                        src="./icons8-windows-11-48.png"
-                        alt=""
-                    />
-                    <div class="search-container">
-                        <div class="left-box">
-                            <i class="ri-search-line"></i>
-                            <p>Search</p>
+            <section class="container">
+                <div class="calculator">
+                    <form>
+                        <div class="display">
+                            <input type="text" name="display">
                         </div>
-                        <div class="right-box">
-                            <img src="./nobel.webp" alt="" />
-                        </div>
-                    </div>
-                </div>
+                        
+                        <div>
+                            <input type="button" value="AC" onclick="display.value=''"
+                            class="operator">
+                            <input type="button" value="DE" 
+                            onclick="display.value= display.value.toString().slice(0,-1)"
+                            class="operator">
 
-                <div class="windowScreen">
-                    <div class="left-side">
-                        <div class="win-search-container">
-                            <i class="ri-search-line"></i>
-                            <input
-                                class="win-search"
-                                type="search"
-                                placeholder="Search"
-                            />
+                            <input type="button" value="." onclick="display.value+='.'">
+                            <input type="button" value="/" onclick="display.value+='/'" 
+                            class="operator">
                         </div>
-                        <img src="./apps.png" alt="" />
-                        <div class="buttom">
-                            <div class="user">
-                                <div class="user-icon">
-                                    <i class="ri-account-circle-fill"></i>
-                                    <p>Sujoy Saha</p>
-                                </div>
-                            </div>
-                            <i class="ri-shut-down-line"></i>
+                        
+                        <div>
+                            <input type="button" value="7" onclick="display.value+='7'">
+                            <input type="button" value="8"  onclick="display.value+='8'">
+                            <input type="button" value="9"  onclick="display.value+='9'">
+                            <input type="button" value="*"  onclick="display.value+='*'" 
+                            class="operator">
                         </div>
-                    </div>
-                    <div class="right-side">
-                        <img src="./right.png" alt="">
-                    </div>
-                </div>
-
-                <div class="right-click-menu">
-                    <div class="menu-box">
-                        <i class="ri-gallery-view-2"></i>
-                        <p>View</p>
-                    </div>
-                    <div class="menu-box">
-                        <i class="ri-arrow-up-down-line"></i>
-                        <p>Sort by</p>
-                    </div>
-                    <div class="menu-box">
-                        <i class="ri-reset-right-line"></i>
-                        <p>Refresh</p>
-                    </div>
-                    <div class="menu-box">
-                        <i class="ri-add-circle-line"></i>
-                        <p>New</p>
-                    </div>
-                    <div class="menu-box">
-                        <i class="ri-computer-line"></i>
-                        <p>Desplay Setting</p>
-                    </div>
-                    <div class="menu-box">
-                        <i class="ri-brush-line"></i>
-                        <p>Personalize</p>
-                    </div>
-                    <div class="menu-box">
-                        <i class="ri-terminal-box-fill"></i>
-                        <p>Open in Terminal</p>
-                    </div>
-                    <div class="menu-box">
-                        <i class="ri-more-line"></i>
-                        <p>Show More Option</p>
-                    </div>
+                        
+                        <div>
+                            <input type="button" value="4"  onclick="display.value+='4'">
+                            <input type="button" value="5"  onclick="display.value+='5'">
+                            <input type="button" value="6"  onclick="display.value+='6'">
+                            <input type="button" value="-"  onclick="display.value+='-'"
+                            class="operator">
+                        </div>
+                        
+                        <div>
+                            <input type="button" value="1"  onclick="display.value+='1'">
+                            <input type="button" value="2"  onclick="display.value+='2'">
+                            <input type="button" value="3"  onclick="display.value+='3'">
+                            <input type="button" value="+"  onclick="display.value+='+'" class="operator">
+                        </div>
+                        
+                        <div>
+                            <input type="button" value="00"  onclick="display.value+='00'">
+                            <input type="button" value="0"  onclick="display.value+='0'">
+                            <input  type="button" value="=" class="equeal operator" 
+                            onclick="display.value = eval(display.value)">
+                        </div>
+                    </form>
                 </div>
             </section>
         </main>
