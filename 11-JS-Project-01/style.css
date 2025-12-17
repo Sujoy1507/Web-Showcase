@@ -79,6 +79,7 @@ main .fullElem {
   transform: translateX(-50%);
 }
 main .fullElem .back-container {
+  grid-area: top;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -110,7 +111,14 @@ main .fullElem .back-container .container > button {
 main .fullElem .back-container .container:active {
   scale: 0.95;
 }
+main .todo-fullpage {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 12% 12% 76%;
+  grid-template-areas: "top" "middle" "bottom";
+}
 main .todo-fullpage .date-container {
+  grid-area: middle;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -133,9 +141,142 @@ main .todo-fullpage .date-container .day {
   font-weight: 700;
   font-size: clamp(0.9rem, 0.78rem + 0.384vw, 1.5rem);
 }
+main .todo-fullpage .todo-container {
+  grid-area: bottom;
+  width: 100%;
+}
+main .todo-fullpage .todo-container .addTask {
+  height: 36%;
+  width: 100%;
+  border-radius: 0.4rem;
+  background-color: var(--pri);
+  margin-bottom: 1rem;
+}
+main .todo-fullpage .todo-container .addTask form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 1rem;
+}
+main .todo-fullpage .todo-container .addTask form > input,
+main .todo-fullpage .todo-container .addTask form textarea {
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  width: 100%;
+  font-size: clamp(1rem, 0.9rem + 0.32vw, 1.5rem);
+  background-color: var(--text-light);
+  color: var(--text);
+  border: none;
+  outline: none;
+}
+main .todo-fullpage .todo-container .addTask form > button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  width: 100%;
+  font-size: clamp(1rem, 0.9rem + 0.32vw, 1.5rem);
+  background-color: var(--green);
+  font-weight: 700;
+  color: var(--text);
+  border: none;
+  outline: none;
+  transition: all 0.2s ease;
+}
+main .todo-fullpage .todo-container .addTask form > button:active {
+  scale: 0.95;
+}
+main .todo-fullpage .todo-container .addTask .check-inp {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  gap: 1rem;
+}
+main .todo-fullpage .todo-container .addTask .check-inp #check {
+  scale: 2;
+}
+main .todo-fullpage .todo-container .addTask .check-inp label {
+  padding: 0.1rem 1rem;
+  border-radius: 0.4rem;
+  background-color: var(--tri2);
+}
+main .todo-fullpage .todo-container .allTask {
+  width: 100%;
+  height: 62%;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  background-color: var(--pri);
+  overflow-y: scroll;
+}
+main .todo-fullpage .todo-container .allTask::-webkit-scrollbar {
+  display: none;
+}
+main .todo-fullpage .todo-container .allTask .task {
+  width: 100%;
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem;
+  background-color: var(--tri4);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+main .todo-fullpage .todo-container .allTask .task .task-container h5 {
+  color: var(--text-light);
+  font-size: clamp(1rem, 0.9rem + 0.32vw, 1.5rem);
+}
+main .todo-fullpage .todo-container .allTask .task .task-container h5 span {
+  background-color: var(--red);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+  font-size: 0.5rem;
+}
+main .todo-fullpage .todo-container .allTask .task .task-container h5 span.true {
+  opacity: 1;
+}
+main .todo-fullpage .todo-container .allTask .task .task-container h5 span.false {
+  opacity: 0;
+}
+main .todo-fullpage .todo-container .allTask .task .task-container .detail {
+  font-size: 0.85rem;
+}
+main .todo-fullpage .todo-container .allTask .task > button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  max-height: 40px;
+  font-size: 1rem;
+  background-color: var(--green);
+  font-weight: 700;
+  color: var(--text);
+  border: none;
+  outline: none;
+  transition: all 0.2s ease;
+}
+main .todo-fullpage .todo-container .allTask .task > button:active {
+  scale: 0.95;
+}
 
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  main .todo-fullpage {
+    grid-template-rows: 11% 9% 80%;
+  }
+  main .todo-fullpage .date-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+  main .todo-fullpage .todo-container {
+    display: flex;
+    gap: 1rem;
+  }
+  main .todo-fullpage .todo-container .addTask {
+    height: 100%;
+    width: 33%;
+  }
+  main .todo-fullpage .todo-container .allTask {
+    height: 100%;
+    width: 66%;
+  }
   main .allElems {
     height: 100%;
     display: grid;
@@ -164,8 +305,24 @@ main .todo-fullpage .date-container .day {
 }
 /* Laptop */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
+  main .todo-fullpage {
+    grid-template-rows: 11% 9% 80%;
+  }
   main .todo-fullpage .date-container {
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+  main .todo-fullpage .todo-container {
+    display: flex;
+    gap: 1rem;
+  }
+  main .todo-fullpage .todo-container .addTask {
+    height: 100%;
+    width: 33%;
+  }
+  main .todo-fullpage .todo-container .allTask {
+    height: 100%;
+    width: 66%;
   }
   main .allElems {
     height: 100%;
@@ -195,8 +352,24 @@ main .todo-fullpage .date-container .day {
 }
 /* Large Display */
 @media screen and (min-width: 1441px) and (max-width: 2559px) {
+  main .todo-fullpage {
+    grid-template-rows: 11% 9% 80%;
+  }
   main .todo-fullpage .date-container {
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+  main .todo-fullpage .todo-container {
+    display: flex;
+    gap: 1rem;
+  }
+  main .todo-fullpage .todo-container .addTask {
+    height: 100%;
+    width: 33%;
+  }
+  main .todo-fullpage .todo-container .allTask {
+    height: 100%;
+    width: 66%;
   }
   main .allElems {
     height: 100%;
@@ -226,10 +399,24 @@ main .todo-fullpage .date-container .day {
 }
 /* 4K Display */
 @media screen and (min-width: 2560px) {
-  main .fullElem {
-    max-width: 1600px;
-    left: 50%;
-    transform: translateX(-50%);
+  main .todo-fullpage {
+    grid-template-rows: 11% 9% 80%;
+  }
+  main .todo-fullpage .date-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+  main .todo-fullpage .todo-container {
+    display: flex;
+    gap: 1rem;
+  }
+  main .todo-fullpage .todo-container .addTask {
+    height: 100%;
+    width: 33%;
+  }
+  main .todo-fullpage .todo-container .allTask {
+    height: 100%;
+    width: 66%;
   }
   main .allElems {
     max-width: 1600px;

@@ -48,3 +48,58 @@ function dateFeatuers() {
 }
 
 dateFeatuers();
+
+//Add Task Section
+
+const addTaskForm = document.querySelector(".addTask form");
+const addTaskInput = document.querySelector(".addTask form input");
+const addTaskTextarea = document.querySelector(".addTask form textarea");
+const addTaskCheckBox = document.querySelector(".addTask form #check");
+
+const allTask = document.querySelector(".allTask");
+
+var currentTask = [];
+
+// if( localStorage.getItem("currentTask")){
+//     console.log('Task list is full')
+// }else{
+//     console.log('Hello')
+//      localStorage.setItem("currentTask",currentTask)
+// }
+
+
+
+
+function renderTask() {
+    let sum = "";
+
+    currentTask.forEach((val) => {
+        sum += `<div class="task">
+                            <div class="task-container">
+                                <h5>${val.task} <span class="${val.imp}">IMP</span></h5>
+                                <h6 class="detail">${val.details}</h6>
+                            </div>
+
+                            <button>Completed</button>
+                        </div>`;
+    });
+
+    allTask.innerHTML = sum;
+}
+renderTask();
+
+addTaskForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    currentTask.push({
+        task: addTaskInput.value,
+        details: addTaskTextarea.value,
+        imp: addTaskCheckBox.checked,
+    });
+    addTaskInput.value = "";
+    addTaskTextarea.value = "";
+    addTaskCheckBox.checked = false;
+    renderTask();
+});
+
+localStorage.clear();
