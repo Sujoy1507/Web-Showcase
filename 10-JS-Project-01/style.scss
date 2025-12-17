@@ -1,33 +1,3 @@
-:root {
-    --pri: #0f172a;
-    --sec: #1e293b;
-    --tri1: #38bdf8;
-    --tri2: #16f9e6;
-    --tri3: #e5e7eb;
-    --red: red;
-    --green: green;
-}
-
-@font-face {
-    font-family: normal;
-    src: url(./Fonts/fonnts.com-Aeonik-Regular.ttf);
-}
-
-@font-face {
-    font-family: bold;
-    src: url(./Fonts/fonnts.com-Aeonik-Bold.ttf);
-}
-
-@font-face {
-    font-family: sf;
-    src: url(./Fonts/SFPRODISPLAYREGULAR.OTF);
-}
-
-@font-face {
-    font-family: rl;
-    src: url(./Fonts/raleway.regular.ttf);
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -35,8 +5,6 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
-    font-weight: 300;
-    color: var(--tri2);
 }
 
 html,
@@ -44,336 +12,179 @@ body {
     height: 100%;
     width: 100%;
 }
-main {
-    width: 100%;
-    height: 100%;
-    background: var(--pri);
 
-    section.allElems {
-        position: absolute;
-        height: 100%;
+:root {
+    --pri: #ffb703;
+    --sec: #ff4d8d;
+
+    --tri1: #ffd166;
+    --tri2: #ff85b3;
+    --tri3: #fff1c1;
+
+    --text: #000000;
+    --text-light: #ffffff;
+
+    --red: #e63946;
+    --green: #2ec4b6;
+}
+
+@mixin flex($jc, $ai, $fd) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+
+main {
+    width: 100dvw;
+    height: 100dvh;
+    background: var(--sec);
+
+    .allElems {
         width: 100%;
-        padding: 3rem;
-        padding-top: 5.5rem;
-        background: var(--sec);
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        gap: 2rem;
+        height: 100%;
+        padding: 1rem;
+        @include flex(start, center, column);
+        gap: 1rem;
 
         .elem {
-            background: var(--tri1);
-            font-size: 1.5rem;
-            height: 400px;
-            width: 255px;
-            border-radius: 0.8rem;
-            overflow: hidden;
+            border: 2px solid black;
+            width: 100%;
+            flex: 1;
             position: relative;
-            transition: all ease 0.2s;
-            box-shadow: 15px 10px 10px var(--pri), -3px -3px 12px var(--tri2);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0.3rem 0.3rem 1rem var(--tri1),
+                -0.3rem -0.3rem 0.3rem var(--tri3);
 
-            &:active {
-                scale: 0.97;
+            > h2 {
+                position: absolute;
+                bottom: 3%;
+                right: 3%;
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                color: var(--text-light);
+                text-shadow: 0 0 0.6rem var(--text);
             }
 
             > img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                pointer-events: none;
-            }
-
-            > h2 {
-                color: var(--pri);
-                position: absolute;
-                bottom: 5%;
-                left: 5%;
             }
         }
     }
 
-    section.fullElem {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    main {
+        .allElems {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                "first second"
+                "third fourth"
+                "fifth fifth";
+
+            .elem {
+                height: 100%;
+                &:nth-child(1) {
+                    grid-area: first;
+                }
+                &:nth-child(2) {
+                    grid-area: second;
+                }
+                &:nth-child(3) {
+                    grid-area: third;
+                }
+                &:nth-child(4) {
+                    grid-area: fourth;
+                }
+                &:nth-child(5) {
+                    grid-area: fifth;
+                }
+            }
+        }
+
+    }
+}
+
+/* Laptop */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    main {
         height: 100%;
-        width: 100%;
-        display: none;
-        background: var(--sec);
-
-        .back {
+        position: relative;
+        .allElems {
             position: absolute;
-            font-size: 1.3rem;
-            padding: 0.4rem 0.7rem;
-            border-radius: 0.4rem;
-            border: none;
-            background: var(--red);
-            color: var(--tri3);
-            right: 4%;
-            font-weight: 500;
-            top: 5%;
-            cursor: pointer;
-
-            &:active {
-                scale: 0.97;
-            }
-        }
-    }
-
-    .todo-list-fullpage {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 1rem;
-
-        h2 {
-            font-size: 5rem;
-            font-weight: 700;
-            font-family: sf;
-            color: var(--tri1);
-            text-shadow: 5px 5px 10px var(--pri), -5px -5px 10px var(--tri1);
-        }
-
-        .date-container {
-            display: flex;
-            justify-content: space-evenly;
-
-            .month,
-            .date {
-                padding: 0.4rem 1rem;
-                border-radius: 0.3rem;
-                background-color: var(--pri);
-                font-size: 2rem;
-                margin-top: 2rem;
-            }
-        }
-
-        .todo-container {
-            width: 100%;
-            margin-top: 2rem;
+            bottom: 5%;
+            left: 0;
             height: 70%;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
 
-            .addTask {
+            @include flex(center, center, row);
+
+            .elem {
                 height: 100%;
-                width: 33%;
-                background: var(--tri1);
-                border-radius: 0.7rem;
+                width: 100%;
 
-                form {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: start;
-                    padding: 1rem;
-                    gap: 1rem;
-
-                    input#task-input {
-                        width: 100%;
-                        padding: 0.7rem 1.5rem;
-                        border-radius: 0.5rem;
-                        background: var(--pri);
-                        font-weight: 500;
-                        border: none;
-                        color: var(--tri3);
-                        font-size: 1.3rem;
-                        outline: none;
-                    }
-
-                    textarea {
-                        width: 100%;
-                        padding: 0.7rem 1.5rem;
-                        font-weight: 500;
-                        border-radius: 0.5rem;
-                        background: var(--pri);
-                        border: none;
-                        color: var(--tri3);
-                        font-size: 1.3rem;
-                        outline: none;
-                    }
-                    #mark-imp {
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-start;
-                        gap: 1.5rem;
-                        padding: 1rem;
-
-                        #check {
-                            scale: 2;
-                        }
-                        label {
-                            color: var(--pri);
-                            font-weight: 500;
-                        }
-                    }
-
-                    button {
-                        width: 100%;
-                        padding: 0.7rem 1.5rem;
-                        border-radius: 0.5rem;
-                        background: var(--tri2);
-                        border: none;
-                        color: var(--pri);
-                        font-size: 1.3rem;
-                        font-weight: 700;
-                        outline: none;
-                        transition: all ease 0.3s;
-
-                        &:active {
-                            scale: 0.97;
-                        }
-                    }
-                }
-            }
-            .allTask {
-                height: 100%;
-                border-radius: 0.7rem;
-                width: 65%;
-                background: var(--tri1);
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-                overflow-y: scroll;
-
-                &::-webkit-scrollbar {
-                    display: none;
-                }
-
-                .task {
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    background: var(--sec);
-                    padding: 0.7rem 1rem;
-                    border-radius: 0.3rem;
-                    justify-content: space-between;
-
-                    h5 {
-                        color: var(--tri3);
-                        font-size: 1.4rem;
-                    }
-
-                    button {
-                        padding: 1rem 2rem;
-                        border-radius: 0.4rem;
-                        overlay: none;
-                        color: var(--tri3);
-                        background: var(--green);
-                        font-size: 1.3rem;
-                        font-weight: 700;
-                        outline: none;
-                        border: none;
-                        transition: all ease 0.2s;
-
-                        &:active {
-                            scale: 0.97;
-                        }
-                    }
+                > h2 {
+                    font-size: clamp(1.2rem, 2vw, 2rem);
                 }
             }
         }
+
     }
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* Large Display */
+/* Large Display */
+@media screen and (min-width: 1441px) and (max-width: 2559px) {
+    main {
+        height: 100%;
+        position: relative;
+        .allElems {
+            max-width: 1500px;
+            margin: 0 auto;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 70%;
+            @include flex(center, center, row);
+            .elem {
+                height: 100%;
+                width: 100%;
+                > h2 {
+                    font-size: clamp(1.2rem, 2vw, 2rem);
+                }
+            }
+        }
 
-/* Tablets */
-@media (max-width: 1024px) {
-    main section.allElems {
-        justify-content: center;
-        padding: 2rem;
     }
+} /* 4K Display */
+@media screen and (min-width: 2560px) {
+    main {
+        height: 100%;
+        position: relative;
+        .allElems {
+            max-width: 1500px;
+            margin: 0 auto;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 70%;
+            @include flex(center, center, row);
+            .elem {
+                height: 100%;
+                width: 100%;
+                > h2 {
+                    font-size: clamp(1.2rem, 2vw, 2rem);
+                }
+            }
+        }
 
-    main section.allElems .elem {
-        width: 220px;
-        height: 340px;
-    }
-
-    .todo-list-fullpage h2 {
-        font-size: 3.5rem;
-    }
-
-    .todo-container {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .addTask,
-    .allTask {
-        width: 100% !important;
-        height: auto;
-    }
-}
-
-/* Mobiles */
-@media (max-width: 768px) {
-    main section.allElems {
-        padding: 1.5rem;
-        gap: 1.2rem;
-    }
-
-    main section.allElems .elem {
-        width: 100%;
-        height: 260px;
-    }
-
-    .todo-list-fullpage h2 {
-        font-size: 2.5rem;
-        text-align: center;
-    }
-
-    .date-container {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    .date-container .month,
-    .date-container .date {
-        font-size: 1.3rem;
-    }
-
-    .todo-container {
-        gap: 1.5rem;
-    }
-
-    .addTask form input,
-    .addTask form textarea,
-    .addTask form button {
-        font-size: 1rem;
-    }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-    main section.allElems {
-        padding: 1rem;
-    }
-
-    .todo-list-fullpage {
-        padding: 0.8rem;
-    }
-
-    .todo-list-fullpage h2 {
-        font-size: 2rem;
-    }
-
-    .task h5 {
-        font-size: 1.1rem;
-    }
-
-    .task button {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-    }
-
-    .back {
-        font-size: 1rem;
-        padding: 0.3rem 0.6rem;
     }
 }

@@ -30,6 +30,7 @@ main {
   background-color: var(--pri);
 }
 main .allElems {
+  position: absolute;
   height: 100%;
   width: 100%;
   padding: 1rem;
@@ -62,6 +63,40 @@ main .allElems .elem h2 {
   pointer-events: none;
   color: var(--text-light);
   font-size: clamp(2rem, 1.6rem + 1.28vw, 4rem);
+}
+main .fullElem {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: var(--sec);
+  display: none;
+}
+main .fullElem .back-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 1rem;
+}
+main .fullElem .back-container .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--red);
+  gap: 0.5rem;
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  transition: all ease 0.3s;
+  font-size: 1rem;
+  color: var(--text-light);
+}
+main .fullElem .back-container .container > button {
+  background: none;
+  border: none;
+  color: var(--text-light);
+}
+main .fullElem .back-container .container:active {
+  scale: 0.95;
 }
 
 /* Tablet */
