@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  --pri: #6c5ce7;
+  --sec: #00cec9;
+  --tri1: #fdcb6e;
+  --tri2: #fab1a0;
+  --tri3: #81ecec;
+  --tri4: #a29bfe;
+  --red: #ff6b6b;
+  --green: #55efc4;
+  --text: #232425;
+  --text-light: #ffffff;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background-color: var(--pri);
+}
+main .allElems {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--sec);
+  display: grid;
+  gap: 1rem;
+}
+main .allElems .elem {
+  background-color: var(--tri1);
+  position: relative;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  transition: all ease 0.3s;
+  box-shadow: 0.4rem 0.4rem 1rem var(--pri), -0.3rem -0.3rem 1rem var(--tri2);
+}
+main .allElems .elem:active {
+  scale: 0.95;
+}
+main .allElems .elem > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  pointer-events: none;
+}
+main .allElems .elem h2 {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  pointer-events: none;
+  color: var(--text-light);
+  font-size: clamp(2rem, 1.6rem + 1.28vw, 4rem);
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  main .allElems {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    grid-template-areas: "one two" "three four" "five five";
+  }
+  main .allElems .elem {
+    height: 100%;
+  }
+  main .allElems .elem:nth-child(1) {
+    grid-area: one;
+  }
+  main .allElems .elem:nth-child(2) {
+    grid-area: two;
+  }
+  main .allElems .elem:nth-child(3) {
+    grid-area: three;
+  }
+  main .allElems .elem:nth-child(4) {
+    grid-area: four;
+  }
+  main .allElems .elem:nth-child(5) {
+    grid-area: five;
+  }
+}
+/* Laptop */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  main .allElems {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "one one two two three three" "four four four five five five";
+  }
+  main .allElems .elem {
+    height: 100%;
+  }
+  main .allElems .elem:nth-child(1) {
+    grid-area: one;
+  }
+  main .allElems .elem:nth-child(2) {
+    grid-area: two;
+  }
+  main .allElems .elem:nth-child(3) {
+    grid-area: three;
+  }
+  main .allElems .elem:nth-child(4) {
+    grid-area: four;
+  }
+  main .allElems .elem:nth-child(5) {
+    grid-area: five;
+  }
+}
+/* Large Display */
+@media screen and (min-width: 1441px) and (max-width: 2559px) {
+  main .allElems {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "one one two two three three" "four four four five five five";
+  }
+  main .allElems .elem {
+    height: 100%;
+  }
+  main .allElems .elem:nth-child(1) {
+    grid-area: one;
+  }
+  main .allElems .elem:nth-child(2) {
+    grid-area: two;
+  }
+  main .allElems .elem:nth-child(3) {
+    grid-area: three;
+  }
+  main .allElems .elem:nth-child(4) {
+    grid-area: four;
+  }
+  main .allElems .elem:nth-child(5) {
+    grid-area: five;
+  }
+}
+/* 4K Display */
+@media screen and (min-width: 2560px) {
+  main .allElems {
+    max-width: 1600px;
+    margin: 0 auto;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "one one two two three three" "four four four five five five";
+  }
+  main .allElems .elem {
+    height: 100%;
+  }
+  main .allElems .elem:nth-child(1) {
+    grid-area: one;
+  }
+  main .allElems .elem:nth-child(2) {
+    grid-area: two;
+  }
+  main .allElems .elem:nth-child(3) {
+    grid-area: three;
+  }
+  main .allElems .elem:nth-child(4) {
+    grid-area: four;
+  }
+  main .allElems .elem:nth-child(5) {
+    grid-area: five;
+  }
+}/*# sourceMappingURL=style.css.map */
