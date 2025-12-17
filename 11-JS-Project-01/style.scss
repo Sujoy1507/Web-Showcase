@@ -43,6 +43,9 @@ main {
 
         display: grid;
         gap: 1rem;
+        max-width: 1600px;
+        left: 50%;
+        transform: translateX(-50%);
 
         .elem {
             background-color: var(--tri1);
@@ -80,14 +83,23 @@ main {
         height: 100%;
         width: 100%;
         background: var(--sec);
-
+        padding: 1rem;
         display: none;
+        max-width: 1600px;
+        left: 50%;
+        transform: translateX(-50%);
 
         .back-container {
             width: 100%;
             display: flex;
-            justify-content: end;
+            justify-content: space-between;
             padding: 1rem;
+            border-bottom: 3px solid var(--tri1);
+            margin-bottom: .3rem;
+
+            > h3 {
+                font-size: clamp(1.6rem, 1.32rem + 0.896vw, 3rem);
+            }
             .container {
                 display: flex;
                 justify-content: center;
@@ -110,6 +122,33 @@ main {
                 &:active {
                     scale: 0.95;
                 }
+            }
+        }
+    }
+
+    .todo-fullpage {
+        .date-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: .2rem;
+            padding: .3rem;
+            border-bottom: 3px solid var(--tri1);
+            margin-bottom: .3rem;
+
+            .date,
+            .month,
+            .time,
+            .day {
+                width: 100%;
+                text-align: center;
+                padding: 0.3rem 1rem;
+                background: var(--pri);
+                border-radius: 0.4rem;
+                color: var(--text-light);
+                font-weight: 700;
+                font-size: clamp(0.9rem, 0.78rem + 0.384vw, 1.5rem);
             }
         }
     }
@@ -155,6 +194,12 @@ main {
 /* Laptop */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
     main {
+        .todo-fullpage{
+            .date-container{
+                grid-template-columns: repeat(4,1fr);
+            }
+        }
+
         .allElems {
             height: 100%;
             display: grid;
@@ -191,6 +236,11 @@ main {
 /* Large Display */
 @media screen and (min-width: 1441px) and (max-width: 2559px) {
     main {
+        .todo-fullpage{
+            .date-container{
+                grid-template-columns: repeat(4,1fr);
+            }
+        }
         .allElems {
             height: 100%;
             display: grid;
@@ -227,9 +277,16 @@ main {
 /* 4K Display */
 @media screen and (min-width: 2560px) {
     main {
+        .fullElem {
+            max-width: 1600px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         .allElems {
             max-width: 1600px;
-            margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%);
             height: 100%;
             display: grid;
 
