@@ -15,4 +15,34 @@ function openFeatures() {
     });
 }
 
-openFeatures()
+openFeatures();
+
+function timeFeature() {
+    const month = document.querySelector(".month span");
+    const date = document.querySelector(".date span");
+
+    date.innerText = new Date().toLocaleDateString("en-IN", {
+        day: "numeric",
+        month: "numeric",
+        year: "numeric",
+    });
+    month.innerText = new Date().toLocaleString("en-IN", { month: "long" });
+}
+
+timeFeature();
+
+const form = document.querySelector('.addTask form')
+const taskInput = document.querySelector('.addTask form #task-input')
+const taskDetailInput = document.querySelector('.addTask form textarea')
+const taskCheckBox =document.querySelector('.addTask form #check')
+
+form.addEventListener('submit',(event)=>{
+    event.preventDefault()
+
+    console.log(taskInput.value)
+    console.log(taskDetailInput.value)
+
+    console.log(taskCheckBox.checked)
+})
+
+

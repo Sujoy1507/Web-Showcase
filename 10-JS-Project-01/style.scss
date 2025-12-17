@@ -1,29 +1,32 @@
 :root {
-    --pri: #1a374d;
-    --sec: #406882;
-    --tri1: #6998ab;
-    --tri2: #b1d0e0;
+    --pri: #0f172a;
+    --sec: #1e293b;
+    --tri1: #38bdf8;
+    --tri2: #16f9e6;
+    --tri3: #e5e7eb;
+    --red: red;
+    --green: green;
 }
 
-// @font-face {
-//     font-family: normal;
-//     src: url(./Fonts/fonnts.com-Aeonik-Regular.ttf);
-// }
+@font-face {
+    font-family: normal;
+    src: url(./Fonts/fonnts.com-Aeonik-Regular.ttf);
+}
 
-// @font-face {
-//     font-family: bold;
-//     src: url(./Fonts/fonnts.com-Aeonik-Bold.ttf);
-// }
+@font-face {
+    font-family: bold;
+    src: url(./Fonts/fonnts.com-Aeonik-Bold.ttf);
+}
 
-// @font-face {
-//     font-family: sf;
-//     src: url(./Fonts/SFPRODISPLAYREGULAR.OTF);
-// }
+@font-face {
+    font-family: sf;
+    src: url(./Fonts/SFPRODISPLAYREGULAR.OTF);
+}
 
-// @font-face {
-//     font-family: rl;
-//     src: url(./Fonts/raleway.regular.ttf);
-// }
+@font-face {
+    font-family: rl;
+    src: url(./Fonts/raleway.regular.ttf);
+}
 
 * {
     margin: 0;
@@ -46,13 +49,6 @@ main {
     height: 100%;
     background: var(--pri);
 
-    nav {
-        position: fixed;
-        width: 100%;
-        height: 60px;
-        background-color: var(--pri);
-    }
-
     section.allElems {
         position: absolute;
         height: 100%;
@@ -74,7 +70,7 @@ main {
             overflow: hidden;
             position: relative;
             transition: all ease 0.2s;
-            box-shadow: 15px 10px 10px var(--pri),-3px -3px 12px var(--tri2);
+            box-shadow: 15px 10px 10px var(--pri), -3px -3px 12px var(--tri2);
 
             &:active {
                 scale: 0.97;
@@ -106,22 +102,278 @@ main {
         display: none;
         background: var(--sec);
 
-        .back{
+        .back {
             position: absolute;
             font-size: 1.3rem;
-            padding: 0.4rem .7rem;
-            border-radius: .4rem;
+            padding: 0.4rem 0.7rem;
+            border-radius: 0.4rem;
             border: none;
-            background: hsl(0, 100, 50);
+            background: var(--red);
+            color: var(--tri3);
             right: 4%;
             font-weight: 500;
-            color: hsl(0, 0, 100);
             top: 5%;
             cursor: pointer;
 
-            &:active{
-                scale: .97;
+            &:active {
+                scale: 0.97;
             }
         }
+    }
+
+    .todo-list-fullpage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1rem;
+
+        h2 {
+            font-size: 5rem;
+            font-weight: 700;
+            font-family: sf;
+            color: var(--tri1);
+            text-shadow: 5px 5px 10px var(--pri), -5px -5px 10px var(--tri1);
+        }
+
+        .date-container {
+            display: flex;
+            justify-content: space-evenly;
+
+            .month,
+            .date {
+                padding: 0.4rem 1rem;
+                border-radius: 0.3rem;
+                background-color: var(--pri);
+                font-size: 2rem;
+                margin-top: 2rem;
+            }
+        }
+
+        .todo-container {
+            width: 100%;
+            margin-top: 2rem;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+
+            .addTask {
+                height: 100%;
+                width: 33%;
+                background: var(--tri1);
+                border-radius: 0.7rem;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    padding: 1rem;
+                    gap: 1rem;
+
+                    input#task-input {
+                        width: 100%;
+                        padding: 0.7rem 1.5rem;
+                        border-radius: 0.5rem;
+                        background: var(--pri);
+                        font-weight: 500;
+                        border: none;
+                        color: var(--tri3);
+                        font-size: 1.3rem;
+                        outline: none;
+                    }
+
+                    textarea {
+                        width: 100%;
+                        padding: 0.7rem 1.5rem;
+                        font-weight: 500;
+                        border-radius: 0.5rem;
+                        background: var(--pri);
+                        border: none;
+                        color: var(--tri3);
+                        font-size: 1.3rem;
+                        outline: none;
+                    }
+                    #mark-imp {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 1.5rem;
+                        padding: 1rem;
+
+                        #check {
+                            scale: 2;
+                        }
+                        label {
+                            color: var(--pri);
+                            font-weight: 500;
+                        }
+                    }
+
+                    button {
+                        width: 100%;
+                        padding: 0.7rem 1.5rem;
+                        border-radius: 0.5rem;
+                        background: var(--tri2);
+                        border: none;
+                        color: var(--pri);
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        outline: none;
+                        transition: all ease 0.3s;
+
+                        &:active {
+                            scale: 0.97;
+                        }
+                    }
+                }
+            }
+            .allTask {
+                height: 100%;
+                border-radius: 0.7rem;
+                width: 65%;
+                background: var(--tri1);
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+                overflow-y: scroll;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .task {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    background: var(--sec);
+                    padding: 0.7rem 1rem;
+                    border-radius: 0.3rem;
+                    justify-content: space-between;
+
+                    h5 {
+                        color: var(--tri3);
+                        font-size: 1.4rem;
+                    }
+
+                    button {
+                        padding: 1rem 2rem;
+                        border-radius: 0.4rem;
+                        overlay: none;
+                        color: var(--tri3);
+                        background: var(--green);
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        outline: none;
+                        border: none;
+                        transition: all ease 0.2s;
+
+                        &:active {
+                            scale: 0.97;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    main section.allElems {
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    main section.allElems .elem {
+        width: 220px;
+        height: 340px;
+    }
+
+    .todo-list-fullpage h2 {
+        font-size: 3.5rem;
+    }
+
+    .todo-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .addTask,
+    .allTask {
+        width: 100% !important;
+        height: auto;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    main section.allElems {
+        padding: 1.5rem;
+        gap: 1.2rem;
+    }
+
+    main section.allElems .elem {
+        width: 100%;
+        height: 260px;
+    }
+
+    .todo-list-fullpage h2 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .date-container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .date-container .month,
+    .date-container .date {
+        font-size: 1.3rem;
+    }
+
+    .todo-container {
+        gap: 1.5rem;
+    }
+
+    .addTask form input,
+    .addTask form textarea,
+    .addTask form button {
+        font-size: 1rem;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    main section.allElems {
+        padding: 1rem;
+    }
+
+    .todo-list-fullpage {
+        padding: 0.8rem;
+    }
+
+    .todo-list-fullpage h2 {
+        font-size: 2rem;
+    }
+
+    .task h5 {
+        font-size: 1.1rem;
+    }
+
+    .task button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .back {
+        font-size: 1rem;
+        padding: 0.3rem 0.6rem;
     }
 }
