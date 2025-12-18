@@ -257,7 +257,6 @@ main .todo-fullpage .todo-container .allTask .task > button:active {
 main .daily-planner-fullpage {
   width: 100%;
   height: 100%;
-  display: grid;
   margin-top: -0.5rem;
   grid-template-rows: 9% 92%;
 }
