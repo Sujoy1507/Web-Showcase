@@ -146,7 +146,7 @@ main .todo-fullpage .todo-container {
   width: 100%;
 }
 main .todo-fullpage .todo-container .addTask {
-  height: 36%;
+  height: 45%;
   width: 100%;
   border-radius: 0.4rem;
   background-color: var(--pri);
@@ -203,7 +203,7 @@ main .todo-fullpage .todo-container .addTask .check-inp label {
 }
 main .todo-fullpage .todo-container .allTask {
   width: 100%;
-  height: 62%;
+  height: 53%;
   border-radius: 0.4rem;
   padding: 1rem;
   background-color: var(--pri);
