@@ -7,7 +7,8 @@ function openFeatuers() {
 
     allElems.forEach((elem) => {
         elem.addEventListener("click", () => {
-            allfullElemPage[elem.id].style.display = "block";
+            allfullElemPage.forEach((p) => (p.style.display = "none"));
+            allfullElemPage[elem.id].style.display = "grid";
         });
     });
 
@@ -17,11 +18,9 @@ function openFeatuers() {
         });
     });
 }
-
 openFeatuers();
 
 // Date featuers
-
 function dateFeatuers() {
     const dayInput = document.querySelector(".date-container .day span");
     const monthInput = document.querySelector(".date-container .month span");
@@ -46,60 +45,67 @@ function dateFeatuers() {
         hour12: true,
     });
 }
-
 dateFeatuers();
 
 //Add Task Section
+function todoList() {
+    const addTaskForm = document.querySelector(".addTask form");
+    const addTaskInput = document.querySelector(".addTask form input");
+    const addTaskTextarea = document.querySelector(".addTask form textarea");
+    const addTaskCheckBox = document.querySelector(".addTask form #check");
 
-const addTaskForm = document.querySelector(".addTask form");
-const addTaskInput = document.querySelector(".addTask form input");
-const addTaskTextarea = document.querySelector(".addTask form textarea");
-const addTaskCheckBox = document.querySelector(".addTask form #check");
+    const allTask = document.querySelector(".allTask");
 
-const allTask = document.querySelector(".allTask");
+    var currentTask = [];
 
-var currentTask = [];
+    if (localStorage.getItem("currentTask")) {
+        currentTask = JSON.parse(localStorage.getItem("currentTask"));
+    } else {
+        console.log("Task list is empty");
+    }
 
-// if( localStorage.getItem("currentTask")){
-//     console.log('Task list is full')
-// }else{
-//     console.log('Hello')
-//      localStorage.setItem("currentTask",currentTask)
-// }
+    function renderTask() {
+        let sum = "";
 
-
-
-
-function renderTask() {
-    let sum = "";
-
-    currentTask.forEach((val) => {
-        sum += `<div class="task">
+        currentTask.forEach((val, index) => {
+            sum += `<div class="task">
                             <div class="task-container">
                                 <h5>${val.task} <span class="${val.imp}">IMP</span></h5>
                                 <h6 class="detail">${val.details}</h6>
                             </div>
 
-                            <button>Completed</button>
+                            <button id='${index}'>Completed</button>
                         </div>`;
-    });
+        });
 
-    allTask.innerHTML = sum;
-}
-renderTask();
+        allTask.innerHTML = sum;
 
-addTaskForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+        localStorage.setItem("currentTask", JSON.stringify(currentTask));
 
-    currentTask.push({
-        task: addTaskInput.value,
-        details: addTaskTextarea.value,
-        imp: addTaskCheckBox.checked,
-    });
-    addTaskInput.value = "";
-    addTaskTextarea.value = "";
-    addTaskCheckBox.checked = false;
+        //markCompletedButton
+
+        let markCompletedButton = document.querySelectorAll(".task button");
+        markCompletedButton.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                currentTask.splice(btn.id, 1);
+                renderTask();
+            });
+        });
+    }
     renderTask();
-});
 
-localStorage.clear();
+    addTaskForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        currentTask.push({
+            task: addTaskInput.value,
+            details: addTaskTextarea.value,
+            imp: addTaskCheckBox.checked,
+        });
+        renderTask();
+
+        addTaskInput.value = "";
+        addTaskTextarea.value = "";
+        addTaskCheckBox.checked = false;
+    });
+}
+todoList();
