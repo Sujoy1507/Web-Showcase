@@ -325,7 +325,121 @@ main .daily-planner-fullpage .day-planner .day-planner-time > input::placeholder
   color: var(--tri3);
   font-size: clamp(1rem, 0.74rem + 0.832vw, 2.3rem);
 }
+main .motivational-fullpage {
+  grid-template-rows: 10% 90%;
+  position: relative;
+  background: conic-gradient(from var(--rotate), var(--tri3), var(--tri1), var(--tri2), var(--pri), var(--tri3));
+  animation: rotate-container 8s linear infinite;
+}
+main .motivational-fullpage .back-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 3px solid var(--tri1);
+  margin-bottom: 0.3rem;
+}
+main .motivational-fullpage .back-container > h3 {
+  font-size: clamp(1rem, 0.6rem + 1.28vw, 3rem);
+  color: var(--text);
+}
+main .motivational-fullpage .back-container .container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 1rem;
+  background: var(--red);
+  border-radius: 0.3rem;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+main .motivational-fullpage .back-container .container:active {
+  transform: scale(0.95);
+}
+main .motivational-fullpage .back-container .container button {
+  background: none;
+  border: none;
+  color: var(--text-light);
+}
+main .motivational-fullpage .motivation-container-contain {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .motivational-fullpage .motivation-container-contain .motivation-container {
+  width: clamp(18.75rem, 14.019vw + 15.596rem, 37.5rem);
+  padding: 1rem;
+  border-radius: 1rem;
+  position: relative;
+  background: linear-gradient(var(--tri4), var(--pri)) content-box, conic-gradient(from var(--rotate), var(--tri1), var(--tri3), var(--tri4), var(--sec), var(--tri1)) padding-box;
+  animation: rotate-container 8s linear infinite;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+}
+main .motivational-fullpage .motivation-container-contain .motivation-container::after {
+  content: "";
+  position: absolute;
+  inset: -1.2rem;
+  border-radius: inherit;
+  background: conic-gradient(from var(--rotate), var(--tri1), var(--tri3), var(--tri4), var(--sec), var(--tri1));
+  filter: blur(2.2rem);
+  opacity: 0.6;
+  z-index: -1;
+  animation: rotate-container 8s linear infinite;
+}
+main .motivational-fullpage .motivation-container-contain .motivation-container .motivation-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.8rem;
+  background: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 1rem;
+  flex-direction: column;
+}
+main .motivational-fullpage .motivation-container-contain .motivation-container .motivation-wrapper .motivation-1 {
+  background: var(--pri);
+  padding: 0.3rem 0.6rem;
+  width: 100%;
+  border-radius: 0.4rem;
+  text-align: left;
+  margin-bottom: 2rem;
+  font-size: clamp(0.35rem, 0.22rem + 0.416vw, 1rem);
+}
+main .motivational-fullpage .motivation-container-contain .motivation-container .motivation-wrapper .motivation-2 {
+  text-align: start;
+  font-weight: 700;
+}
+main .motivational-fullpage .motivation-container-contain .motivation-container .motivation-wrapper .motivation-2 h1 {
+  font-size: clamp(0.8rem, 0.6654rem + 0.5981vw, 1.6rem);
+}
+main .motivational-fullpage .motivation-container-contain .motivation-container .motivation-wrapper .motivation-3 {
+  font-size: clamp(0.35rem, 0.22rem + 0.416vw, 1rem);
+  color: var(--sec);
+  width: 100%;
+  text-align: right;
+  margin-top: clamp(0.8rem, 0.6654rem + 0.5981vw, 1.6rem);
+}
 
+@property --rotate {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes rotate-container {
+  from {
+    --rotate: 0deg;
+  }
+  to {
+    --rotate: 360deg;
+  }
+}
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   main .daily-planner-fullpage {

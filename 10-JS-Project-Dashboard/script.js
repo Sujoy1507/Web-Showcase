@@ -141,4 +141,22 @@ function dailyPlanner() {
     });
 }
 
-dailyPlanner()
+dailyPlanner();
+
+// Motivational Quoat
+
+function motivationalQuote() {
+    let motivationQuoat = document.querySelector(".motivation-2 h1");
+    let motivationAuthor = document.querySelector(".motivation-3 h2");
+
+    async function featchQuoat() {
+        let responce = await fetch(`https://dummyjson.com/quotes/random`);
+        let data = await responce.json();
+
+        motivationQuoat.textContent = data.quote;
+        motivationAuthor.textContent = data.author;
+    }
+
+    featchQuoat();
+}
+motivationalQuote()
