@@ -159,4 +159,83 @@ function motivationalQuote() {
 
     featchQuoat();
 }
-motivationalQuote()
+motivationalQuote();
+
+//Pomodoro Timer
+
+let timer = document.querySelector(".pomo-timer h1");
+let startTimer = document.querySelector(".pomo-timer .start-timer");
+let pauseTimer = document.querySelector(".pomo-timer .pause-timer");
+let resetTimer = document.querySelector(".pomo-timer .reset-timer");
+
+let timerWorning = document.querySelector(".bottom-container h1");
+
+let userTimeInp = document.querySelector(".inp-container input");
+let isWorkSetion = true;
+
+let totalSecond = 25 * 60;
+
+function updateTimer() {
+    let minutes = Math.floor(totalSecond / 60);
+    let seconds = totalSecond % 60;
+
+    timer.innerHTML = `${String(minutes).padStart("2", "0")}:${String(
+        seconds
+    ).padStart("2", "0")}`;
+}
+updateTimer();
+
+let intervalId = null;
+
+function startTimerTimer() {
+    clearInterval(intervalId);
+
+    if (isWorkSetion) {
+        totalSecond = 25 * 60;
+
+        intervalId = setInterval(() => {
+            if (totalSecond > 0) {
+                totalSecond--;
+                timerWorning.style.display = "none";
+                updateTimer();
+            } else {
+                isWorkSetion = false;
+                clearInterval(intervalId);
+                timerWorning.style.display = "block";
+            }
+        }, 5);
+    } else {
+        totalSecond = 5 * 60;
+
+        intervalId = setInterval(() => {
+            if (totalSecond > 0) {
+                totalSecond--;
+                timerWorning.style.display = "none";
+                updateTimer();
+            } else {
+                isWorkSetion = true;
+                clearInterval(intervalId);
+                timerWorning.style.display = "block";
+            }
+        }, 5);
+    }
+}
+
+function pauseTimerTimer() {
+    clearInterval(intervalId);
+}
+
+function resetTimerTimer() {
+    clearInterval(intervalId);
+    totalSecond = 25 * 60;
+    timerWorning.style.display = "none";
+    updateTimer();
+}
+
+pauseTimer.addEventListener("click", pauseTimerTimer);
+startTimer.addEventListener("click", () => {
+    clearInterval(intervalId);
+    updateTimer();
+    startTimerTimer();
+});
+resetTimer.addEventListener("click", resetTimerTimer);
