@@ -250,6 +250,20 @@ function pomodoroTimerTimer() {
 
 pomodoroTimerTimer();
 
+const timeDetail = document.querySelector(".time-detail");
+const tempDetails = document.querySelector(".temp-details");
+const tempValue = document.querySelector(".temp-details span");
+
+const humidity = document.querySelector(".humidity span");
+const precipitation = document.querySelector(".precipitation span");
+const wind = document.querySelector(".wind span");
+
+const cityInput = document.querySelector(".city");
+const stateText = document.querySelector(".state");
+const countryText = document.querySelector(".country");
+
+const searchBtn = document.querySelector("header button");
+
 const city = "kolkata";
 const apiKey = `b126310c87fd4ceca1655720252012`;
 async function weatherApiCall() {
@@ -257,9 +271,22 @@ async function weatherApiCall() {
         `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
     );
 
-    let raw =await responce.json()
-    let temp = raw.current.temp_c
-    let wind = raw.current.wind_kph
+    let raw = await responce.json();
     console.log(raw);
+    wind.textContent = raw.current.wind_kph;
+    tempValue.textContent = raw.current.temp_c;
+    timeDetail.textContent = raw.location.localtime;
+    stateText.textContent = raw.location.region;
+    cityInput.value = raw.location.name;
+    countryText.textContent= raw.location.country;
+humidity.textContent=raw.current.humidity
+
+    
 }
 weatherApiCall();
+
+
+let ddd = new Date()
+ddd.g
+
+console.log(ddd)
