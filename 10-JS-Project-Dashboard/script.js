@@ -162,80 +162,86 @@ function motivationalQuote() {
 motivationalQuote();
 
 //Pomodoro Timer
+function pomodoroTimerTimer() {
+    let timer = document.querySelector(".pomo-timer h1");
+    let startTimer = document.querySelector(".pomo-timer .start-timer");
+    let pauseTimer = document.querySelector(".pomo-timer .pause-timer");
+    let resetTimer = document.querySelector(".pomo-timer .reset-timer");
+    let session = document.querySelector(".pomo-timer .session");
 
-let timer = document.querySelector(".pomo-timer h1");
-let startTimer = document.querySelector(".pomo-timer .start-timer");
-let pauseTimer = document.querySelector(".pomo-timer .pause-timer");
-let resetTimer = document.querySelector(".pomo-timer .reset-timer");
+    let isWorkSetion = true;
 
-let timerWorning = document.querySelector(".bottom-container h1");
+    let totalSecond = 25 * 60;
 
-let userTimeInp = document.querySelector(".inp-container input");
-let isWorkSetion = true;
+    function updateTimer() {
+        let minutes = Math.floor(totalSecond / 60);
+        let seconds = totalSecond % 60;
 
-let totalSecond = 25 * 60;
-
-function updateTimer() {
-    let minutes = Math.floor(totalSecond / 60);
-    let seconds = totalSecond % 60;
-
-    timer.innerHTML = `${String(minutes).padStart("2", "0")}:${String(
-        seconds
-    ).padStart("2", "0")}`;
-}
-updateTimer();
-
-let intervalId = null;
-
-function startTimerTimer() {
-    clearInterval(intervalId);
-
-    if (isWorkSetion) {
-        totalSecond = 25 * 60;
-
-        intervalId = setInterval(() => {
-            if (totalSecond > 0) {
-                totalSecond--;
-                timerWorning.style.display = "none";
-                updateTimer();
-            } else {
-                isWorkSetion = false;
-                clearInterval(intervalId);
-                timerWorning.style.display = "block";
-            }
-        }, 5);
-    } else {
-        totalSecond = 5 * 60;
-
-        intervalId = setInterval(() => {
-            if (totalSecond > 0) {
-                totalSecond--;
-                timerWorning.style.display = "none";
-                updateTimer();
-            } else {
-                isWorkSetion = true;
-                clearInterval(intervalId);
-                timerWorning.style.display = "block";
-            }
-        }, 5);
+        timer.innerHTML = `${String(minutes).padStart("2", "0")}:${String(
+            seconds
+        ).padStart("2", "0")}`;
     }
-}
-
-function pauseTimerTimer() {
-    clearInterval(intervalId);
-}
-
-function resetTimerTimer() {
-    clearInterval(intervalId);
-    totalSecond = 25 * 60;
-    timerWorning.style.display = "none";
     updateTimer();
+
+    let intervalId = null;
+
+    function startTimerTimer() {
+        clearInterval(intervalId);
+
+        if (isWorkSetion) {
+            session.innerHTML = "Work Session";
+            session.style.backgroundColor = `var(--green)`;
+
+            intervalId = setInterval(() => {
+                if (totalSecond > 0) {
+                    totalSecond--;
+                    updateTimer();
+                } else {
+                    isWorkSetion = false;
+                    clearInterval(intervalId);
+                    timer.innerText = "05:00";
+                    session.innerHTML = "Break";
+                    totalSecond = 5 * 60;
+                    session.style.backgroundColor = `var(--blue)`;
+                }
+            }, 1000);
+        } else {
+            session.innerHTML = "Break";
+            session.style.backgroundColor = `var(--blue)`;
+
+            intervalId = setInterval(() => {
+                if (totalSecond > 0) {
+                    totalSecond--;
+                    updateTimer();
+                } else {
+                    isWorkSetion = true;
+                    clearInterval(intervalId);
+                    timer.innerText = "25:00";
+                    session.innerHTML = "Work Session";
+                    totalSecond = 25 * 60;
+                    session.style.backgroundColor = `var(--green)`;
+                }
+            }, 1000);
+        }
+    }
+
+    function pauseTimerTimer() {
+        clearInterval(intervalId);
+    }
+
+    function resetTimerTimer() {
+        clearInterval(intervalId);
+        totalSecond = 25 * 60;
+        updateTimer();
+    }
+
+    pauseTimer.addEventListener("click", pauseTimerTimer);
+    startTimer.addEventListener("click", () => {
+        clearInterval(intervalId);
+        updateTimer();
+        startTimerTimer();
+    });
+    resetTimer.addEventListener("click", resetTimerTimer);
 }
 
-pauseTimer.addEventListener("click", pauseTimerTimer);
-startTimer.addEventListener("click", () => {
-    clearInterval(intervalId);
-    updateTimer();
-    startTimerTimer();
-});
-resetTimer.addEventListener("click", resetTimerTimer);
+pomodoroTimerTimer();
