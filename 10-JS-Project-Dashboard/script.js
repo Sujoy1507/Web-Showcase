@@ -1,4 +1,6 @@
 function openFeatuers() {
+    const mainSection = document.querySelector(".main-section");
+
     const allElems = document.querySelectorAll(".elem");
     const allfullElemPage = document.querySelectorAll(".fullElem");
     const fulPageBackBtn = document.querySelectorAll(
@@ -7,6 +9,7 @@ function openFeatuers() {
 
     allElems.forEach((elem) => {
         elem.addEventListener("click", () => {
+            mainSection.style.display = "none";
             allfullElemPage.forEach((p) => (p.style.display = "none"));
             allfullElemPage[elem.id].style.display = "grid";
         });
@@ -14,6 +17,7 @@ function openFeatuers() {
 
     fulPageBackBtn.forEach((back) => {
         back.addEventListener("click", () => {
+            mainSection.style.display = "block";
             allfullElemPage[back.id].style.display = "none";
         });
     });
@@ -245,3 +249,17 @@ function pomodoroTimerTimer() {
 }
 
 pomodoroTimerTimer();
+
+const city = "kolkata";
+const apiKey = `b126310c87fd4ceca1655720252012`;
+async function weatherApiCall() {
+    let responce = await fetch(
+        `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
+    );
+
+    let raw =await responce.json()
+    let temp = raw.current.temp_c
+    let wind = raw.current.wind_kph
+    console.log(raw);
+}
+weatherApiCall();
