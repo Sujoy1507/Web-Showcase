@@ -762,7 +762,8 @@ main {
 
     .daily-goals-fullpage {
         height: 100vh;
-        display: grid;
+        // display: grid;
+        // display: none;
         grid-template-rows: 10% 90%;
         background: var(--pri);
     }
