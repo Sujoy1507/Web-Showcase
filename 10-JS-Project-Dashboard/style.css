@@ -637,6 +637,106 @@ main .pomodoro-fullpage .pomo-timer > button:active {
   scale: 0.98;
   box-shadow: 0px 0px 0 var(--text);
 }
+main .daily-goals-fullpage {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10% 90%;
+  background: var(--pri);
+}
+main .back-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 3px solid var(--tri1);
+  margin-bottom: 0.3rem;
+}
+main .back-container > h3 {
+  font-size: clamp(1rem, 0.6rem + 1.28vw, 3rem);
+  color: var(--text);
+}
+main .back-container .container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 1rem;
+  background-color: var(--red);
+  border-radius: 0.3rem;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+main .back-container .container:active {
+  transform: scale(0.95);
+}
+main .back-container .container button {
+  background: none;
+  border: none;
+  color: var(--text-light);
+}
+main .daily-goals-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .add-goal {
+  display: flex;
+  gap: 0.5rem;
+}
+main .add-goal input {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.4rem;
+  background: var(--tri3);
+  color: var(--text);
+  outline: none;
+}
+main .add-goal button {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  background: var(--green);
+  color: var(--text-light);
+  cursor: pointer;
+}
+main .goals-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+main .goal {
+  padding: 1rem;
+  border-radius: 0.6rem;
+  background: var(--sec);
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .goal.done {
+  background: var(--tri1);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+main .goal .actions {
+  display: flex;
+  gap: 0.5rem;
+}
+main .goal .actions button {
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  color: white;
+}
+main .goal .actions .complete {
+  background: var(--green);
+}
+main .goal .actions .delete {
+  background: var(--red);
+}
 
 @property --rotate {
   syntax: "<angle>";
@@ -653,6 +753,9 @@ main .pomodoro-fullpage .pomo-timer > button:active {
 }
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  main .daily-goals-fullpage .daily-goals-container .goals-grid {
+    grid-template-columns: 1fr;
+  }
   main .main-section header {
     height: 35%;
     grid-template-columns: repeat(4, 1fr);
@@ -738,6 +841,9 @@ main .pomodoro-fullpage .pomo-timer > button:active {
 }
 /* Laptop */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
+  main .daily-goals-fullpage .daily-goals-container .goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   main .main-section header {
     height: 39%;
     grid-template-columns: repeat(4, 1fr);
@@ -824,6 +930,9 @@ main .pomodoro-fullpage .pomo-timer > button:active {
 }
 /* Large Display */
 @media screen and (min-width: 1441px) and (max-width: 2559px) {
+  main .daily-goals-fullpage .daily-goals-container .goals-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
   main .main-section header {
     height: 39%;
     grid-template-columns: repeat(4, 1fr);
@@ -910,6 +1019,9 @@ main .pomodoro-fullpage .pomo-timer > button:active {
 }
 /* 4K Display */
 @media screen and (min-width: 2560px) {
+  main .daily-goals-fullpage .daily-goals-container .goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   main .main-section header {
     height: 22%;
     grid-template-columns: repeat(4, 1fr);
