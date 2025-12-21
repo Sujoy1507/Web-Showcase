@@ -90,6 +90,23 @@ main .main-section header .header1 .wind {
   font-size: clamp(1.8rem, 1.6479rem + 0.7373vw, 2.8rem);
   font-weight: 400;
 }
+main .main-section header .header1 > .theme {
+  position: absolute;
+  bottom: 3%;
+  left: 3%;
+  font-size: clamp(1rem, 0.7719rem + 1.106vw, 2.5rem);
+  padding: 0.6rem 0.8rem;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: 0.2rem 0.1rem 0 var(--text);
+  background-color: var(--pri);
+  color: var(--text-light);
+}
+main .main-section header .header1 > .theme:active {
+  scale: 0.98;
+  box-shadow: 0 0 0 var(--text);
+}
 main .main-section header .header2 {
   grid-area: end;
   display: flex;
@@ -109,14 +126,13 @@ main .main-section header .header2 .city {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15rem;
+  width: 20rem;
   text-align: center;
   border-radius: 0.4rem;
   outline: none;
 }
 main .main-section header .header2 .city::placeholder {
   font-size: clamp(0.7rem, 0.624rem + 0.3687vw, 1.2rem);
-  width: clamp(10rem, 9.2396rem + 3.6866vw, 15rem);
   display: flex;
   justify-content: center;
   align-items: center;

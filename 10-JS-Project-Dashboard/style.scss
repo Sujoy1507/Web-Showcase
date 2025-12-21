@@ -100,6 +100,25 @@ main {
                     font-size: clamp(1.8rem, 1.6479rem + 0.7373vw, 2.8rem);
                     font-weight: 400;
                 }
+
+                > .theme {
+                    position: absolute;
+                    bottom: 3%;
+                    left: 3%;
+                    font-size: clamp(1rem, 0.7719rem + 1.106vw, 2.5rem);
+                    padding:.6rem .8rem;
+                    border: none;
+                    border-radius: 50%;
+                    outline: none;
+                    box-shadow: 0.2rem 0.1rem 0 var(--text);
+                    background-color: var(--pri);
+                    color: var(--text-light);
+
+                    &:active {
+                        scale: 0.98;
+                        box-shadow: 0 0 0 var(--text);
+                    }
+                }
             }
             .header2 {
                 grid-area: end;
@@ -120,14 +139,14 @@ main {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 15rem;
+                    width: 20rem;
                     text-align: center;
                     border-radius: 0.4rem;
                     outline: none;
 
                     &::placeholder {
                         font-size: clamp(0.7rem, 0.624rem + 0.3687vw, 1.2rem);
-                        width: clamp(10rem, 9.2396rem + 3.6866vw, 15rem);
+                        // width: clamp(10rem, 9.2396rem + 3.6866vw, 15rem);
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -155,19 +174,16 @@ main {
                     font-size: clamp(1rem, 0.7719rem + 1.106vw, 2.5rem);
                     padding: 0.4rem 1rem;
                     border: none;
-                    border-radius: .4rem;
+                    border-radius: 0.4rem;
                     outline: none;
-                    box-shadow: .2rem .2rem 0 var(--text);
+                    box-shadow: 0.2rem 0.2rem 0 var(--text);
                     background-color: var(--pri);
                     color: var(--text-light);
 
-
-                    &:active{
-                        scale: .98;
-                    box-shadow: 0 0 0 var(--text);
-
+                    &:active {
+                        scale: 0.98;
+                        box-shadow: 0 0 0 var(--text);
                     }
-
                 }
             }
         }

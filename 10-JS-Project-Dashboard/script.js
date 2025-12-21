@@ -250,43 +250,73 @@ function pomodoroTimerTimer() {
 
 pomodoroTimerTimer();
 
-const timeDetail = document.querySelector(".time-detail");
-const tempDetails = document.querySelector(".temp-details");
-const tempValue = document.querySelector(".temp-details span");
+//Weather function
 
-const humidity = document.querySelector(".humidity span");
-const precipitation = document.querySelector(".precipitation span");
-const wind = document.querySelector(".wind span");
+function weatherFunctionality() {
+    const timeDetail = document.querySelector(".time-detail");
+    const tempDetails = document.querySelector(".temp-details");
+    const tempValue = document.querySelector(".temp-details span");
 
-const cityInput = document.querySelector(".city");
-const stateText = document.querySelector(".state");
-const countryText = document.querySelector(".country");
+    const humidity = document.querySelector(".humidity span");
+    const precipitation = document.querySelector(".precipitation");
+    const wind = document.querySelector(".wind span");
 
-const searchBtn = document.querySelector("header button");
+    const cityInput = document.querySelector(".city");
+    const stateText = document.querySelector(".state");
+    const countryText = document.querySelector(".country");
 
-const city = "kolkata";
-const apiKey = `b126310c87fd4ceca1655720252012`;
-async function weatherApiCall() {
-    let responce = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
-    );
+    const searchBtn = document.querySelector(".header2 button");
 
-    let raw = await responce.json();
-    console.log(raw);
-    wind.textContent = raw.current.wind_kph;
-    tempValue.textContent = raw.current.temp_c;
-    timeDetail.textContent = raw.location.localtime;
-    stateText.textContent = raw.location.region;
-    cityInput.value = raw.location.name;
-    countryText.textContent= raw.location.country;
-humidity.textContent=raw.current.humidity
+    let timeDetailTimeSet = null;
+    timeDetailTimeSet = setInterval(() => {
+        const now = new Date();
 
-    
+        const yyyy = now.getFullYear();
+        const mmth = String(now.getMonth() + 1).padStart(2, "0");
+        const dd = String(now.getDate()).padStart(2, "0");
+
+        const hh = String(now.getHours()).padStart(2, "0");
+        const mm = String(now.getMinutes()).padStart(2, "0");
+        const ss = String(now.getSeconds()).padStart(2, "0");
+
+        timeDetail.textContent = `${yyyy}-${mmth}-${dd} ${hh}:${mm}:${ss}`;
+    }, 1000);
+
+    let city = "kolkata";
+
+    const apiKey = `b126310c87fd4ceca1655720252012`;
+    async function weatherApiCall() {
+        let responce = await fetch(
+            `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
+        );
+
+        let raw = await responce.json();
+        wind.textContent = raw.current.wind_kph;
+        tempValue.textContent = raw.current.temp_c;
+        stateText.textContent = raw.location.region;
+        countryText.textContent = raw.location.country;
+        humidity.textContent = raw.current.humidity;
+        precipitation.textContent = raw.current.condition.text;
+
+        if (cityInput.value) {
+            timeDetailTimeSet = null;
+        } else {
+            timeDetail.textContent = raw.location.localTime;
+        }
+    }
+    weatherApiCall();
+
+    searchBtn.addEventListener("click", () => {
+        city = cityInput.value;
+        weatherApiCall();
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            city = cityInput.value;
+            weatherApiCall();
+        }
+    });
 }
-weatherApiCall();
 
-
-let ddd = new Date()
-ddd.g
-
-console.log(ddd)
+weatherFunctionality();
