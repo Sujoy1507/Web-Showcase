@@ -45,7 +45,7 @@ body {
     /* Base */
     --black: #000000;
 
-    // pading Variables
+    //  pading Variables
     --padding-sm: 0.3rem;
     --padding-md: 0.7rem;
     --padding-lg: 1rem;
@@ -119,9 +119,11 @@ main {
     section.board {
         flex-grow: 1;
         padding: var(--padding-md) var(--padding-xl);
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
         gap: var(--size-lg);
+        align-items: start;
+        grid-auto-rows: auto;
 
         .task-column.hover-over {
             border: 2px dashed var(--text-muted);
@@ -129,9 +131,11 @@ main {
         }
 
         .task-column {
+            max-height: 100%;
+            overflow-y: auto;
+            align-self: start;
             padding: var(--padding-md);
             border-radius: var(--size-sm);
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
             gap: var(--size-md);
@@ -186,7 +190,7 @@ main {
         }
     }
 
-    .modal.active{
+    .modal.active {
         display: flex;
     }
 
@@ -205,7 +209,8 @@ main {
             position: absolute;
             height: 100%;
             width: 100%;
-            background: radial-gradient(circle at bottom left,
+            background: radial-gradient(
+                circle at bottom left,
                 var(--pri-bg),
                 var(--sec-bg),
                 var(--tri-bg)
@@ -261,7 +266,7 @@ main {
                 font-weight: 600;
                 font-size: var(--size-lg);
 
-                &::-webkit-scrollbar{
+                &::-webkit-scrollbar {
                     display: none;
                 }
             }
@@ -287,6 +292,58 @@ main {
                     scale: 0.98;
                 }
             }
+        }
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    main {
+        section.board {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                "todo progress"
+                "done done";
+
+            align-items: start;
+            grid-auto-rows: auto;
+
+            #todo {
+                grid-area: todo;
+            }
+            #progress {
+                grid-area: progress;
+            }
+            #done {
+                grid-area: done;
+            }
+        }
+    }
+}
+
+/* Laptop */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    main {
+        section.board {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+/* Large Display */
+@media screen and (min-width: 1441px) and (max-width: 2559px) {
+    main {
+        section.board {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+/* 4K Display */
+@media screen and (min-width: 2560px) {
+    main {
+        section.board {
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 }
