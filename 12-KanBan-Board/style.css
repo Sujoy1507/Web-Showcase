@@ -53,7 +53,7 @@ body {
 }
 
 body {
-  background: radial-gradient(circle at top left, var(--pri1), var(--sec1), var(--tri2));
+  background: linear-gradient(to bottom right, var(--pri2), var(--pri1), var(--sec2), var(--sec1), var(--tri3), var(--tri2));
 }
 
 main {
@@ -72,7 +72,7 @@ main nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(var(--pri2), var(--sec2));
+  background: linear-gradient(to right, var(--pri1), var(--sec1), var(--tri2), var(--tri3));
 }
 main nav .left p {
   color: var(--text);
@@ -82,13 +82,13 @@ main nav .left p {
   margin-left: var(--padding-md);
 }
 main nav .right button {
-  background: linear-gradient(var(--pri1), var(--sec));
+  background: linear-gradient(to right, var(--pri), var(--pri1), var(--pri2));
   padding: var(--padding-sm) var(--padding-md);
   font-weight: 700;
   border-radius: var(--size-sm);
   border: none;
   cursor: pointer;
-  color: var(--text-muted);
+  color: var(--text);
 }
 main nav .right button:active {
   scale: 0.98;
@@ -103,7 +103,13 @@ main section.board {
   grid-template-columns: 1fr;
   grid-template-rows: 37% 37% 1fr;
   align-items: stretch;
-  gap: var(--size-sm);
+  gap: var(--size-md);
+}
+main section.board #todo {
+  background: radial-gradient(circle at top left, var(--pri-bg), var(--sec-bg), var(--tri-bg), var(--pri2), var(--sec2), var(--tri3));
+}
+main section.board #done {
+  background: radial-gradient(circle at bottom left, var(--green2), var(--green1), var(--green), var(--pri1));
 }
 main section.board .task-column.hover-over {
   border: 2px dashed var(--text-muted);
@@ -140,13 +146,16 @@ main section.board .task-column .task button {
   border-radius: var(--size-sm);
   border: none;
   outline: none;
-  background: radial-gradient(circle at top right, var(--tri1), var(--red));
+  background: radial-gradient(circle at top right, var(--tri1), var(--red), var(--tri1));
   color: var(--text-muted);
   font-size: var(--size-lg);
   font-weight: 700;
 }
 main section.board .task-column .task button:active {
   scale: 0.98;
+}
+main section.board .task-column::-webkit-scrollbar {
+  display: none;
 }
 main .modal.active {
   display: flex;
