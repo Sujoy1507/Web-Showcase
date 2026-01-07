@@ -62,8 +62,12 @@ main {
   margin: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: start;
 }
 main nav {
+  width: 100%;
+  max-width: 1670px;
   padding: var(--padding-md) var(--padding-xl);
   display: flex;
   align-items: center;
@@ -90,22 +94,24 @@ main nav .right button:active {
   scale: 0.98;
 }
 main section.board {
-  flex-grow: 1;
+  height: calc(100vh - 80px);
+  align-items: stretch;
+  width: 100%;
+  max-width: 1700px;
   padding: var(--padding-md) var(--padding-xl);
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: var(--size-lg);
-  align-items: start;
-  grid-auto-rows: auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 37% 37% 1fr;
+  align-items: stretch;
+  gap: var(--size-sm);
 }
 main section.board .task-column.hover-over {
   border: 2px dashed var(--text-muted);
   scale: 1.025;
 }
 main section.board .task-column {
-  max-height: 100%;
+  height: 100%;
   overflow-y: auto;
-  align-self: start;
   padding: var(--padding-md);
   border-radius: var(--size-sm);
   display: flex;
@@ -213,10 +219,12 @@ main .modal .center button:active {
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   main section.board {
+    height: calc(100vh - 80px);
+    grid-template-rows: auto;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "todo progress" "done done";
-    align-items: start;
-    grid-auto-rows: auto;
+    grid-auto-rows: minmax(50%, 1fr);
+    align-items: stretch;
   }
   main section.board #todo {
     grid-area: todo;
@@ -231,18 +239,21 @@ main .modal .center button:active {
 /* Laptop */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   main section.board {
+    grid-template-rows: auto;
     grid-template-columns: repeat(3, 1fr);
   }
 }
 /* Large Display */
 @media screen and (min-width: 1441px) and (max-width: 2559px) {
   main section.board {
+    grid-template-rows: auto;
     grid-template-columns: repeat(3, 1fr);
   }
 }
 /* 4K Display */
 @media screen and (min-width: 2560px) {
   main section.board {
+    grid-template-rows: auto;
     grid-template-columns: repeat(3, 1fr);
   }
 }/*# sourceMappingURL=style.css.map */
