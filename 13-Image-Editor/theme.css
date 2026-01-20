@@ -1,0 +1,71 @@
+:root {
+    /* Extra bg colors */
+
+    --bg-denger: rgb(226, 38, 38);
+
+
+    /* Background Color */
+    --bg1-primary: linear-gradient(135deg, #1d2671, #c33764);
+    --bg1-secondary: radial-gradient(circle at top, #3a1c71, #1d2671);
+    --bg1-active: linear-gradient(90deg, #c33764, #fd746c);
+
+    /* text Color */
+    --text1-primary: #ffffff;
+    --text1-secondary: #f0e9ff;
+    --text1-muted: #cbbde2;
+
+    /* Background Color */
+    --bg2-primary: linear-gradient(135deg, #134e5e, #71b280);
+    --bg2-secondary: radial-gradient(circle at bottom right, #71b280, #134e5e);
+    --bg2-active: linear-gradient(90deg, #56ab2f, #a8e063);
+
+    /* Text Color */
+    --text2-primary: #ffffff;
+    --text2-secondary: #e6fff2;
+    --text2-muted: #b7e4c7;
+
+    /* Background Color */
+    --bg3-primary: linear-gradient(135deg, #0f0c29, #302b63);
+    --bg3-secondary: radial-gradient(circle at top left, #3a3a7c, #0f0c29);
+    --bg3-active: linear-gradient(90deg, #8e2de2, #4a00e0);
+
+    /* Text Color */
+    --text3-primary: #ffffff;
+    --text3-secondary: #dcdcff;
+    --text3-muted: #a5a5d6;
+
+    /* Padding Variables */
+    --padding-sm: 0.3rem;
+    --padding-md: 0.6rem;
+    --padding-lg: 1rem;
+    --padding-xl: 1.5rem;
+    --padding-2xl: 2rem;
+
+    /* Margin Variables */
+    --margin-sm: 0.3rem;
+    --margin-md: 0.6rem;
+    --margin-lg: 1rem;
+    --margin-xl: 1.5rem;
+    --margin-2xl: 2rem;
+
+    /* Border Radius Variables */
+    --rounded-sm: 0.3rem;
+    --rounded-md: 0.6rem;
+    --rounded-lg: 1rem;
+    --rounded-xl: 1.5rem;
+    --rounded-2xl: 2rem;
+
+    /* Gutter / Gap  */
+    --gutter-sm: 0.3rem;
+    --gutter-md: 0.6rem;
+    --gutter-lg: 1rem;
+    --gutter-xl: 1.5rem;
+    --gutter-2xl: 2rem;
+
+    /* Font Size  */
+    --text-sm: 0.3rem;
+    --text-md: 0.6rem;
+    --text-lg: 1rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+}
