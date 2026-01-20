@@ -166,7 +166,7 @@ main {
                         font-size: var(--text-lg);
                     }
                 }
-                #image-canvas{
+                #image-canvas {
                     display: none;
                     max-width: 95%;
                     max-height: 90%;
@@ -184,7 +184,7 @@ main {
             flex-direction: column;
             overflow-y: scroll;
 
-            &::-webkit-scrollbar{
+            &::-webkit-scrollbar {
                 display: none;
             }
 
@@ -194,30 +194,35 @@ main {
                 transform: skewX(120);
             }
 
-            .filter {
+            .filters {
                 width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: var(--gutter-lg);
 
-                p {
-                    font-size: var(--text-md);
-                }
-
-                input {
-                    width: 100%;
-                    // margin-top: var(--margin-md);
-                    appearance: none;
-
-                    &::-webkit-slider-thumb {
-                        appearance: none;
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 50%;
-                        background: red;
-                        margin-top: -3.5px;
+                .filter {
+                    p {
+                        font-size: var(--text-md);
                     }
 
-                    &::-webkit-slider-runnable-track {
-                        height: 1px;
-                        border-radius: var(--rounded-2xl);
+                    input {
+                        width: 100%;
+                        // margin-top: var(--margin-md);
+                        appearance: none;
+
+                        &::-webkit-slider-thumb {
+                            appearance: none;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            background: red;
+                            margin-top: -3.5px;
+                        }
+
+                        &::-webkit-slider-runnable-track {
+                            height: 1px;
+                            border-radius: var(--rounded-2xl);
+                        }
                     }
                 }
             }

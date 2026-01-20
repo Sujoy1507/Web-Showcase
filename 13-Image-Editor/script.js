@@ -66,6 +66,8 @@ const imageCanvas = document.querySelector("#image-canvas");
 const imageInput = document.querySelector("#image-input");
 const CanvasCtx = imageCanvas.getContext("2d");
 const imgPlaceholder = document.querySelector('.placeholder');
+let file = null;
+let image = null;
 
 const createFilterElement = (name, value, min, max, unit = "%") => {
     const div = document.createElement("div");
@@ -84,6 +86,10 @@ const createFilterElement = (name, value, min, max, unit = "%") => {
     div.appendChild(p);
     div.appendChild(input);
 
+    input.addEventListener('input',(event)=>{
+        console.log(input.value)
+    })
+
     return div;
 };
 
@@ -100,7 +106,7 @@ Object.keys(filters).forEach((key) => {
 });
 
 imageInput.addEventListener("change", (event) => {
-    const file = event.target.files[0];
+     file = event.target.files[0];
     const img = new Image();
     img.src = URL.createObjectURL(file);
     imageCanvas.style.display='block'
@@ -108,8 +114,15 @@ imageInput.addEventListener("change", (event) => {
     imgPlaceholder.style.display='none'
 
     img.onload = () => {
+        image=img;
+
         imageCanvas.width = img.width;
         imageCanvas.height = img.height;
         CanvasCtx.drawImage(img, 0, 0);
     };
 });
+
+const applyBlur = ()=>{
+    CanvasCtx.filter=`brightness(175%)`
+    CanvasCtx.drawImage(image,0,0)
+}
