@@ -147,6 +147,9 @@ main .first-page nav .left-right-container .left-right .right .get-start {
 main .first-page nav .left-right-container .left-right .right .get-start:hover {
   border: none;
 }
+main .first-page nav .left-right-container .left-right .right .get-start:active {
+  scale: 0.97;
+}
 main .first-page nav .menu-btn {
   width: 100%;
   display: flex;
@@ -199,6 +202,9 @@ main .first-page nav .menu-btn .bottom .get-start {
   background: #000;
   color: var(--text-active);
 }
+main .first-page nav .menu-btn .bottom .get-start:active {
+  scale: 0.97;
+}
 main .first-page nav .menu-btn .bottom .contact-sales {
   border: var(--border-lg) solid var(--text-pri);
 }
@@ -233,6 +239,9 @@ main .first-page .hero1 .get-start {
   color: var(--text-active);
   margin-bottom: var(--margin-xl);
 }
+main .first-page .hero1 .get-start:active {
+  scale: 0.97;
+}
 main .first-page .hero1 .login-popup {
   display: none;
   width: 100%;
@@ -261,44 +270,164 @@ main .first-page .hero1 .login-popup .login-window {
   padding: var(--padding-md);
   flex-direction: column;
 }
-main .first-page .hero1 .login-popup .login-window .google {
-  border: var(--border-md) solid var(--text-pri);
-  padding: var(--padding-sm) var(--padding-md);
-  font-size: var(--text-xl);
-  display: flex;
-  gap: var(--gutter-xl);
-  border-radius: var(--rounded-lg);
+main .first-page .hero1 .login-popup .login-window > h2 {
+  font-size: var(--text-3xl);
 }
-main .first-page .hero1 .login-popup .login-window .google > img {
-  width: 30px;
-}
-main .first-page .hero1 .login-popup .login-window .email-textarea {
-  background: rgba(147, 144, 144, 0.5725490196);
-  width: 100%;
-  border-radius: var(--rounded-md);
-  text-align: left;
-  padding: var(--padding-md);
-}
-main .first-page .hero1 .login-popup .login-window .email-textarea textarea {
-  border: none;
-  outline: none;
-  background: none;
-}
-main .first-page .hero1 .login-popup .login-window .email {
-  background: black;
-  color: var(--text-active);
-  width: 100%;
+main .first-page .hero1 .login-popup .login-window .input-name {
   padding: var(--padding-sm) var(--padding-lg);
-  border-radius: var(--rounded-md);
+  background: #e0dfdf;
+  border-radius: var(--rounded-sm);
+  outline: none;
+  border: none;
+}
+main .first-page .hero1 .login-popup .login-window .next {
+  padding: var(--padding-sm) var(--padding-lg);
+  background: black;
+  border-radius: var(--rounded-sm);
+  outline: none;
+  border: none;
+  color: var(--text-active);
+}
+main .first-page .hero1 .login-popup .login-window .next:active {
+  scale: 0.97;
 }
 main .second-page {
   height: 100vh;
   width: 100%;
+  display: block;
+  padding: var(--padding-sm);
+  gap: var(--gutter-sm);
+  position: relative;
+  display: flex;
+}
+main .second-page nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-lg);
+  border-bottom: var(--border-sm) solid black;
+}
+main .second-page nav i {
+  border: var(--border-lg) solid black;
+  padding: var(--padding-sm);
+  border-radius: var(--rounded-sm);
+}
+main .second-page nav p {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+}
+main .second-page .left {
+  width: 18%;
   background: red;
+  border-radius: var(--rounded-sm);
+  height: 100%;
+  padding: var(--padding-sm);
+}
+main .second-page .left .name-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-xl);
+}
+main .second-page .left .name-section .name-sec {
+  width: 60%;
+  padding: var(--padding-sm) var(--padding-lg);
+  border-radius: var(--rounded-5xl);
+  background: blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .second-page .left .name-section .name-sec .name-first {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-active);
+  font-weight: 700;
+  font-size: var(--text-2xl);
+  background: #000;
+}
+main .second-page .left .name-section .name-sec i {
+  color: var(--text-active);
+  font-weight: 700;
+  font-size: var(--text-2xl);
+}
+main .second-page .left .name-section .username {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+}
+main .second-page .right {
+  width: 100%;
+  height: 100%;
+  background: blue;
+  border-radius: var(--rounded-sm);
+}
+main .second-page .user-menu-side-bar {
+  width: 90%;
+  background: white;
   display: none;
+  position: absolute;
+  top: 50px;
+  border-radius: var(--rounded-sm);
+  padding: var(--padding-sm);
+  left: 0;
+}
+main .second-page .user-menu-side-bar .name-section {
+  width: 100%;
+  display: flex;
+  gap: var(--gutter-sm);
+  align-items: center;
+  border-bottom: var(--border-xl) solid var(--text-pri);
+  padding: var(--padding-sm);
+}
+main .second-page .user-menu-side-bar .name-section .name-first {
+  font-size: var(--text-2xl);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  color: var(--text-active);
+  background: blue;
+}
+main .second-page .user-menu-side-bar .name-section .username {
+  font-size: var(--text-2xl);
+}
+main .second-page .user-menu-side-bar .name-section i {
+  font-size: var(--text-2xl);
+}
+main .second-page .user-menu-side-bar .search,
+main .second-page .user-menu-side-bar .recent {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  display: flex;
+  gap: var(--gutter-xl);
+  margin-top: var(--margin-xl);
+  align-items: center;
+  border: var(--border-sm) solid black;
+  padding: var(--padding-md);
+  border-radius: var(--rounded-sm);
+}
+main .second-page .user-menu-side-bar .search input,
+main .second-page .user-menu-side-bar .recent input {
+  border: none;
+  outline: none;
+  font-size: var(--text-2xl);
+  width: 100%;
+}
+main .second-page .user-menu-side-bar > img {
+  width: 100%;
+  margin-top: var(--margin-4xl);
+  border-radius: var(--rounded-md);
+  object-fit: cover;
+  margin-bottom: var(--margin-4xl);
 }
 
-/* Tablet */
 /* Large Display */
 @media screen and (min-width: 1275px) and (max-width: 2559px) {
   main .first-page nav .img-menu-container {
@@ -309,6 +438,9 @@ main .second-page {
   }
   main .first-page .hero1 img {
     width: 28%;
+  }
+  main .second-page nav {
+    display: none;
   }
 }
 /* 4K Display */

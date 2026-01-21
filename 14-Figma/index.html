@@ -82,7 +82,11 @@
                                     >
                                 </li>
                                 <li>
-                                    <a href="#" id="first-start" class="get-start">
+                                    <a
+                                        href="#"
+                                        id="first-start"
+                                        class="get-start"
+                                    >
                                         <i class="ri-arrow-right-line"></i>
                                         Get Started For Free</a
                                     >
@@ -134,37 +138,79 @@
                     </div>
                 </nav>
 
+                <!-- First Page Hero Section -->
                 <section class="hero1">
                     <img src="./Asset/hero-photo-1.png" alt="" />
                     <p class="bannar-title">Make This Photo Rotate</p>
-                    <button id="first-start" class="get-start">Get Start</button>
+                    <button id="first-start" class="get-start">
+                        Get Start
+                    </button>
                     <h2>
                         Figma lets you turn big ideas into real products.
                         Brainstorm, design, and build with your team.
                     </h2>
 
+                    <!-- First Page Login Popup -->
                     <div class="login-popup">
                         <div class="login-window">
-                            <h2>Welcome To Figma</h2>
+                            <h2>Login Page</h2>
 
-                            <div class="google login-done">
-                                <img src="./Asset/google.png" alt="" />
-                                <p>Continue With Google</p>
-                            </div>
-                            <div class="or">or</div>
-                            <div class="email-textarea login-done">
-                                <p>Email</p>
-                                <textarea></textarea>
-                            </div>
-                            <div class="email login-done">Continue With Email</div>
+                            <input
+                                type="text"
+                                placeholder="Enter Your Name"
+                                class="input-name"
+                            />
+
+                            <button class="next">
+                                Next <i class="ri-arrow-right-line"></i>
+                            </button>
                         </div>
                     </div>
                 </section>
             </section>
 
-
+            <!-- Second Page -->
             <section class="second-page">
-                
+                <!-- Second Page Nav Bar -->
+                <nav>
+                    <i id="user-sidebar-menu-btn" class="ri-menu-line"></i>
+                    <p>Recent</p>
+                </nav>
+
+                <!-- Second Page Left Section For History -->
+                <aside class="left">
+                    <div class="name-section">
+                        <div class="name-sec">
+                            <p class="name-first">S</p>
+                            <i class="ri-arrow-down-s-line"></i>
+                        </div>
+                        <p class="username">Sujoy Saha</p>
+                    </div>
+                </aside>
+
+                <!-- Second Page Right Section For Big Button -->
+                <section class="right"></section>
+
+                <!-- For Mobile Screen Side Bar -->
+                <aside class="user-menu-side-bar">
+                    <div class="name-section">
+                        <p class="name-first"></p>
+                        <p class="username">Sujoy Saha</p>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </div>
+
+                    <div class="search">
+                        <i class="ri-search-line"></i>
+                        <input type="search" placeholder="Search" />
+                    </div>
+
+                    <div class="recent">
+                        <i class="ri-history-line"></i>
+                        <p>Recent</p>
+                    </div>
+
+                    <img src="./Asset/figma logo.webp" alt="" />
+                </aside>
             </section>
         </main>
         <script src="script.js"></script>

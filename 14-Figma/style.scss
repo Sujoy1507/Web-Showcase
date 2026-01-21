@@ -184,6 +184,10 @@ main {
                             &:hover {
                                 border: none;
                             }
+
+                            &:active {
+                                scale: 0.97;
+                            }
                         }
                     }
                 }
@@ -245,6 +249,10 @@ main {
                     .get-start {
                         background: #000;
                         color: var(--text-active);
+
+                        &:active {
+                            scale: 0.97;
+                        }
                     }
 
                     .contact-sales {
@@ -286,6 +294,10 @@ main {
                 font-size: var(--text-3xl);
                 color: var(--text-active);
                 margin-bottom: var(--margin-xl);
+
+                &:active {
+                    scale: 0.97;
+                }
             }
 
             .login-popup {
@@ -315,55 +327,195 @@ main {
                     padding: var(--padding-md);
                     flex-direction: column;
 
-                    .google {
-                        border: var(--border-md) solid var(--text-pri);
-                        padding: var(--padding-sm) var(--padding-md);
-                        font-size: var(--text-xl);
-                        display: flex;
-                        gap: var(--gutter-xl);
-                        border-radius: var(--rounded-lg);
-
-                        > img {
-                            width: 30px;
-                        }
+                    > h2 {
+                        font-size: var(--text-3xl);
                     }
 
-                    .email-textarea{
-                        background: #93909092;
-                        width: 100%;
-                        border-radius: var(--rounded-md);
-                        text-align: left;
-                        padding: var(--padding-md);
-
-                        textarea{
-                            border: none;
-                            outline: none;
-                            background: none;
-                        }
-                    }
-                    .email{
-                        background: black;
-                        color: var(--text-active);
-                        width: 100%;
+                    .input-name {
                         padding: var(--padding-sm) var(--padding-lg);
-                        border-radius: var(--rounded-md);
+                        background: #e0dfdf;
+                        border-radius: var(--rounded-sm);
+                        outline: none;
+                        border: none;
+                    }
 
+                    .next {
+                        padding: var(--padding-sm) var(--padding-lg);
+                        background: black;
+                        border-radius: var(--rounded-sm);
+                        outline: none;
+                        border: none;
+                        color: var(--text-active);
+
+                        &:active {
+                            scale: 0.97;
+                        }
                     }
                 }
             }
         }
     }
 
-
-    .second-page{
+    .second-page {
         height: 100vh;
         width: 100%;
-        background: red;
-        display: none;
+        display: block;
+        padding: var(--padding-sm);
+        gap: var(--gutter-sm);
+        position: relative;
+        display: flex;
+
+        nav {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: var(--gutter-lg);
+            border-bottom: var(--border-sm) solid black;
+
+            i {
+                border: var(--border-lg) solid black;
+                padding: var(--padding-sm);
+                border-radius: var(--rounded-sm);
+            }
+
+            p {
+                font-size: var(--text-2xl);
+                font-weight: 600;
+            }
+        }
+
+        .left {
+            width: 18%;
+            background: red;
+            border-radius: var(--rounded-sm);
+            height: 100%;
+            padding: var(--padding-sm);
+            // display: none;
+
+            .name-section {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: var(--gutter-xl);
+
+                .name-sec {
+                    width: 60%;
+                    padding: var(--padding-sm) var(--padding-lg);
+                    border-radius: var(--rounded-5xl);
+                    background: blue;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .name-first {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: var(--text-active);
+                        font-weight: 700;
+                        font-size: var(--text-2xl);
+                        background: #000;
+                    }
+
+                    i {
+                        color: var(--text-active);
+                        font-weight: 700;
+                        font-size: var(--text-2xl);
+                    }
+                }
+
+                .username{
+                    font-size: var(--text-2xl);
+                    font-weight: 600;
+                    
+                }
+            }
+        }
+
+        .right {
+            width: 100%;
+            height: 100%;
+            background: blue;
+            border-radius: var(--rounded-sm);
+        }
+
+        // User SideBar Menu bar
+        .user-menu-side-bar {
+            width: 90%;
+            background: white;
+            display: none;
+            position: absolute;
+            top: 50px;
+            border-radius: var(--rounded-sm);
+
+            padding: var(--padding-sm);
+            left: 0;
+
+            .name-section {
+                width: 100%;
+                display: flex;
+                gap: var(--gutter-sm);
+                align-items: center;
+                border-bottom: var(--border-xl) solid var(--text-pri);
+                padding: var(--padding-sm);
+
+                .name-first {
+                    font-size: var(--text-2xl);
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    font-weight: 900;
+                    color: var(--text-active);
+                    background: blue;
+                }
+
+                .username {
+                    font-size: var(--text-2xl);
+                }
+
+                i {
+                    font-size: var(--text-2xl);
+                }
+            }
+
+            .search,
+            .recent {
+                font-size: var(--text-2xl);
+                font-weight: 700;
+                display: flex;
+                gap: var(--gutter-xl);
+                margin-top: var(--margin-xl);
+                align-items: center;
+
+                border: var(--border-sm) solid black;
+                padding: var(--padding-md);
+                border-radius: var(--rounded-sm);
+
+                input {
+                    border: none;
+                    outline: none;
+                    font-size: var(--text-2xl);
+                    width: 100%;
+                }
+            }
+
+            > img {
+                width: 100%;
+                margin-top: var(--margin-4xl);
+                border-radius: var(--rounded-md);
+                object-fit: cover;
+                margin-bottom: var(--margin-4xl);
+            }
+        }
     }
 }
-
-/* Tablet */
 
 /* Large Display */
 @media screen and (min-width: 1275px) and (max-width: 2559px) {
@@ -382,6 +534,12 @@ main {
                 img {
                     width: 28%;
                 }
+            }
+        }
+
+        .second-page {
+            nav {
+                display: none;
             }
         }
     }

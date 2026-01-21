@@ -39,14 +39,33 @@ const loginPageOpenClose = () => {
 
 loginPageOpenClose();
 
+const loginDone = document.querySelector(".next");
+const firstPage = document.querySelector(".first-page");
+const secondPage = document.querySelector(".second-page");
+const userNameInput = document.querySelector(".login-window input");
+const userName  = document.querySelector('.username')
+const nameFirst = document.querySelector('.name-first')
 
-const loginDone = document.querySelectorAll('.login-done');
-const firstPage= document.querySelector('.first-page');
-const secondPage = document.querySelector('.second-page');
+loginDone.addEventListener("click", () => {
+    secondPage.style.display = "block";
+    firstPage.style.display = "none";
+    nameFirst.textContent= userNameInput.value[0]
+    userName.textContent= userNameInput.value
+});
 
-loginDone.forEach(btn=>{
-    btn.addEventListener('click',()=>{
-        secondPage.style.display='block'
-        firstPage.style.display='none'
-    })
-})
+//Second paga Work
+
+const userSideMenubtn = document.querySelector("#user-sidebar-menu-btn");
+const userSideMenu = document.querySelector(".user-menu-side-bar");
+
+let flag = true;
+userSideMenubtn.addEventListener("click", () => {
+    if (flag) {
+        userSideMenu.style.display = "block";
+
+        flag = false;
+    } else {
+        userSideMenu.style.display = "none";
+        flag = true;
+    }
+});
