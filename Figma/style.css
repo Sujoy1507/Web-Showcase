@@ -1,0 +1,325 @@
+:root {
+  --text-pri: #1c1c1c;
+  --text-sec: #222;
+  --text-active: #eeecec;
+  --text-sm: clamp(0.45rem, 0.5vw, 0.5rem);
+  --text-md: clamp(0.6rem, 0.7vw, 0.75rem);
+  --text-lg: clamp(0.85rem, 0.9vw, 1rem);
+  --text-xl: clamp(1.05rem, 1.2vw, 1.25rem);
+  --text-2xl: clamp(1.4rem, 1.7vw, 1.8rem);
+  --text-3xl: clamp(2rem, 2.5vw, 2.8rem);
+  --text-4xl: clamp(2.6rem, 3.2vw, 3.6rem);
+  --text-5xl: clamp(3.2rem, 4vw, 4.5rem);
+  --padding-sm: 0.5rem;
+  --padding-md: 0.75rem;
+  --padding-lg: 1rem;
+  --padding-xl: 1.5rem;
+  --padding-2xl: 2rem;
+  --padding-3xl: 3rem;
+  --padding-4xl: 4rem;
+  --padding-5xl: 5rem;
+  --margin-sm: 0.5rem;
+  --margin-md: 0.75rem;
+  --margin-lg: 1rem;
+  --margin-xl: 1.5rem;
+  --margin-2xl: 2rem;
+  --margin-3xl: 3rem;
+  --margin-4xl: 4rem;
+  --margin-5xl: 5rem;
+  --rounded-sm: 0.5rem;
+  --rounded-md: 0.75rem;
+  --rounded-lg: 1rem;
+  --rounded-xl: 1.5rem;
+  --rounded-2xl: 2rem;
+  --rounded-3xl: 3rem;
+  --rounded-4xl: 4rem;
+  --rounded-5xl: 5rem;
+  --gutter-sm: 0.5rem;
+  --gutter-md: 0.75rem;
+  --gutter-lg: 1rem;
+  --gutter-xl: 1.5rem;
+  --gutter-2xl: 2rem;
+  --gutter-3xl: 3rem;
+  --gutter-4xl: 4rem;
+  --gutter-5xl: 5rem;
+  --border-sm: 1px;
+  --border-md: 1.5px;
+  --border-lg: 2px;
+  --border-xl: 2.5px;
+  --border-2xl: 3px;
+  --border-3xl: 4px;
+  --border-4xl: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+}
+main .first-page {
+  width: 100%;
+  padding: var(--padding-xl);
+}
+main .first-page nav {
+  width: 100%;
+}
+main .first-page nav .img-menu-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+main .first-page nav .img-menu-container .logo {
+  width: 45px;
+}
+main .first-page nav .img-menu-container .menu-icon {
+  font-size: var(--text-xl);
+}
+main .first-page nav .left-right-container {
+  width: 100%;
+  display: flex;
+  height: 0;
+  overflow: hidden;
+  justify-content: space-between;
+}
+main .first-page nav .left-right-container .logo {
+  width: 45px;
+  aspect-ratio: 1/1;
+}
+main .first-page nav .left-right-container .left-right {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+main .first-page nav .left-right-container .left-right .left {
+  width: 55%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  font-size: var(--text-xl);
+}
+main .first-page nav .left-right-container .left-right .left .first-page-nav {
+  text-decoration: none;
+  color: var(--text-pri);
+  transition: all 0.3s ease;
+}
+main .first-page nav .left-right-container .left-right .left .first-page-nav:hover {
+  border-bottom: var(--border-lg) solid var(--text-pri);
+}
+main .first-page nav .left-right-container .left-right .right {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  font-size: var(--text-xl);
+}
+main .first-page nav .left-right-container .left-right .right a {
+  text-decoration: none;
+  color: var(--text-pri);
+  transition: all 0.3s ease;
+}
+main .first-page nav .left-right-container .left-right .right a:hover {
+  border-bottom: var(--border-lg) solid var(--text-pri);
+}
+main .first-page nav .left-right-container .left-right .right .contact-sales {
+  border: var(--border-lg) solid var(--text-pri);
+  border-radius: var(--rounded-md);
+  padding: var(--padding-md) var(--padding-lg);
+}
+main .first-page nav .left-right-container .left-right .right .get-start {
+  padding: var(--padding-md) var(--padding-lg);
+  border-radius: var(--rounded-md);
+  background: black;
+  color: var(--text-active);
+}
+main .first-page nav .left-right-container .left-right .right .get-start:hover {
+  border: none;
+}
+main .first-page nav .menu-btn {
+  width: 100%;
+  display: flex;
+  height: 0;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: 9/18;
+}
+main .first-page nav .menu-btn .top {
+  width: 100%;
+}
+main .first-page nav .menu-btn .top ul {
+  margin-top: var(--margin-2xl);
+  width: 100%;
+  list-style-type: none;
+  font-size: var(--text-2xl);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--gutter-xl);
+}
+main .first-page nav .menu-btn .top ul li {
+  width: 100%;
+}
+main .first-page nav .menu-btn .top ul li a {
+  display: block;
+  padding-bottom: var(--padding-lg);
+  width: 100%;
+  text-decoration: none;
+  border-bottom: var(--border-2xl) solid var(--text-pri);
+}
+main .first-page nav .menu-btn .bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-lg);
+}
+main .first-page nav .menu-btn .bottom a {
+  display: block;
+  padding-bottom: var(--padding-lg);
+  width: 100%;
+  text-decoration: none;
+  font-size: var(--text-2xl);
+  padding: var(--padding-sm) var(--padding-md);
+  border-radius: var(--rounded-lg);
+}
+main .first-page nav .menu-btn .bottom .get-start {
+  background: #000;
+  color: var(--text-active);
+}
+main .first-page nav .menu-btn .bottom .contact-sales {
+  border: var(--border-lg) solid var(--text-pri);
+}
+main .first-page .hero1 {
+  width: 100%;
+  margin-top: var(--margin-2xl);
+  padding: var(--padding-sm);
+  gap: var(--gutter-3xl);
+  text-align: center;
+  position: relative;
+}
+main .first-page .hero1 > img {
+  border: var(--border-2xl) solid var(--text-pri);
+  padding: var(--padding-lg);
+  border-radius: var(--rounded-sm);
+  width: 100%;
+  margin-top: var(--margin-2xl);
+}
+main .first-page .hero1 > p {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin-bottom: var(--margin-3xl);
+}
+main .first-page .hero1 > h2 {
+  font-weight: 400;
+}
+main .first-page .hero1 .get-start {
+  padding: var(--padding-md) var(--padding-lg);
+  border-radius: var(--rounded-md);
+  background: black;
+  font-size: var(--text-3xl);
+  color: var(--text-active);
+  margin-bottom: var(--margin-xl);
+}
+main .first-page .hero1 .login-popup {
+  display: none;
+  width: 100%;
+  height: calc(100vh - 100px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(113, 107, 107, 0.611);
+  backdrop-filter: blur(5px);
+  border-radius: var(--rounded-xl);
+}
+main .first-page .hero1 .login-popup .login-window {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  aspect-ratio: 1/1;
+  border: var(--border-2xl) solid var(--text-pri);
+  border-radius: var(--rounded-lg);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: var(--padding-md);
+  flex-direction: column;
+}
+main .first-page .hero1 .login-popup .login-window .google {
+  border: var(--border-md) solid var(--text-pri);
+  padding: var(--padding-sm) var(--padding-md);
+  font-size: var(--text-xl);
+  display: flex;
+  gap: var(--gutter-xl);
+  border-radius: var(--rounded-lg);
+}
+main .first-page .hero1 .login-popup .login-window .google > img {
+  width: 30px;
+}
+main .first-page .hero1 .login-popup .login-window .email-textarea {
+  background: rgba(147, 144, 144, 0.5725490196);
+  width: 100%;
+  border-radius: var(--rounded-md);
+  text-align: left;
+  padding: var(--padding-md);
+}
+main .first-page .hero1 .login-popup .login-window .email-textarea textarea {
+  border: none;
+  outline: none;
+  background: none;
+}
+main .first-page .hero1 .login-popup .login-window .email {
+  background: black;
+  color: var(--text-active);
+  width: 100%;
+  padding: var(--padding-sm) var(--padding-lg);
+  border-radius: var(--rounded-md);
+}
+main .second-page {
+  height: 100vh;
+  width: 100%;
+  background: red;
+  display: none;
+}
+
+/* Tablet */
+/* Large Display */
+@media screen and (min-width: 1275px) and (max-width: 2559px) {
+  main .first-page nav .img-menu-container {
+    display: none;
+  }
+  main .first-page nav .left-right-container {
+    height: 55px;
+  }
+  main .first-page .hero1 img {
+    width: 28%;
+  }
+}
+/* 4K Display */
+@media screen and (min-width: 2560px) {
+  main .first-page nav .img-menu-container {
+    display: none;
+  }
+  main .first-page nav .left-right-container {
+    height: 55px;
+  }
+  main .first-page .hero1 img {
+    width: 28%;
+  }
+}/*# sourceMappingURL=style.css.map */
