@@ -673,6 +673,9 @@ main .third-page .main-workspace .workspace #canvas .canvas {
   position: relative;
   overflow: hidden;
 }
+main .third-page .main-workspace .workspace #canvas .canvas .canvas-element {
+  overflow: visible;
+}
 main .third-page .main-workspace .workspace #properties .properties {
   background: var(--bg-sec);
 }

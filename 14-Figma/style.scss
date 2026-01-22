@@ -807,6 +807,10 @@ main {
                         background: var(--bg-canvas);
                         position: relative;
                         overflow: hidden;
+
+                        .canvas-element {
+                            overflow: visible;
+                        }
                     }
                 }
                 #properties {
