@@ -2,6 +2,26 @@
   --text-pri: #1c1c1c;
   --text-sec: #222;
   --text-active: #eeecec;
+  /* Backgrounds */
+  --bg-pri: linear-gradient(135deg, #1e1b4b, #312e81);
+  --bg-sec: linear-gradient(135deg, #3b0764, #701a75);
+  --bg-active: linear-gradient(135deg, #ec4899, #f59e0b);
+  --bg-canvas: #0f172a;
+  --bg-panel: #111827;
+  /* Text colors */
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --text-highlight: #fde68a;
+  /* Accent colors */
+  --accent-pink: #ec4899;
+  --accent-yellow: #facc15;
+  --accent-blue: #6366f1;
+  /* Borders and dividers */
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --border-active: #facc15;
+  /* States */
+  --hover-bg: rgba(255, 255, 255, 0.06);
+  --active-shadow: 0 0 0 2px rgba(250, 204, 21, 0.4);
   --text-sm: clamp(0.45rem, 0.5vw, 0.5rem);
   --text-md: clamp(0.6rem, 0.7vw, 0.75rem);
   --text-lg: clamp(0.85rem, 0.9vw, 1rem);
@@ -69,6 +89,7 @@ main {
 }
 main .first-page {
   width: 100%;
+  height: 100vh;
   padding: var(--padding-xl);
 }
 main .first-page nav {
@@ -292,13 +313,12 @@ main .first-page .hero1 .login-popup .login-window .next:active {
   scale: 0.97;
 }
 main .second-page {
-  height: 100vh;
   width: 100%;
-  display: block;
   padding: var(--padding-sm);
   gap: var(--gutter-sm);
   position: relative;
   display: flex;
+  flex-direction: column;
 }
 main .second-page nav {
   width: 100%;
@@ -317,23 +337,26 @@ main .second-page nav p {
   font-weight: 600;
 }
 main .second-page .left {
-  width: 18%;
-  background: red;
+  height: 90vh;
+  width: 100%;
+  background: var(--bg-pri);
   border-radius: var(--rounded-sm);
-  height: 100%;
   padding: var(--padding-sm);
 }
 main .second-page .left .name-section {
   width: 100%;
   display: flex;
+  background: var(--bg-active);
   flex-direction: column;
   gap: var(--gutter-xl);
+  padding: var(--padding-sm);
+  border-radius: var(--rounded-sm);
 }
 main .second-page .left .name-section .name-sec {
   width: 60%;
   padding: var(--padding-sm) var(--padding-lg);
   border-radius: var(--rounded-5xl);
-  background: blue;
+  background: var(--bg-canvas);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -358,15 +381,112 @@ main .second-page .left .name-section .name-sec i {
 main .second-page .left .name-section .username {
   font-size: var(--text-2xl);
   font-weight: 600;
-}
-main .second-page .right {
   width: 100%;
-  height: 100%;
-  background: blue;
+  text-align: center;
+}
+main .second-page .left .previous-creation {
+  width: 100%;
+  margin-top: var(--margin-3xl);
+  max-height: 70%;
+  background: var(--bg-sec);
+  border-radius: var(--rounded-sm);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-md);
+  padding: var(--padding-sm);
+}
+main .second-page .left .previous-creation::-webkit-scrollbar {
+  display: none;
+}
+main .second-page .left .previous-creation .recent-canvas {
+  width: 100%;
+  height: 160px;
+  padding: var(--padding-sm);
+  flex-shrink: 0;
+  background: beige;
   border-radius: var(--rounded-sm);
 }
+main .second-page .left .previous-creation h3 {
+  font-size: var(--text-2xl);
+  color: var(--text-active);
+}
+main .second-page .right-container {
+  height: 97.5vh;
+  display: none;
+  width: 82%;
+}
+main .second-page .right-container .right {
+  height: 100%;
+  background: var(--bg-active);
+  border-radius: var(--rounded-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-sm);
+  padding: var(--padding-md);
+}
+main .second-page .right-container .right > .top {
+  height: 55vh;
+  overflow: none;
+  width: 100%;
+  background: var(--bg-pri);
+  border-radius: var(--rounded-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gutter-lg);
+  flex-direction: column;
+}
+main .second-page .right-container .right > .top > img {
+  width: 45%;
+  border-radius: var(--rounded-sm);
+}
+main .second-page .right-container .right > .top > button {
+  font-size: var(--text-3xl);
+  padding: var(--padding-sm) var(--padding-xl);
+  border-radius: var(--rounded-sm);
+  border: none;
+  outline: none;
+  background: var(--bg-active);
+  color: var(--text-main);
+  transition: all 0.3s ease;
+}
+main .second-page .right-container .right > .top > button:active {
+  scale: 0.97;
+}
+main .second-page .right-container .right > .bottom {
+  height: 38.5vh;
+  width: 100%;
+  background: var(--bg-sec);
+  border-radius: var(--rounded-md);
+}
+main .second-page .right-container .right > .bottom h3 {
+  width: 100%;
+  font-size: var(--text-3xl);
+  text-align: center;
+  color: var(--text-active);
+  margin-bottom: var(--margin-xl);
+}
+main .second-page .right-container .right > .bottom .previous-creation {
+  width: 100%;
+  display: flex;
+  gap: var(--gutter-md);
+  overflow-x: scroll;
+  padding: var(--padding-sm);
+}
+main .second-page .right-container .right > .bottom .previous-creation::-webkit-scrollbar {
+  display: none;
+}
+main .second-page .right-container .right > .bottom .previous-creation .recent-canvas {
+  height: 180px;
+  border-radius: var(--rounded-sm);
+  width: 300px;
+  flex-shrink: 0;
+  padding: var(--padding-sm);
+  background: beige;
+}
 main .second-page .user-menu-side-bar {
-  width: 90%;
+  max-width: 270px;
   background: white;
   display: none;
   position: absolute;
@@ -422,6 +542,7 @@ main .second-page .user-menu-side-bar .recent input {
 }
 main .second-page .user-menu-side-bar > img {
   width: 100%;
+  height: 250px;
   margin-top: var(--margin-4xl);
   border-radius: var(--rounded-md);
   object-fit: cover;
@@ -439,7 +560,20 @@ main .second-page .user-menu-side-bar > img {
   main .first-page .hero1 img {
     width: 28%;
   }
+  main .second-page {
+    flex-direction: row;
+  }
   main .second-page nav {
+    display: none;
+  }
+  main .second-page .left {
+    height: 97.5vh;
+    width: 18%;
+  }
+  main .second-page .right-container {
+    display: block;
+  }
+  main .second-page .user-menu-side-bar {
     display: none;
   }
 }

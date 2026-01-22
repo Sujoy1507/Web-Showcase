@@ -39,33 +39,37 @@ const loginPageOpenClose = () => {
 
 loginPageOpenClose();
 
-const loginDone = document.querySelector(".next");
-const firstPage = document.querySelector(".first-page");
-const secondPage = document.querySelector(".second-page");
-const userNameInput = document.querySelector(".login-window input");
-const userName  = document.querySelector('.username')
-const nameFirst = document.querySelector('.name-first')
+const firstPageToSecondPage = () => {
+    const loginDone = document.querySelector(".next");
+    const firstPage = document.querySelector(".first-page");
+    const secondPage = document.querySelector(".secondPage-container");
+    const userNameInput = document.querySelector(".login-window input");
+    const userName = document.querySelector(".username");
+    const nameFirst = document.querySelector(".name-first");
 
-loginDone.addEventListener("click", () => {
-    secondPage.style.display = "block";
-    firstPage.style.display = "none";
-    nameFirst.textContent= userNameInput.value[0]
-    userName.textContent= userNameInput.value
-});
+    loginDone.addEventListener("click", () => {
+        secondPage.style.display = "flex";
+        firstPage.style.display = "none";
+        nameFirst.textContent = userNameInput.value[0];
+        userName.textContent = userNameInput.value;
+    });
 
-//Second paga Work
+    //Second paga Work
 
-const userSideMenubtn = document.querySelector("#user-sidebar-menu-btn");
-const userSideMenu = document.querySelector(".user-menu-side-bar");
+    const userSideMenubtn = document.querySelector("#user-sidebar-menu-btn");
+    const userSideMenu = document.querySelector(".user-menu-side-bar");
 
-let flag = true;
-userSideMenubtn.addEventListener("click", () => {
-    if (flag) {
-        userSideMenu.style.display = "block";
+    let flag = true;
+    userSideMenubtn.addEventListener("click", () => {
+        if (flag) {
+            userSideMenu.style.display = "block";
 
-        flag = false;
-    } else {
-        userSideMenu.style.display = "none";
-        flag = true;
-    }
-});
+            flag = false;
+        } else {
+            userSideMenu.style.display = "none";
+            flag = true;
+        }
+    });
+};
+
+firstPageToSecondPage();
