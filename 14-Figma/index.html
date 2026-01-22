@@ -15,239 +15,288 @@
         <!-- First Page Before Login -->
 
         <main>
-            <section class="first-page">
+            <div class="delete">
+                <section class="first-page">
+                    <nav>
+                        <!-- Container For image and logo for mobile screen -->
+
+                        <div class="img-menu-container">
+                            <img
+                                src="./Asset/figma.png"
+                                alt="Figma Logo"
+                                class="logo"
+                            />
+                            <div class="menu-icon">
+                                <i id="menu-btn" class="ri-menu-line"></i>
+                            </div>
+                        </div>
+
+                        <!-- Container For Left Right -->
+
+                        <div class="left-right-container">
+                            <img
+                                src="./Asset/figma.png"
+                                alt="Figma Logo"
+                                class="logo"
+                            />
+                            <div class="left-right">
+                                <ul class="left">
+                                    <li>
+                                        <a href="#" class="first-page-nav"
+                                            >Products</a
+                                        >
+                                        <i class="ri-arrow-drop-down-line"></i>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="first-page-nav"
+                                            >Solutions</a
+                                        >
+                                        <i class="ri-arrow-drop-down-line"></i>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="first-page-nav"
+                                            >Community</a
+                                        >
+                                        <i class="ri-arrow-drop-down-line"></i>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="first-page-nav"
+                                            >Resources</a
+                                        >
+                                        <i class="ri-arrow-drop-down-line"></i>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="first-page-nav"
+                                            >Pricing</a
+                                        >
+                                    </li>
+                                </ul>
+
+                                <ul class="right">
+                                    <li>
+                                        <a href="#" class="login">Log in</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="contact-sales">
+                                            <i class="ri-arrow-right-line"></i>
+                                            Contact Sales</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="#"
+                                            id="first-start"
+                                            class="get-start"
+                                        >
+                                            <i class="ri-arrow-right-line"></i>
+                                            Get Started For Free</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Menu For Mobile Screen For all Nav Links -->
+                        <div class="menu-btn">
+                            <div class="top">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="first-page-nav"
+                                            >Products</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="#" class="first-page-nav"
+                                            >Solutions</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="#" class="first-page-nav"
+                                            >Community</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="#" class="first-page-nav"
+                                            >Resources</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="#" class="first-page-nav"
+                                            >Pricing</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="#" class="login">Log in</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bottom">
+                                <a href="#" id="first-start" class="get-start"
+                                    >Get Started For Free</a
+                                >
+                                <a href="#" class="contact-sales">
+                                    Contact Sales</a
+                                >
+                            </div>
+                        </div>
+                    </nav>
+
+                    <!-- First Page Hero Section -->
+                    <section class="hero1">
+                        <img src="./Asset/hero-photo-1.png" alt="" />
+                        <p class="bannar-title">Make This Photo Rotate</p>
+                        <button id="first-start" class="get-start">
+                            Get Start
+                        </button>
+                        <h2>
+                            Figma lets you turn big ideas into real products.
+                            Brainstorm, design, and build with your team.
+                        </h2>
+
+                        <!-- First Page Login Popup -->
+                        <div class="login-popup">
+                            <div class="login-window">
+                                <h2>Login Page</h2>
+
+                                <input
+                                    type="text"
+                                    placeholder="Enter Your Name"
+                                    class="input-name"
+                                />
+
+                                <button class="next">
+                                    Next <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Second Page -->
+                <section class="secondPage-container">
+                    <section class="second-page">
+                        <!-- Second Page Nav Bar -->
+                        <nav>
+                            <i
+                                id="user-sidebar-menu-btn"
+                                class="ri-menu-line"
+                            ></i>
+                            <p>Recent</p>
+                        </nav>
+
+                        <!-- Second Page Left Section For History -->
+                        <aside class="left">
+                            <div class="name-section">
+                                <div class="name-sec">
+                                    <p class="name-first">S</p>
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                                <p class="username">Sujoy Saha</p>
+                            </div>
+
+                            <div class="previous-creation">
+                                <h3>Recent Works</h3>
+                                <div class="recent-canvas"></div>
+                                <div class="recent-canvas"></div>
+                                <div class="recent-canvas"></div>
+                                <div class="recent-canvas"></div>
+                                <div class="recent-canvas"></div>
+                                <div class="recent-canvas"></div>
+                                <div class="recent-canvas"></div>
+                                <div class="recent-canvas"></div>
+                            </div>
+                        </aside>
+
+                        <!-- Second Page Right Section For Big Button -->
+                        <div class="right-container">
+                            <section class="right">
+                                <!-- top Section -->
+                                <div class="top">
+                                    <img src="./Asset/layout.png" alt="" />
+
+                                    <button id="create-new">Create New</button>
+                                </div>
+                                <div class="bottom">
+                                    <h3>Recent Activity</h3>
+
+                                    <div class="previous-creation">
+                                        <div class="recent-canvas"></div>
+                                        <div class="recent-canvas"></div>
+                                        <div class="recent-canvas"></div>
+                                        <div class="recent-canvas"></div>
+                                        <div class="recent-canvas"></div>
+                                        <div class="recent-canvas"></div>
+                                        <div class="recent-canvas"></div>
+                                        <div class="recent-canvas"></div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- For Mobile Screen Side Bar -->
+                        <aside class="user-menu-side-bar">
+                            <div class="name-section">
+                                <p class="name-first"></p>
+                                <p class="username">Sujoy Saha</p>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+
+                            <div class="search">
+                                <i class="ri-search-line"></i>
+                                <input type="search" placeholder="Search" />
+                            </div>
+
+                            <div class="recent">
+                                <i class="ri-history-line"></i>
+                                <p>Recent</p>
+                            </div>
+
+                            <img src="./Asset/figma logo.webp" alt="" />
+                        </aside>
+                    </section>
+                </section>
+            </div>
+
+            <!-- Third  Page/Main Part -->
+            <section class="third-page">
                 <nav>
-                    <!-- Container For image and logo for mobile screen -->
-
-                    <div class="img-menu-container">
-                        <img
-                            src="./Asset/figma.png"
-                            alt="Figma Logo"
-                            class="logo"
-                        />
-                        <div class="menu-icon">
-                            <i id="menu-btn" class="ri-menu-line"></i>
-                        </div>
+                    <!-- Third Page Nav Left -->
+                    <div class="left">
+                        <p class="name-first">S</p>
+                        <h3>Basic Design Tool</h3>
                     </div>
 
-                    <!-- Container For Left Right -->
-
-                    <div class="left-right-container">
-                        <img
-                            src="./Asset/figma.png"
-                            alt="Figma Logo"
-                            class="logo"
-                        />
-                        <div class="left-right">
-                            <ul class="left">
-                                <li>
-                                    <a href="#" class="first-page-nav"
-                                        >Products</a
-                                    >
-                                    <i class="ri-arrow-drop-down-line"></i>
-                                </li>
-                                <li>
-                                    <a href="#" class="first-page-nav"
-                                        >Solutions</a
-                                    >
-                                    <i class="ri-arrow-drop-down-line"></i>
-                                </li>
-                                <li>
-                                    <a href="#" class="first-page-nav"
-                                        >Community</a
-                                    >
-                                    <i class="ri-arrow-drop-down-line"></i>
-                                </li>
-                                <li>
-                                    <a href="#" class="first-page-nav"
-                                        >Resources</a
-                                    >
-                                    <i class="ri-arrow-drop-down-line"></i>
-                                </li>
-                                <li>
-                                    <a href="#" class="first-page-nav"
-                                        >Pricing</a
-                                    >
-                                </li>
-                            </ul>
-
-                            <ul class="right">
-                                <li>
-                                    <a href="#" class="login">Log in</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="contact-sales">
-                                        <i class="ri-arrow-right-line"></i>
-                                        Contact Sales</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        id="first-start"
-                                        class="get-start"
-                                    >
-                                        <i class="ri-arrow-right-line"></i>
-                                        Get Started For Free</a
-                                    >
-                                </li>
-                            </ul>
+                    <!-- Third page Nav Right -->
+                    <div class="right">
+                        <div class="nav-btn" id="add">
+                            Add <i class="ri-add-large-line"></i>
                         </div>
-                    </div>
-
-                    <!-- Menu For Mobile Screen For all Nav Links -->
-                    <div class="menu-btn">
-                        <div class="top">
-                            <ul>
-                                <li>
-                                    <a href="#" class="first-page-nav"
-                                        >Products</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#" class="first-page-nav"
-                                        >Solutions</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#" class="first-page-nav"
-                                        >Community</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#" class="first-page-nav"
-                                        >Resources</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#" class="first-page-nav"
-                                        >Pricing</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#" class="login">Log in</a>
-                                </li>
-                            </ul>
+                        <div class="nav-btn" id="save">
+                            Save <i class="ri-file-download-line"></i>
                         </div>
-                        <div class="bottom">
-                            <a href="#" id="first-start" class="get-start"
-                                >Get Started For Free</a
-                            >
-                            <a href="#" class="contact-sales"> Contact Sales</a>
+                        <div class="nav-btn" id="export">
+                            Export <i class="ri-export-fill"></i>
                         </div>
                     </div>
                 </nav>
 
-                <!-- First Page Hero Section -->
-                <section class="hero1">
-                    <img src="./Asset/hero-photo-1.png" alt="" />
-                    <p class="bannar-title">Make This Photo Rotate</p>
-                    <button id="first-start" class="get-start">
-                        Get Start
-                    </button>
-                    <h2>
-                        Figma lets you turn big ideas into real products.
-                        Brainstorm, design, and build with your team.
-                    </h2>
-
-                    <!-- First Page Login Popup -->
-                    <div class="login-popup">
-                        <div class="login-window">
-                            <h2>Login Page</h2>
-
-                            <input
-                                type="text"
-                                placeholder="Enter Your Name"
-                                class="input-name"
-                            />
-
-                            <button class="next">
-                                Next <i class="ri-arrow-right-line"></i>
-                            </button>
+                <div class="main-workspace">
+                    <div class="workspace">
+                        <div class="editor" id="layers">
+                            <div class="layers design-area">
+                                <h2>Layers</h2>
+                            </div>
+                        </div>
+                        <div class="editor" id="canvas">
+                            <div class="canvas design-area"></div>
+                        </div>
+                        <div class="editor" id="properties">
+                            <div class="properties design-area">
+                                <h2>Properties</h2>
+                            </div>
                         </div>
                     </div>
-                </section>
-            </section>
-
-            <!-- Second Page -->
-            <section class="secondPage-container">
-                <section class="second-page">
-                    <!-- Second Page Nav Bar -->
-                    <nav>
-                        <i id="user-sidebar-menu-btn" class="ri-menu-line"></i>
-                        <p>Recent</p>
-                    </nav>
-
-                    <!-- Second Page Left Section For History -->
-                    <aside class="left">
-                        <div class="name-section">
-                            <div class="name-sec">
-                                <p class="name-first">S</p>
-                                <i class="ri-arrow-down-s-line"></i>
-                            </div>
-                            <p class="username">Sujoy Saha</p>
-                        </div>
-
-                        <div class="previous-creation">
-                            <h3>Recent Works</h3>
-                            <div class="recent-canvas"></div>
-                            <div class="recent-canvas"></div>
-                            <div class="recent-canvas"></div>
-                            <div class="recent-canvas"></div>
-                            <div class="recent-canvas"></div>
-                            <div class="recent-canvas"></div>
-                            <div class="recent-canvas"></div>
-                            <div class="recent-canvas"></div>
-                        </div>
-                    </aside>
-
-                    <!-- Second Page Right Section For Big Button -->
-                    <div class="right-container">
-                        <section class="right">
-                            <!-- top Section -->
-                            <div class="top">
-                                <img src="./Asset/layout.png" alt="" />
-
-                                <button id="create-new">Create New</button>
-                            </div>
-                            <div class="bottom">
-                                <h3>Recent Activity</h3>
-
-                                <div class="previous-creation">
-                                    <div class="recent-canvas"></div>
-                                    <div class="recent-canvas"></div>
-                                    <div class="recent-canvas"></div>
-                                    <div class="recent-canvas"></div>
-                                    <div class="recent-canvas"></div>
-                                    <div class="recent-canvas"></div>
-                                    <div class="recent-canvas"></div>
-                                    <div class="recent-canvas"></div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- For Mobile Screen Side Bar -->
-                    <aside class="user-menu-side-bar">
-                        <div class="name-section">
-                            <p class="name-first"></p>
-                            <p class="username">Sujoy Saha</p>
-                            <i class="ri-arrow-down-s-line"></i>
-                        </div>
-
-                        <div class="search">
-                            <i class="ri-search-line"></i>
-                            <input type="search" placeholder="Search" />
-                        </div>
-
-                        <div class="recent">
-                            <i class="ri-history-line"></i>
-                            <p>Recent</p>
-                        </div>
-
-                        <img src="./Asset/figma logo.webp" alt="" />
-                    </aside>
-                </section>
+                </div>
             </section>
         </main>
         <script src="script.js"></script>

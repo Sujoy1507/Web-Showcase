@@ -7,7 +7,8 @@
     /* Backgrounds */
     --bg-pri: linear-gradient(135deg, #1e1b4b, #312e81);
     --bg-sec: linear-gradient(135deg, #3b0764, #701a75);
-    --bg-active: linear-gradient(135deg, #ec4899, #f59e0b);
+    --bg-active: linear-gradient(135deg, #020617, #1e3a8a, #be185d);
+
     --bg-canvas: #0f172a;
     --bg-panel: #111827;
 
@@ -381,7 +382,7 @@ main {
             }
         }
     }
-    .secondPage-container{
+    .secondPage-container {
         // display: none;
     }
 
@@ -658,6 +659,125 @@ main {
                 border-radius: var(--rounded-md);
                 object-fit: cover;
                 margin-bottom: var(--margin-4xl);
+            }
+        }
+    }
+
+    .delete {
+        display: none;
+    }
+
+    // Third Page / Main page
+
+    .third-page {
+        width: 100%;
+
+        // Third Page Nav Section
+        nav {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: var(--padding-md);
+            background: var(--bg-sec);
+
+            // Third Page Nav Left
+            .left {
+                display: flex;
+                gap: var(--gutter-xl);
+                align-items: center;
+                color: var(--text-main);
+                .name-first {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    font-size: var(--text-xl);
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    background: var(--bg-active);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            // Third Page Nav Right
+            .right {
+                display: flex;
+                gap: var(--gutter-xl);
+                align-items: center;
+                color: var(--text-active);
+
+                .nav-btn {
+                    font-size: var(--text-xl);
+                    padding: var(--padding-sm) var(--padding-lg);
+                    border-radius: var(--rounded-sm);
+
+                    &:active {
+                        scale: 0.97;
+                    }
+                }
+
+                #add {
+                    background: beige;
+                    color: #000;
+
+                    i {
+                        border: var(--border-md) solid var(--bg-canvas);
+                        border-radius: 50%;
+                    }
+                }
+
+                #save,
+                #export {
+                    background: var(--bg-panel);
+                }
+            }
+        }
+
+        .main-workspace {
+            width: 100%;
+            .workspace {
+                width: 100%;
+                height: calc(100vh - 65px);
+                background: var(--bg-pri);
+                display: grid;
+                grid-template-columns: 18% 60% 22%;
+                grid-template-rows: 1fr;
+
+                .editor {
+                    padding: var(--padding-sm);
+                    border-radius: var(--rounded-sm);
+
+                    .design-area {
+                        height: 100%;
+                        width: 100%;
+                        border-radius: var(--rounded-sm);
+                        padding: var(--padding-sm);
+                        color: var(--text-active);
+
+                        > h2 {
+                            font-size: var(--text-3xl);
+                            padding: var(--padding-sm);
+                            border-bottom: var(--border-2xl) solid beige;
+                        }
+                    }
+                }
+
+                #layers {
+                    .layers {
+                        background: var(--bg-active);
+                    }
+                }
+                #canvas {
+                    .canvas {
+                        background: var(--bg-canvas);
+                    }
+                }
+                #properties {
+                    .properties {
+                        background: var(--bg-sec);
+                    }
+                }
             }
         }
     }

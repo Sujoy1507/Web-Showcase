@@ -5,7 +5,7 @@
   /* Backgrounds */
   --bg-pri: linear-gradient(135deg, #1e1b4b, #312e81);
   --bg-sec: linear-gradient(135deg, #3b0764, #701a75);
-  --bg-active: linear-gradient(135deg, #ec4899, #f59e0b);
+  --bg-active: linear-gradient(135deg, #020617, #1e3a8a, #be185d);
   --bg-canvas: #0f172a;
   --bg-panel: #111827;
   /* Text colors */
@@ -547,6 +547,99 @@ main .second-page .user-menu-side-bar > img {
   border-radius: var(--rounded-md);
   object-fit: cover;
   margin-bottom: var(--margin-4xl);
+}
+main .delete {
+  display: none;
+}
+main .third-page {
+  width: 100%;
+}
+main .third-page nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: var(--padding-md);
+  background: var(--bg-sec);
+}
+main .third-page nav .left {
+  display: flex;
+  gap: var(--gutter-xl);
+  align-items: center;
+  color: var(--text-main);
+}
+main .third-page nav .left .name-first {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: var(--text-xl);
+  text-transform: uppercase;
+  font-weight: 800;
+  background: var(--bg-active);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .third-page nav .right {
+  display: flex;
+  gap: var(--gutter-xl);
+  align-items: center;
+  color: var(--text-active);
+}
+main .third-page nav .right .nav-btn {
+  font-size: var(--text-xl);
+  padding: var(--padding-sm) var(--padding-lg);
+  border-radius: var(--rounded-sm);
+}
+main .third-page nav .right .nav-btn:active {
+  scale: 0.97;
+}
+main .third-page nav .right #add {
+  background: beige;
+  color: #000;
+}
+main .third-page nav .right #add i {
+  border: var(--border-md) solid var(--bg-canvas);
+  border-radius: 50%;
+}
+main .third-page nav .right #save,
+main .third-page nav .right #export {
+  background: var(--bg-panel);
+}
+main .third-page .main-workspace {
+  width: 100%;
+}
+main .third-page .main-workspace .workspace {
+  width: 100%;
+  height: calc(100vh - 65px);
+  background: var(--bg-pri);
+  display: grid;
+  grid-template-columns: 18% 60% 22%;
+  grid-template-rows: 1fr;
+}
+main .third-page .main-workspace .workspace .editor {
+  padding: var(--padding-sm);
+  border-radius: var(--rounded-sm);
+}
+main .third-page .main-workspace .workspace .editor .design-area {
+  height: 100%;
+  width: 100%;
+  border-radius: var(--rounded-sm);
+  padding: var(--padding-sm);
+  color: var(--text-active);
+}
+main .third-page .main-workspace .workspace .editor .design-area > h2 {
+  font-size: var(--text-3xl);
+  padding: var(--padding-sm);
+  border-bottom: var(--border-2xl) solid beige;
+}
+main .third-page .main-workspace .workspace #layers .layers {
+  background: var(--bg-active);
+}
+main .third-page .main-workspace .workspace #canvas .canvas {
+  background: var(--bg-canvas);
+}
+main .third-page .main-workspace .workspace #properties .properties {
+  background: var(--bg-sec);
 }
 
 /* Large Display */
