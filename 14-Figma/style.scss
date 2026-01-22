@@ -706,14 +706,45 @@ main {
                 gap: var(--gutter-xl);
                 align-items: center;
                 color: var(--text-active);
+                position: relative;
 
                 .nav-btn {
                     font-size: var(--text-xl);
                     padding: var(--padding-sm) var(--padding-lg);
                     border-radius: var(--rounded-sm);
+                    cursor: pointer;
 
                     &:active {
                         scale: 0.97;
+                    }
+                }
+
+                .expand {
+                    display: none;
+                    border: var(--border-lg) solid var(--bg-canvas);
+                    padding: var(--padding-sm);
+                    border-radius: var(--rounded-sm);
+                    z-index: 10;
+                    position: absolute;
+                    bottom: 0;
+                    background: #000;
+                    width: 130px;
+                    transform: translateY(120%);
+                    transition: all 0.3s ease-in-out;
+
+                    .child {
+                        background: var(--bg-active);
+                        padding: 2px var(--padding-sm);
+                        border-radius: var(--rounded-sm);
+                        display: flex;
+                        gap: var(--gutter-sm);
+                        align-items: center;
+                        cursor: pointer;
+                        margin-top: var(--margin-sm);
+
+                        &:active {
+                            scale: 0.97;
+                        }
                     }
                 }
 
@@ -769,8 +800,13 @@ main {
                     }
                 }
                 #canvas {
+                    height: 100%;
                     .canvas {
+                        height: 100%;
+                        width: 100%;
                         background: var(--bg-canvas);
+                        position: relative;
+                        overflow: hidden;
                     }
                 }
                 #properties {

@@ -73,3 +73,175 @@ const firstPageToSecondPage = () => {
 };
 
 firstPageToSecondPage();
+
+// Add button toggle
+const addElementBtn = document.querySelector("#add");
+const expand = document.querySelector(".expand");
+
+let isOpen = false;
+addElementBtn.addEventListener("click", () => {
+    isOpen = !isOpen;
+    expand.style.display = isOpen ? "block" : "none";
+});
+
+// Canvas & Buttons
+const canvas = document.querySelector(".workspace #canvas .canvas");
+const rectangleBtn = document.querySelector(".expand .rect");
+const textBtn = document.querySelector(".expand .textbox");
+
+let storeElements = [];
+
+const renderElement = (data) => {
+    let div = document.getElementById(data.id);
+
+    if (!div) {
+        div = document.createElement("div");
+        div.id = data.id;
+        div.classList.add("canvas-element", data.class);
+        // div.className = "canvas-element";
+        div.style.position = "absolute";
+        canvas.appendChild(div);
+    }
+
+    div.style.width = data.width + "px";
+    div.style.height = data.height + "px";
+    div.style.top = data.top + "px";
+    div.style.left = data.left + "px";
+    div.style.background = data.background;
+    div.style.color = data.color;
+    div.style.border = data.border ? "1px solid white" : "none";
+    div.innerText = data.text || "";
+
+    if (data.type === "text") {
+        div.contentEditable = true;
+    } else {
+        div.contentEditable = false;
+    }
+};
+
+// Add Rectangle
+rectangleBtn.addEventListener("click", () => {
+    const rectData = {
+        id: "el" + Date.now(),
+        type: "rectangle",
+        width: 200,
+        height: 200,
+        top: canvas.clientHeight / 2 - 100,
+        left: canvas.clientWidth / 2 - 100,
+        background: "red",
+        color: "white",
+        border: true,
+        text: "",
+        isSelected: false,
+        class: "rectangle-element",
+    };
+
+    storeElements.push(rectData);
+    renderElement(rectData);
+});
+
+// Add Text Box
+textBtn.addEventListener("click", () => {
+    const textData = {
+        id: "el" + Date.now(),
+        type: "text",
+        width: 200,
+        height: 80,
+        top: canvas.clientHeight / 2 - 40,
+        left: canvas.clientWidth / 2 - 100,
+        background: "transparent",
+        color: "white",
+        border: true,
+        text: "Edit me",
+        isSelected: false,
+        class: "text-element",
+    };
+
+    storeElements.push(textData);
+    renderElement(textData);
+});
+
+let selectedElementId = null;
+
+canvas.addEventListener("click", (event) => {
+    const element = event.target.closest(".canvas-element");
+    if (element) {
+        selectedElementId = element.id;
+    } else {
+        selectedElementId = null;
+    }
+    updateSelection();
+});
+
+
+function updateSelection() {
+    storeElements.forEach(item => {
+        const div = document.getElementById(item.id);
+        if (!div) return;
+
+        if (item.id === selectedElementId) {
+            div.style.outline = "2px solid blue";
+        } else {
+            div.style.outline = "none";
+        }
+    });
+}
+
+
+// draging Function
+
+let isDragging = false;
+let dragOffsetX = 0;
+let dragOffsetY = 0;
+
+function enableDragging() {
+    canvas.addEventListener("mousedown", (event) => {
+        const element = event.target.closest(".canvas-element");
+        if (!element) return;
+
+        selectedElementId = element.id;
+        isDragging = true;
+
+        const rect = element.getBoundingClientRect();
+        dragOffsetX = event.clientX - rect.left;
+        dragOffsetY = event.clientY - rect.top;
+    });
+
+    canvas.addEventListener("mousemove", (event) => {
+        if (!isDragging || !selectedElementId) return;
+
+        const element = document.getElementById(selectedElementId);
+        if (!element) return;
+
+        const canvasRect = canvas.getBoundingClientRect();
+
+        let newLeft = event.clientX - canvasRect.left - dragOffsetX;
+        let newTop = event.clientY - canvasRect.top - dragOffsetY;
+
+        const maxLeft = canvas.clientWidth - element.offsetWidth;
+        const maxTop = canvas.clientHeight - element.offsetHeight;
+
+        newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+        newTop = Math.max(0, Math.min(newTop, maxTop));
+
+        element.style.left = newLeft + "px";
+        element.style.top = newTop + "px";
+
+        const data = storeElements.find(el => el.id === selectedElementId);
+        if (data) {
+            data.left = newLeft;
+            data.top = newTop;
+        }
+    });
+
+    canvas.addEventListener("mouseup", () => {
+        isDragging = false;
+    });
+
+    canvas.addEventListener("mouseleave", () => {
+        isDragging = false;
+    });
+}
+
+
+enableDragging();

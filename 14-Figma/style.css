@@ -584,13 +584,41 @@ main .third-page nav .right {
   gap: var(--gutter-xl);
   align-items: center;
   color: var(--text-active);
+  position: relative;
 }
 main .third-page nav .right .nav-btn {
   font-size: var(--text-xl);
   padding: var(--padding-sm) var(--padding-lg);
   border-radius: var(--rounded-sm);
+  cursor: pointer;
 }
 main .third-page nav .right .nav-btn:active {
+  scale: 0.97;
+}
+main .third-page nav .right .expand {
+  display: none;
+  border: var(--border-lg) solid var(--bg-canvas);
+  padding: var(--padding-sm);
+  border-radius: var(--rounded-sm);
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  background: #000;
+  width: 130px;
+  transform: translateY(120%);
+  transition: all 0.3s ease-in-out;
+}
+main .third-page nav .right .expand .child {
+  background: var(--bg-active);
+  padding: 2px var(--padding-sm);
+  border-radius: var(--rounded-sm);
+  display: flex;
+  gap: var(--gutter-sm);
+  align-items: center;
+  cursor: pointer;
+  margin-top: var(--margin-sm);
+}
+main .third-page nav .right .expand .child:active {
   scale: 0.97;
 }
 main .third-page nav .right #add {
@@ -635,8 +663,15 @@ main .third-page .main-workspace .workspace .editor .design-area > h2 {
 main .third-page .main-workspace .workspace #layers .layers {
   background: var(--bg-active);
 }
+main .third-page .main-workspace .workspace #canvas {
+  height: 100%;
+}
 main .third-page .main-workspace .workspace #canvas .canvas {
+  height: 100%;
+  width: 100%;
   background: var(--bg-canvas);
+  position: relative;
+  overflow: hidden;
 }
 main .third-page .main-workspace .workspace #properties .properties {
   background: var(--bg-sec);
