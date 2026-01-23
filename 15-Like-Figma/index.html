@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Painter</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <nav>
+                <div class="left">Basic Painter</div>
+                <div class="right">
+                    <button class="child undo">
+                        <i class="ri-arrow-go-back-line"></i>
+                    </button>
+                    <button class="child redo">
+                        <i class="ri-arrow-go-forward-line"></i>
+                    </button>
+                    <button class="child clear-canvas">Clear Canvas</button>
+                    <button class="child save-img">Save Image</button>
+                    <button class="child json">Export Json</button>
+                    <button class="child html-save">Export Html</button>
+                </div>
+            </nav>
+
+            <!--  Working Area section -->
+            <section class="main-working-area">
+                <!-- Layers Panel -->
+                <section class="layers" id="layers">
+                    <h2>Layers</h2>
+                </section>
+
+                <!-- canvas Paner -->
+                <section class="canvas" id="canvas"></section>
+
+                <!-- Properties pannel -->
+                <section class="properties" id="properties">
+                    <!-- Tools Section -->
+                    <div class="tools">
+                        <div class="options pencilBtn">
+                            <i class="ri-pencil-line"></i>
+                        </div>
+                        <div class="options brushBtn">
+                            <i class="ri-brush-line"></i>
+                        </div>
+                        <div class="options rectangleBtn">
+                            <i class="ri-rectangle-line"></i>
+                        </div>
+                        <div class="options circleBtn">
+                            <i class="ri-checkbox-blank-circle-line"></i>
+                        </div>
+                        <div class="options triangleBtn">
+                            <i class="ri-triangle-line"></i>
+                        </div>
+                        <div class="options textBoxBtn">
+                            <i class="ri-t-box-line"></i>
+                        </div>
+                        <div class="options last fillColorBtn">
+                            <input type="checkbox" id="fill-color" />
+                            <label for="fill-color">Fill color</label>
+                        </div>
+                    </div>
+
+                    <!-- Size Slider -->
+                    <div class="slider">
+                        <input type="range" id="size-slider" />
+                    </div>
+
+                    <!-- change Colors -->
+                    <div class="colors">
+                        <ul class="options">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>

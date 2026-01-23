@@ -268,7 +268,6 @@
 
                     <!-- Third page Nav Right -->
                     <div class="right">
-
                         <!-- Expand -->
                         <div class="expand">
                             <div class="rect child">
@@ -292,19 +291,50 @@
 
                 <div class="main-workspace">
                     <div class="workspace">
+
+                        <!-- Layers Panel for 
+                         the panel -->
                         <div class="editor" id="layers">
                             <div class="layers design-area">
                                 <h2>Layers</h2>
                             </div>
                         </div>
-                        <div class="editor" id="canvas">
-                            <div class="canvas design-area">
 
+                        <!-- Main Canvas Working Area -->
+                        <div class="editor" id="canvas">
+
+                            <!-- Design Tools above canvas -->
+                            <div class="tools-section">
+
+                                <!-- All designs for canvas -->
+                                <div class="design">
+                                    <div id="rect" class="rect child">
+                                        Rect <i class="ri-rectangle-line"></i>
+                                    </div>
+                                    <div id="textbox" class="textbox child">
+                                        Text <i class="ri-t-box-line"></i>
+                                    </div>
+                                    <div id="circle" class="circle child">
+                                        Circle
+                                        <i
+                                            class="ri-checkbox-blank-circle-line"
+                                        ></i>
+                                    </div>
+                                </div>
                             </div>
+
+                            <!-- main canvas drawing area -->
+                            <div class="canvas design-area"></div>
                         </div>
+
+                        <!-- Properties Panel for canvas -->
                         <div class="editor" id="properties">
                             <div class="properties design-area">
                                 <h2>Properties</h2>
+
+                                <div class="all-properties">
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -86,8 +86,9 @@ addElementBtn.addEventListener("click", () => {
 
 // Canvas & Buttons
 const canvas = document.querySelector(".workspace #canvas .canvas");
-const rectangleBtn = document.querySelector(".expand .rect");
-const textBtn = document.querySelector(".expand .textbox");
+const rectangleBtn = document.querySelector("#rect");
+const textBtn = document.querySelector("#textbox");
+const circleBtn = document.querySelector('#circle')
 
 let storeElements = [];
 
@@ -116,8 +117,11 @@ const renderElement = (data) => {
 
     if (data.type === "text") {
         div.contentEditable = true;
-    } else {
+    } else if (data.type === "rectangle") {
         div.contentEditable = false;
+    }else if(data.type==='circle'){
+        div.contentEditable=false;
+        div.style.borderRadius=data.borderRadius;
     }
 };
 
@@ -143,6 +147,32 @@ rectangleBtn.addEventListener("click", () => {
     storeElements.push(rectData);
     renderElement(rectData);
 });
+
+// Add Circle 
+
+circleBtn.addEventListener("click", () => {
+    const circleData = {
+        id: "el" + Date.now(),
+        type: "circle",
+        width: 200,
+        height: 200,
+        top: canvas.clientHeight / 2 - 100,
+        left: canvas.clientWidth / 2 - 100,
+        background: "red",
+        color: "white",
+        border: true,
+        text: "",
+        isSelected: false,
+        class: "circle-element",
+        zIndex: 1,
+        rotation: 0,
+        borderRadius: "50%"
+    };
+
+    storeElements.push(circleData);
+    renderElement(circleData);
+});
+
 
 // Add Text Box
 textBtn.addEventListener("click", () => {
@@ -174,8 +204,8 @@ function updateSelection() {
         const div = document.getElementById(item.id);
         if (!div) return;
 
-        div.querySelectorAll(".resize-handle").forEach(h => h.remove());
-        div.querySelectorAll(".rotate-handle").forEach(h => h.remove());
+        div.querySelectorAll(".resize-handle").forEach((h) => h.remove());
+        div.querySelectorAll(".rotate-handle").forEach((h) => h.remove());
 
         if (item.id === selectedElementId) {
             div.style.outline = "2px solid blue";
@@ -188,7 +218,6 @@ function updateSelection() {
         }
     });
 }
-
 
 // draging Function
 
