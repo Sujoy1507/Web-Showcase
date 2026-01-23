@@ -187,10 +187,39 @@ main .main-working-area .canvas {
   border: var(--border-sm) solid var(--text-1);
   position: relative;
 }
+main .main-working-area .canvas .resize-handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: black;
+}
+main .main-working-area .canvas .resize-handle.br {
+  right: -5px;
+  bottom: -5px;
+  cursor: nwse-resize;
+}
+main .main-working-area .canvas .resize-handle.bl {
+  left: -5px;
+  bottom: -5px;
+  cursor: nesw-resize;
+}
+main .main-working-area .canvas .resize-handle.tr {
+  right: -5px;
+  top: -5px;
+  cursor: nesw-resize;
+}
+main .main-working-area .canvas .resize-handle.tl {
+  left: -5px;
+  top: -5px;
+  cursor: nwse-resize;
+}
 main .main-working-area .properties {
   background: var(--bg-3);
   border-radius: var(--rounded-md);
   padding: var(--pad-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-3xl);
 }
 main .main-working-area .properties .tools {
   background: var(--bg-1);
@@ -279,4 +308,49 @@ main .main-working-area .properties .colors .options li:nth-child(6) {
 }
 main .main-working-area .properties .colors .options li:nth-child(7) {
   background: var(--rainbow-7);
+}
+main .main-working-area .properties .buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gutter-sm);
+}
+main .main-working-area .properties .buttons .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--rainbow-3);
+  padding: var(--pad-md) var(--pad-lg);
+  border-radius: var(--rounded-sm);
+  font-size: var(--text-xl);
+  display: flex;
+  gap: var(--gutter-sm);
+}
+main .main-working-area .properties .buttons .btn:active {
+  scale: 0.96;
+}
+main .main-working-area .properties .buttons .btn:hover {
+  filter: brightness(5) contrast(2);
+  font-weight: 900;
+}
+main .main-working-area .properties .buttons .btn i {
+  font-size: var(--text-3xl);
+}
+main .main-working-area .properties .buttons .zIndex {
+  display: flex;
+  flex-direction: column;
+}
+main .main-working-area .properties .buttons .zIndex p {
+  width: 100%;
+  text-align: center;
+  background: var(--bg-1);
+  border-radius: var(--rounded-sm);
+}
+main .main-working-area .properties .buttons .zIndex .btnsZ {
+  display: flex;
+  gap: var(--gutter-sm);
+}
+main .main-working-area .properties .buttons .zIndex .btnsZ .btn {
+  padding: 0;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
